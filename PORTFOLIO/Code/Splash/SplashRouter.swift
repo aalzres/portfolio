@@ -6,9 +6,14 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SplashRouter {
+    func goMainScreen() {
+        let vc = MainScreenRouter.create()
+        UIApplication.serviceLocator.mainRouter.set(vc: vc)
+    }
+    
     class func create() -> SplashVC {
         let repository = SplashRepositoryImpl()
         let router = SplashRouter()

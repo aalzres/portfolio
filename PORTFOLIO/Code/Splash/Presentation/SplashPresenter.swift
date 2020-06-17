@@ -13,7 +13,7 @@ protocol SplashPresenterOutput: class {
 }
 
 protocol SplashPresenter {
-
+    func goMainScreen()
 }
 
 class SplashPresenterImpl: SplashPresenter {
@@ -25,6 +25,10 @@ class SplashPresenterImpl: SplashPresenter {
     init(router: SplashRouter, interactor: Splash) {
         self.interactor = interactor
         self.router = router
+    }
+    
+    func goMainScreen() {
+        router.goMainScreen()
     }
 }
 

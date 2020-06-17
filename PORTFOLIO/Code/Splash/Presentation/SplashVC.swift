@@ -32,7 +32,9 @@ class SplashVC: UIViewController {
     }
     //MARK: - Setups
     private func setupView() {
-        view.backgroundColor = .white
+        view.addGradientLayer()
+        
+        presenter.goMainScreen()
     }
 }
 

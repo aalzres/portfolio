@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  PORTFOLIO
+
+  Created by Andres Felipe Alzate on 16/06/2020.
+  Copyright © 2020 aalzres. All rights reserved.
+*/
+
+// <WHERE>_<DESCRIPTION>
+
+"main_screen_text_field" = "UITextField";
