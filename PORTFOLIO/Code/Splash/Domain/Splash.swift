@@ -8,13 +8,9 @@
 
 import Foundation
 
-protocol SplashOutput: class {
-    
-}
+protocol SplashOutput: class {}
 
-protocol Splash {
-    
-}
+protocol Splash {}
 
 class SplashImpl: Splash {
     private let repository: SplashRepository
@@ -26,6 +22,4 @@ class SplashImpl: Splash {
     }
 }
 
-extension SplashImpl: SplashRepositoryOutput {
-    
-}
+extension SplashImpl: SplashRepositoryOutput {}

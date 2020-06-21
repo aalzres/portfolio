@@ -27,6 +27,12 @@
 		674E33092498DFD500428BD0 /* PDimen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E33082498DFD500428BD0 /* PDimen.swift */; };
 		674E330E2498E2B700428BD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E330D2498E2B700428BD0 /* String+Extension.swift */; };
 		674E33102498E50C00428BD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 674E330F2498E50C00428BD0 /* Localizable.strings */; };
+		6785D07A249FDF5600148B01 /* UIKeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785D079249FDF5600148B01 /* UIKeyboardController.swift */; };
+		6795C119249D07A600A8589B /* TextFieldRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6795C111249D07A600A8589B /* TextFieldRouter.swift */; };
+		6795C11A249D07A600A8589B /* TextFieldRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6795C113249D07A600A8589B /* TextFieldRepository.swift */; };
+		6795C11B249D07A600A8589B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6795C115249D07A600A8589B /* TextField.swift */; };
+		6795C11C249D07A600A8589B /* TextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6795C117249D07A600A8589B /* TextFieldVC.swift */; };
+		6795C11D249D07A600A8589B /* TextFieldPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6795C118249D07A600A8589B /* TextFieldPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +58,12 @@
 		674E33082498DFD500428BD0 /* PDimen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDimen.swift; sourceTree = "<group>"; };
 		674E330D2498E2B700428BD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		674E330F2498E50C00428BD0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		6785D079249FDF5600148B01 /* UIKeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardController.swift; sourceTree = "<group>"; };
+		6795C111249D07A600A8589B /* TextFieldRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldRouter.swift; sourceTree = "<group>"; };
+		6795C113249D07A600A8589B /* TextFieldRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldRepository.swift; sourceTree = "<group>"; };
+		6795C115249D07A600A8589B /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		6795C117249D07A600A8589B /* TextFieldVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldVC.swift; sourceTree = "<group>"; };
+		6795C118249D07A600A8589B /* TextFieldPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 				6700D1E52497B4EA00ED44AB /* Base */,
 				674E32F42498BC5E00428BD0 /* MainScreen */,
 				6700D1EE2497BC6500ED44AB /* Splash */,
+				6795C110249D07A600A8589B /* TextField */,
 				674E330A2498E1F900428BD0 /* Utils */,
 			);
 			path = Code;
@@ -119,6 +132,7 @@
 				6700D1E92497B5A100ED44AB /* MainRouter.swift */,
 				674E33052498DC7F00428BD0 /* Presentation */,
 				6700D1E62497B50000ED44AB /* ServicesLocator.swift */,
+				6785D079249FDF5600148B01 /* UIKeyboardController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -229,6 +243,42 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		6795C110249D07A600A8589B /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				6795C112249D07A600A8589B /* Data */,
+				6795C114249D07A600A8589B /* Domain */,
+				6795C116249D07A600A8589B /* Presentation */,
+				6795C111249D07A600A8589B /* TextFieldRouter.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		6795C112249D07A600A8589B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6795C113249D07A600A8589B /* TextFieldRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6795C114249D07A600A8589B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6795C115249D07A600A8589B /* TextField.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6795C116249D07A600A8589B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6795C118249D07A600A8589B /* TextFieldPresenter.swift */,
+				6795C117249D07A600A8589B /* TextFieldVC.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,12 +350,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6795C11A249D07A600A8589B /* TextFieldRepository.swift in Sources */,
 				674E330E2498E2B700428BD0 /* String+Extension.swift in Sources */,
 				674E33072498DCB000428BD0 /* PColor.swift in Sources */,
+				6795C11B249D07A600A8589B /* TextField.swift in Sources */,
 				674E32FD2498BC5F00428BD0 /* MainScreenRouter.swift in Sources */,
 				6700D1F82497BC6500ED44AB /* SplashRepository.swift in Sources */,
 				6700D1E72497B50000ED44AB /* ServicesLocator.swift in Sources */,
 				674E33002498BC5F00428BD0 /* MainScreenVC.swift in Sources */,
+				6795C119249D07A600A8589B /* TextFieldRouter.swift in Sources */,
 				674E32FF2498BC5F00428BD0 /* MainScreen.swift in Sources */,
 				6700D1F72497BC6500ED44AB /* SplashRouter.swift in Sources */,
 				6700D1FB2497BC6500ED44AB /* SplashPresenter.swift in Sources */,
@@ -313,6 +366,9 @@
 				674E33092498DFD500428BD0 /* PDimen.swift in Sources */,
 				673C5462249A46E800BDF5EB /* UIView+Extension.swift in Sources */,
 				6700D1F92497BC6500ED44AB /* Splash.swift in Sources */,
+				6785D07A249FDF5600148B01 /* UIKeyboardController.swift in Sources */,
+				6795C11D249D07A600A8589B /* TextFieldPresenter.swift in Sources */,
+				6795C11C249D07A600A8589B /* TextFieldVC.swift in Sources */,
 				6700D1EA2497B5A100ED44AB /* MainRouter.swift in Sources */,
 				674E32FE2498BC5F00428BD0 /* MainScreenRepository.swift in Sources */,
 				674E33012498BC5F00428BD0 /* MainScreenPresenter.swift in Sources */,
@@ -453,13 +509,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2T2LC747UA;
+				DEVELOPMENT_TEAM = 53347QZ87F;
 				INFOPLIST_FILE = PORTFOLIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aalzres.portfolio.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aalzres.portfolio.test.test;
 				PRODUCT_NAME = portfolio;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -471,13 +527,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2T2LC747UA;
+				DEVELOPMENT_TEAM = 53347QZ87F;
 				INFOPLIST_FILE = PORTFOLIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aalzres.portfolio.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aalzres.portfolio.test.test;
 				PRODUCT_NAME = portfolio;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

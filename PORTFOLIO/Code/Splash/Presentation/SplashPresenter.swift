@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol SplashPresenterOutput: class {
-
-}
+protocol SplashPresenterOutput: class {}
 
 protocol SplashPresenter {
     func goMainScreen()
@@ -32,6 +30,4 @@ class SplashPresenterImpl: SplashPresenter {
     }
 }
 
-extension SplashPresenterImpl: SplashOutput {
-
-}
+extension SplashPresenterImpl: SplashOutput {}

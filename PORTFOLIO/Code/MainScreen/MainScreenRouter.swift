@@ -9,6 +9,11 @@
 import UIKit
 
 class MainScreenRouter {
+    func goTextFieldVC() {
+        let vc = TextFieldRouter.create()
+        UIApplication.serviceLocator.mainRouter.push(vc: vc)
+    }
+    
     class func create() -> MainScreenVC {
         let repository = MainScreenRepositoryImpl()
         let router = MainScreenRouter()

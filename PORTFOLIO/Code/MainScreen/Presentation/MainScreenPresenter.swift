@@ -8,12 +8,10 @@
 
 import Foundation
 
-protocol MainScreenPresenterOutput: class {
-
-}
+protocol MainScreenPresenterOutput: class {}
 
 protocol MainScreenPresenter {
-
+    func goTextFieldVC()
 }
 
 class MainScreenPresenterImpl: MainScreenPresenter {
@@ -26,8 +24,10 @@ class MainScreenPresenterImpl: MainScreenPresenter {
         self.interactor = interactor
         self.router = router
     }
+    
+    func goTextFieldVC() {
+        router.goTextFieldVC()
+    }
 }
 
-extension MainScreenPresenterImpl: MainScreenOutput {
-
-}
+extension MainScreenPresenterImpl: MainScreenOutput {}

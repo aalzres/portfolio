@@ -9,7 +9,7 @@
 import UIKit
 
 class SplashVC: UIViewController {
-   private let presenter: SplashPresenter
+    private let presenter: SplashPresenter
     
     init(presenter: SplashPresenter) {
         self.presenter = presenter
@@ -38,6 +38,4 @@ class SplashVC: UIViewController {
     }
 }
 
-extension SplashVC: SplashPresenterOutput {
-
-}
+extension SplashVC: SplashPresenterOutput {}

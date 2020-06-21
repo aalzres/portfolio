@@ -8,13 +8,9 @@
 
 import Foundation
 
-protocol SplashRepositoryOutput: class {
-    
-}
+protocol SplashRepositoryOutput: class {}
 
-protocol SplashRepository {
-    
-}
+protocol SplashRepository {}
 
 class SplashRepositoryImpl: SplashRepository {
     weak var output: SplashRepositoryOutput?
