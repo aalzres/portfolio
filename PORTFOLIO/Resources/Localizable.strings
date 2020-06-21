@@ -8,4 +8,16 @@
 
 // <WHERE>_<DESCRIPTION>
 
+/* Main Screen */
 "main_screen_text_field" = "UITextField";
+
+/* Text Field */
+"text_field_title_view" = "Datos del usuario";
+"text_field_name_label" = "Nombre";
+"text_field_document_number_label" = "Documento de indentidad";
+"text_field_date_of_birth" = "Fecha de nacimiento";
+"text_field_mail" = "Correo electrónico";
+"text_field_address" = "Dirección";
+"text_field_sex" = "Género";
+"text_field_tel" = "Teléfono";
+"text_field_nationality" = "Nacionalidad";

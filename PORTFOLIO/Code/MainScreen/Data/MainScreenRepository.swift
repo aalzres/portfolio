@@ -8,13 +8,9 @@
 
 import Foundation
 
-protocol MainScreenRepositoryOutput: class {
-    
-}
+protocol MainScreenRepositoryOutput: class {}
 
-protocol MainScreenRepository {
-    
-}
+protocol MainScreenRepository {}
 
 class MainScreenRepositoryImpl: MainScreenRepository {
     weak var output: MainScreenRepositoryOutput?

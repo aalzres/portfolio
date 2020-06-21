@@ -8,13 +8,9 @@
 
 import Foundation
 
-protocol MainScreenOutput: class {
-    
-}
+protocol MainScreenOutput: class {}
 
-protocol MainScreen {
-    
-}
+protocol MainScreen {}
 
 class MainScreenImpl: MainScreen {
     private let repository: MainScreenRepository
@@ -26,6 +22,4 @@ class MainScreenImpl: MainScreen {
     }
 }
 
-extension MainScreenImpl: MainScreenRepositoryOutput {
-    
-}
+extension MainScreenImpl: MainScreenRepositoryOutput {}

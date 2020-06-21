@@ -33,6 +33,12 @@ struct PDimen {
     static let componentButtonBorderWidth: CGFloat = 2
     static let componentButtonWidthMultiplier: CGFloat = 0.9
     
+    static let inputHeight: CGFloat = 50
+    static let inputTitleTextSize: CGFloat = 16
+    static let inputTextSize: CGFloat = 18
+    static let inputButtonWidth: CGFloat = 30
+    static let inputButtonHeight: CGFloat = inputButtonWidth
+    
     static let cornerRadius: CGFloat = 15
     static let shadowRadius: CGFloat = 2
 }

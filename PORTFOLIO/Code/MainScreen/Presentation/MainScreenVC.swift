@@ -11,7 +11,11 @@ import UIKit
 class MainScreenVC: UIViewController {
     private let presenter: MainScreenPresenter
     
-    private lazy var textFieldView = UIView()
+    private lazy var textFieldView: UIView = {
+        let textFieldView = UIView()
+        textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goTextFieldVC)))
+        return textFieldView
+    }()
     private lazy var textFieldLabel: UILabel = {
         let textFieldLabel = UILabel()
         textFieldLabel.text = "main_screen_text_field".localized()
@@ -54,7 +58,7 @@ class MainScreenVC: UIViewController {
                              top: view.safeAreaLayoutGuide.topAnchor, paddingTop: PDimen.paddingS,
                              leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
                              trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS,
-                             height: PDimen.componentButtonHeight)
+                             heightConstant: PDimen.componentButtonHeight)
         
         textFieldView.addNeumorphismStyle(colorLight: PColor.grayL, colorDark: PColor.grayD)
         
@@ -68,8 +72,12 @@ class MainScreenVC: UIViewController {
                      centerY: textFieldView.centerYAnchor)
     }
 }
-
-extension MainScreenVC: MainScreenPresenterOutput {
-    
+// MARK: - Output
+extension MainScreenVC: MainScreenPresenterOutput {}
+// MARK: - Selector
+extension MainScreenVC {
+    @objc
+    func goTextFieldVC() {
+        presenter.goTextFieldVC()
+    }
 }
-
