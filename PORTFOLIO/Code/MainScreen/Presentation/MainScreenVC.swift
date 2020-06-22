@@ -21,6 +21,7 @@ class MainScreenVC: UIViewController {
         textFieldLabel.text = "main_screen_text_field".localized()
         return textFieldLabel
     }()
+    
     private lazy var arrow: UIImageView = {
         let arrow = UIImageView(image: UIImage(named: "arrow"))
         return arrow
@@ -30,6 +31,7 @@ class MainScreenVC: UIViewController {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
+        setupTitleView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,18 +40,28 @@ class MainScreenVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        configNavBar()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = PColor.white
         
         setupView()
     }
+    
     //MARK: - Setups
+    private func setupTitleView() {
+        title = "main_screen_title".localized()
+    }
+    
+    private func configNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode =  .always
+    }
+    
     private func setupView() {
-        view.addGradientLayer()
-        
         setupTextField()
     }
     
@@ -59,8 +71,6 @@ class MainScreenVC: UIViewController {
                              leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
                              trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS,
                              heightConstant: PDimen.componentButtonHeight)
-        
-        textFieldView.addNeumorphismStyle(colorLight: PColor.grayL, colorDark: PColor.grayD)
         
         textFieldLabel.anchor(textFieldView,
                               top: textFieldView.topAnchor, paddingTop: PDimen.paddingS,

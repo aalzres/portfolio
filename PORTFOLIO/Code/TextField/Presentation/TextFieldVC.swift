@@ -13,10 +13,10 @@ class TextFieldVC: UIKeyboardController {
     
     private lazy var contentView = UIView()
     
-    private lazy var titleView: UILabel = {
-        let titleView = UILabel()
-        titleView.text = "text_field_title_view".localized()
-        return titleView
+    private lazy var headerView: UILabel = {
+        let headerView = UILabel()
+        headerView.text = "text_field_header_view".localized()
+        return headerView
     }()
     
     private lazy var nameLabel: UILabel = {
@@ -111,6 +111,7 @@ class TextFieldVC: UIKeyboardController {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
+        setupTitleView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -119,19 +120,26 @@ class TextFieldVC: UIKeyboardController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        configNavController()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = PColor.white
         
         setupView()
     }
     //MARK: - Setups
+    private func setupTitleView() { title = "main_screen_text_field".localized() }
+    
+    private func configNavController() {
+        navigationItem.largeTitleDisplayMode =  .never
+    }
+    
     private func setupView() {
-        view.addGradientLayer()
-        
         setupContentView()
-        setupTitleView()
+        setupHeaderView()
         setupName()
         setupDocumentNumber()
         setupDateOfBirth()
@@ -150,15 +158,15 @@ class TextFieldVC: UIKeyboardController {
                           trailing: view.trailingAnchor)
         
         contentView.anchor(scrollView,
-                          top: scrollView.topAnchor,
-                          bottom: scrollView.bottomAnchor,
-                          leading: scrollView.leadingAnchor,
-                          trailing: scrollView.trailingAnchor,
-                          width: scrollView.widthAnchor)
+                           top: scrollView.topAnchor,
+                           bottom: scrollView.bottomAnchor,
+                           leading: scrollView.leadingAnchor,
+                           trailing: scrollView.trailingAnchor,
+                           width: scrollView.widthAnchor)
     }
     
-    private func setupTitleView() {
-        titleView.anchor(contentView,
+    private func setupHeaderView() {
+        headerView.anchor(contentView,
                          top: contentView.topAnchor, paddingTop: PDimen.paddingS,
                          leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
                          trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
@@ -167,7 +175,7 @@ class TextFieldVC: UIKeyboardController {
     
     private func setupName() {
         nameLabel.anchor(contentView,
-                         top: titleView.bottomAnchor, paddingTop: PDimen.paddingM,
+                         top: headerView.bottomAnchor, paddingTop: PDimen.paddingM,
                          leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
                          trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
         
@@ -212,7 +220,6 @@ class TextFieldVC: UIKeyboardController {
                          leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
                          trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
     }
-    
     
     private func setupAddress() {
         addressLabel.anchor(contentView,
