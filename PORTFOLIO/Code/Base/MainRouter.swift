@@ -117,13 +117,11 @@ class MainRouterImpl: MainRouter {
     }
     
     private func configNavBar(vc: UIViewController) {
-        vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(pop))
+        vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: vc.title ?? "", style: .plain, target: self, action: #selector(pop))
         
-        navController?.navigationBar.shadowImage = UIImage()
-        navController?.navigationBar.barStyle = .default
-        navController?.navigationBar.isTranslucent = false
-        navController?.navigationBar.backIndicatorImage = UIImage(named: "iconBack")
-        navController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "iconBack")
+        let backButton = UIImage(named: "iconBack")
+        navController?.navigationBar.backIndicatorImage = backButton
+        navController?.navigationBar.backIndicatorTransitionMaskImage = backButton
     }
 }
 

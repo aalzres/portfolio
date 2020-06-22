@@ -9,10 +9,11 @@
 // <WHERE>_<DESCRIPTION>
 
 /* Main Screen */
+"main_screen_title" = "Portfolio";
 "main_screen_text_field" = "UITextField";
 
 /* Text Field */
-"text_field_title_view" = "Datos del usuario";
+"text_field_header_view" = "Datos del usuario";
 "text_field_name_label" = "Nombre";
 "text_field_document_number_label" = "Documento de indentidad";
 "text_field_date_of_birth" = "Fecha de nacimiento";
