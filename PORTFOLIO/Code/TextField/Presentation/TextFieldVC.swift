@@ -15,94 +15,111 @@ class TextFieldVC: UIKeyboardController {
     
     private lazy var headerView: UILabel = {
         let headerView = UILabel()
+        headerView.font = PFont.title
         headerView.text = "text_field_header_view".localized()
         return headerView
     }()
     
     private lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
+        nameLabel.font = PFont.inputPrimary
         nameLabel.text = "text_field_name_label".localized()
         return nameLabel
     }()
     private lazy var nameInput: UITextField = {
         let nameInput = UITextField()
+        nameInput.font = PFont.inputSecondary
         nameInput.addLine(position: .bottom)
         return nameInput
     }()
     
     private lazy var documentNumberLabel: UILabel = {
         let documentNumberLabel = UILabel()
+        documentNumberLabel.font = PFont.inputPrimary
         documentNumberLabel.text = "text_field_document_number_label".localized()
         return documentNumberLabel
     }()
     private lazy var documentNumberInput: UITextField = {
         let documentNumberInput = UITextField()
+        documentNumberInput.font = PFont.inputSecondary
         documentNumberInput.addLine(position: .bottom)
         return documentNumberInput
     }()
     
     private lazy var dateOfBirthLabel: UILabel = {
         let dateOfBirthLabel = UILabel()
+        dateOfBirthLabel.font = PFont.inputPrimary
         dateOfBirthLabel.text = "text_field_date_of_birth".localized()
         return dateOfBirthLabel
     }()
     private lazy var dateOfBirthInput: UITextField = {
         let dateOfBirthInput = UITextField()
+        dateOfBirthInput.font = PFont.inputSecondary
         dateOfBirthInput.addLine(position: .bottom)
         return dateOfBirthInput
     }()
     
     private lazy var mailLabel: UILabel = {
         let mailLabel = UILabel()
+        mailLabel.font = PFont.inputPrimary
         mailLabel.text = "text_field_mail".localized()
         return mailLabel
     }()
     private lazy var mailInput: UITextField = {
         let mailInput = UITextField()
+        mailInput.font = PFont.inputSecondary
         mailInput.addLine(position: .bottom)
         return mailInput
     }()
     
     private lazy var addressLabel: UILabel = {
         let addressLabel = UILabel()
+        addressLabel.font = PFont.inputPrimary
         addressLabel.text = "text_field_address".localized()
         return addressLabel
     }()
     private lazy var addressInput: UITextField = {
         let addressInput = UITextField()
+        addressInput.font = PFont.inputSecondary
         addressInput.addLine(position: .bottom)
         return addressInput
     }()
     
     private lazy var sexLabel: UILabel = {
         let sexLabel = UILabel()
+        sexLabel.font = PFont.inputPrimary
         sexLabel.text = "text_field_sex".localized()
         return sexLabel
     }()
     private lazy var sexInput: UITextField = {
         let sexInput = UITextField()
+        sexInput.font = PFont.inputSecondary
         sexInput.addLine(position: .bottom)
         return sexInput
     }()
     
     private lazy var telLabel: UILabel = {
         let telLabel = UILabel()
+        telLabel.font = PFont.inputPrimary
         telLabel.text = "text_field_tel".localized()
         return telLabel
     }()
     private lazy var telInput: UITextField = {
         let telInput = UITextField()
+        telInput.font = PFont.inputSecondary
         telInput.addLine(position: .bottom)
         return telInput
     }()
     
     private lazy var nationalityLabel: UILabel = {
         let nationalityLabel = UILabel()
+        nationalityLabel.font = PFont.inputPrimary
         nationalityLabel.text = "text_field_nationality".localized()
         return nationalityLabel
     }()
     private lazy var nationalityInput: UITextField = {
         let nationalityInput = UITextField()
+        nationalityInput.font = PFont.inputSecondary
         nationalityInput.addLine(position: .bottom)
         return nationalityInput
     }()

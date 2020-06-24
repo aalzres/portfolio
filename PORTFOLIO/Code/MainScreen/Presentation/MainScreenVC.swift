@@ -18,6 +18,7 @@ class MainScreenVC: UIViewController {
     }()
     private lazy var textFieldLabel: UILabel = {
         let textFieldLabel = UILabel()
+        textFieldLabel.font = PFont.primary
         textFieldLabel.text = "main_screen_text_field".localized()
         return textFieldLabel
     }()

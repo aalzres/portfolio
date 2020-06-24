@@ -41,4 +41,9 @@ struct PDimen {
     
     static let cornerRadius: CGFloat = 15
     static let shadowRadius: CGFloat = 2
+    
+    static let title: CGFloat = 28
+    static let subtitle: CGFloat = 18
+    static let primary: CGFloat = 16
+    static let secondary: CGFloat = 14
 }
