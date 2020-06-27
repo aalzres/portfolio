@@ -13,7 +13,7 @@ struct PFont {
     static let subtitle: UIFont = .robotoLight(PDimen.subtitle)
     static let primary: UIFont = .robotoLight(PDimen.primary)
     static let secondary: UIFont = .robotoLight(PDimen.secondary)
-    static let inputPrimary: UIFont = .robotoLight(PDimen.primary)
+    static let inputPrimary: UIFont = .robotoRegular(PDimen.primary)
     static let inputSecondary: UIFont = .robotoLight(PDimen.secondary)
 }
 
