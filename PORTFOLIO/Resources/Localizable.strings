@@ -20,5 +20,7 @@
 "text_field_mail" = "Correo electrónico";
 "text_field_address" = "Dirección";
 "text_field_sex" = "Género";
+"text_field_sex_male" = "Masculino";
+"text_field_sex_female" = "Femenino";
 "text_field_tel" = "Teléfono";
 "text_field_nationality" = "Nacionalidad";

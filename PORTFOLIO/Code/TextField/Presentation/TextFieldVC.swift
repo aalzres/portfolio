@@ -91,11 +91,12 @@ class TextFieldVC: UIKeyboardController {
         sexLabel.text = "text_field_sex".localized()
         return sexLabel
     }()
-    private lazy var sexInput: UITextField = {
-        let sexInput = UITextField()
-        sexInput.font = PFont.inputSecondary
-        sexInput.addLine(position: .bottom)
-        return sexInput
+    private lazy var sexInput: UISegmentedControl = {
+        let items = [
+            "text_field_sex_male".localized(),
+            "text_field_sex_female".localized()
+        ]
+        return UISegmentedControl(items: items)
     }()
     
     private lazy var telLabel: UILabel = {
