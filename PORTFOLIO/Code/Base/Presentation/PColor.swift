@@ -14,5 +14,5 @@ struct PColor {
     static let grayM: UIColor = #colorLiteral(red: 0.7607843137, green: 0.7960784314, blue: 0.8509803922, alpha: 1)
     static let grayD: UIColor = #colorLiteral(red: 0.6392156863, green: 0.6941176471, blue: 0.7764705882, alpha: 1)
     
-    static let lineColor: UIColor = PColor.grayD
+    static let lineColor: UIColor = PColor.grayL
 }
