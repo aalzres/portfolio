@@ -52,10 +52,10 @@ class TextFieldVC: UIKeyboardController {
         dateOfBirthLabel.text = "text_field_date_of_birth".localized()
         return dateOfBirthLabel
     }()
-    private lazy var dateOfBirthInput: UITextField = {
-        let dateOfBirthInput = UITextField()
-        dateOfBirthInput.font = PFont.inputSecondary
-        dateOfBirthInput.addLine(position: .bottom)
+    private lazy var dateOfBirthInput: UIDatePicker = {
+        let dateOfBirthInput = UIDatePicker()
+        dateOfBirthInput.datePickerMode = .date
+        if #available(iOS 14.0, *) { dateOfBirthInput.preferredDatePickerStyle = .inline }
         return dateOfBirthInput
     }()
     
