@@ -43,6 +43,11 @@ class TextFieldVC: UIKeyboardController {
         let documentNumberInput = UITextField()
         documentNumberInput.font = PFont.inputSecondary
         documentNumberInput.addLine(position: .bottom)
+        documentNumberInput.autocorrectionType = .no
+        documentNumberInput.keyboardType = .namePhonePad
+        documentNumberInput.returnKeyType = .next
+        documentNumberInput.clearButtonMode = .whileEditing
+        documentNumberInput.delegate = self
         return documentNumberInput
     }()
     
@@ -290,4 +295,25 @@ class TextFieldVC: UIKeyboardController {
 }
 // MARK: - Output
 extension TextFieldVC: TextFieldPresenterOutput {}
-
+// MARK: - TextField Delegate
+extension TextFieldVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case documentNumberInput:
+            return checkLengthDocumentNumber(textField, range, string)
+        default:
+            return true;
+        }
+    }
+    
+    private func checkLengthDocumentNumber(_ textField: UITextField, _ range: NSRange, _ string: String) -> Bool{
+        let maxLength = 9
+        
+        guard let currentText = textField.text,
+              let stringRange = Range(range, in: currentText)
+        else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        return updatedText.count <= maxLength
+    }
+}
