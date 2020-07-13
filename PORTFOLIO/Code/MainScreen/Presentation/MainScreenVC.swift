@@ -103,7 +103,7 @@ extension MainScreenVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellId, for: indexPath) as? MainScreenTableCell else { return UITableViewCell() }
         
         guard let item = menuItems[indexPath.row] as MainScreenItem? else { return UITableViewCell() }
-        cell.name.text = item.name
+        cell.nameItem.text = item.name
         cell.selectionStyle = .none
         
         return cell
