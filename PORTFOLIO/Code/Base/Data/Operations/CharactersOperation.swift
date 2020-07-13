@@ -16,6 +16,7 @@ class CharactersOperation: JSONOperation<CharactersDataWrapperEntity> {
         var params = ["" : ""]
         if let name = characterRequest?.name { params["name"] = name }
         if let offset = characterRequest?.offset { params["offset"] = String(offset) }
+        if let limit = characterRequest?.limit { params["limit"] = String(limit) }
         
         return params
     }

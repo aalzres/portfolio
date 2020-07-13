@@ -27,7 +27,7 @@
 "text_field_nationality" = "Nacionalidad";
 
 /* Marvel */
-"marvel_title_table" = "Marvel";
+"marvel_title_view" = "Marvel";
 
 /* Error */
 "error_generic" = "Hubo un error, inténtalo de nuevo más tarde.";

@@ -18,23 +18,19 @@ class MarvelVC: UIViewController {
     private lazy var itemsTable: UITableView = {
         let itemsTable = UITableView()
         itemsTable.dataSource = self
+        itemsTable.prefetchDataSource = self
         itemsTable.register(MarvelTableCell.self, forCellReuseIdentifier: Constants.cellId)
         return itemsTable
     }()
-    private lazy var tableHeader: UILabel = {
-        let header = UILabel()
-        header.text = "marvel_title_table".localized()
-        header.font = PFont.title
-        header.textAlignment = .left
-        return header
-    }()
     
     private var characterItems: [CharacterItem] = []
+    private var characterRequest = CharacterRequestEntity()
     
     init(presenter: MarvelPresenter) {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
+        setupTitleView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,6 +40,7 @@ class MarvelVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        presenter.getCharacters(characterRequest: characterRequest)
         configNavBar()
     }
     
@@ -53,6 +50,10 @@ class MarvelVC: UIViewController {
         setupView()
     }
     //MARK: - Setups
+    private func setupTitleView() {
+        title = "marvel_title_view".localized()
+    }
+    
     private func configNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode =  .always
@@ -60,12 +61,6 @@ class MarvelVC: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .white
-        
-        //        var characterRequest = CharacterRequestEntity()
-        //        characterRequest.name = "Spider-Man"
-        //        presenter.getCharacters(characterRequest: characterRequest)
-        
-        presenter.getCharacters(characterRequest: nil)
         
         setupTable()
     }
@@ -77,15 +72,9 @@ class MarvelVC: UIViewController {
                           bottom: view.safeAreaLayoutGuide.bottomAnchor,
                           leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
                           trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS)
-        
-        itemsTable.tableHeaderView = tableHeader
-        tableHeader.translatesAutoresizingMaskIntoConstraints = false
-        tableHeader.bottomAnchor.constraint(equalTo: itemsTable.topAnchor, constant: Constants.headerBottomMargin).isActive = true
-        tableHeader.leadingAnchor.constraint(equalTo: itemsTable.leadingAnchor, constant: PDimen.paddingS).isActive = true
-        tableHeader.trailingAnchor.constraint(equalTo: itemsTable.trailingAnchor, constant: -PDimen.paddingS).isActive = true
     }
 }
-
+// MARK: - MarvelPresenterOutput
 extension MarvelVC: MarvelPresenterOutput {
     func getCharactersSuccess(characters: [CharacterEntity]) {
         for character in characters {
@@ -97,9 +86,10 @@ extension MarvelVC: MarvelPresenterOutput {
     }
     
     func getCharactersFailure(_ error: String) {
-        print(error)
+        debugPrint(error)
     }
 }
+// MARK: - UITableViewDataSource
 extension MarvelVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characterItems.count
@@ -109,13 +99,24 @@ extension MarvelVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellId, for: indexPath) as? MarvelTableCell else { return UITableViewCell() }
         
         guard let character = characterItems[indexPath.row] as CharacterItem? else { return UITableViewCell() }
-        cell.name.text = character.name
+        cell.characterName.text = character.name
+        cell.selectionStyle = .none
         
         return cell
     }
 }
-
+// MARK: - UITableViewDataSourcePrefetching
+extension MarvelVC: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let needsFetch = indexPaths.contains { $0.row >= self.characterItems.count-1 }
+        
+        if needsFetch {
+            characterRequest.offset = characterItems.count
+            presenter.getCharacters(characterRequest: characterRequest)
+        }
+    }
+}
+// MARK: - Constans
 private struct Constants {
     static let cellId = "cellId"
-    static let headerBottomMargin: CGFloat = 30
 }
