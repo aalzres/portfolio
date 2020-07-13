@@ -8,41 +8,29 @@
 
 import UIKit
 
+enum MainScreenTarget {
+    case goTextView
+    case goMarvel
+}
+
+struct MainScreenItem {
+    var name: String
+    var target: MainScreenTarget
+}
+
 class MainScreenVC: UIViewController {
     private let presenter: MainScreenPresenter
     
-    private lazy var textFieldView: UIView = {
-        let textFieldView = UIView()
-        textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goTextFieldVC)))
-        return textFieldView
+    private lazy var itemsTable: UITableView = {
+        let itemsTable = UITableView()
+        itemsTable.dataSource = self
+        itemsTable.delegate = self
+        itemsTable.separatorStyle = .none
+        itemsTable.register(MainScreenTableCell.self, forCellReuseIdentifier: Constants.cellId)
+        return itemsTable
     }()
-    private lazy var textFieldLabel: UILabel = {
-        let textFieldLabel = UILabel()
-        textFieldLabel.font = PFont.primary
-        textFieldLabel.text = "main_screen_text_field".localized()
-        return textFieldLabel
-    }()
-    
-    private lazy var arrow: UIImageView = {
-        let arrow = UIImageView(image: UIImage(named: "arrow"))
-        return arrow
-    }()
-    
-    private lazy var marvelView: UIView = {
-        let marvelView = UIView()
-        marvelView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goMarvel)))
-        return marvelView
-    }()
-    private lazy var marvelLabel: UILabel = {
-        let marvelLabel = UILabel()
-        marvelLabel.font = PFont.primary
-        marvelLabel.text = "main_screen_marvel".localized()
-        return marvelLabel
-    }()
-    private lazy var arrowMarvel: UIImageView = {
-        let arrow = UIImageView(image: UIImage(named: "arrow"))
-        return arrow
-    }()
+    private var menuItems: [MainScreenItem] = [MainScreenItem(name: "main_screen_text_field".localized(), target: .goTextView),
+                                               MainScreenItem(name: "main_screen_marvel".localized(), target: .goMarvel)]
     
     init(presenter: MainScreenPresenter) {
         self.presenter = presenter
@@ -79,42 +67,16 @@ class MainScreenVC: UIViewController {
     }
     
     private func setupView() {
-        setupTextFieldView()
-        setupMarvelView()
+        setupTable()
     }
     
-    private func setupTextFieldView() {
-        textFieldView.anchor(view,
-                             top: view.safeAreaLayoutGuide.topAnchor, paddingTop: PDimen.paddingS,
-                             leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
-                             trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS,
-                             heightConstant: PDimen.componentButtonHeight)
-        
-        textFieldLabel.anchor(textFieldView,
-                              top: textFieldView.topAnchor, paddingTop: PDimen.paddingS,
-                              bottom: textFieldView.bottomAnchor, paddingBottom: -PDimen.paddingS,
-                              leading: textFieldView.leadingAnchor, paddingLeading: PDimen.paddingS)
-        
-        arrow.anchor(textFieldView,
-                     trailing: textFieldView.trailingAnchor, paddingTrailing: -PDimen.paddingS,
-                     centerY: textFieldView.centerYAnchor)
-    }
-    
-    private func setupMarvelView() {
-        marvelView.anchor(view,
-                          top: textFieldView.bottomAnchor, paddingTop: PDimen.paddingS,
+    private func setupTable() {
+        itemsTable.separatorInset.right = itemsTable.separatorInset.left
+        itemsTable.anchor(view,
+                          top: view.safeAreaLayoutGuide.topAnchor,
+                          bottom: view.safeAreaLayoutGuide.bottomAnchor,
                           leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
-                          trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS,
-                          heightConstant: PDimen.componentButtonHeight)
-        
-        marvelLabel.anchor(marvelView,
-                           top: marvelView.topAnchor, paddingTop: PDimen.paddingS,
-                           bottom: marvelView.bottomAnchor, paddingBottom: -PDimen.paddingS,
-                           leading: marvelView.leadingAnchor, paddingLeading: PDimen.paddingS)
-        
-        arrowMarvel.anchor(marvelView,
-                           trailing: marvelView.trailingAnchor, paddingTrailing: -PDimen.paddingS,
-                           centerY: marvelView.centerYAnchor)
+                          trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS)
     }
 }
 // MARK: - Output
@@ -130,4 +92,37 @@ extension MainScreenVC {
     func goMarvel() {
         presenter.goMarvel()
     }
+}
+// MARK: - UITableViewDelegate
+extension MainScreenVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellId, for: indexPath) as? MainScreenTableCell else { return UITableViewCell() }
+        
+        guard let item = menuItems[indexPath.row] as MainScreenItem? else { return UITableViewCell() }
+        cell.name.text = item.name
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+}
+// MARK: - UITableViewDelegate
+extension MainScreenVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = menuItems[indexPath.row] as MainScreenItem? else { return }
+        
+        switch item.target {
+        case .goTextView:
+            presenter.goTextFieldVC()
+        case .goMarvel:
+            presenter.goMarvel()
+        }
+    }
+}
+// MARK: - Constants
+private struct Constants {
+    static let cellId = "cellId"
 }

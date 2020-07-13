@@ -9,17 +9,16 @@
 import UIKit
 
 class MarvelTableCell: UITableViewCell {
-    private lazy var textStack: UIStackView = {
-        let stack = UIStackView()
-        stack.spacing = PDimen.paddingS
-        stack.axis = .vertical
-        return stack
+    private lazy var characterValues: UIStackView = {
+        let characterValues = UIStackView()
+        characterValues.spacing = PDimen.paddingS
+        characterValues.axis = .vertical
+        return characterValues
     }()
-    
-    lazy var name: UILabel = {
-        let name = UILabel()
-        name.font = PFont.primary
-        return name
+    lazy var characterName: UILabel = {
+        let characterName = UILabel()
+        characterName.font = PFont.primary
+        return characterName
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -33,10 +32,11 @@ class MarvelTableCell: UITableViewCell {
     }
     
     private func setupCellView() {
-        textStack.anchor(contentView,
-                         top: contentView.topAnchor, paddingTop: PDimen.paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
-        textStack.addArrangedSubview(name)
+        characterValues.anchor(contentView,
+                               top: contentView.topAnchor, paddingTop: PDimen.paddingS,
+                               bottom: contentView.bottomAnchor, paddingBottom: -PDimen.paddingS,
+                               leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
+                               trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+        characterValues.addArrangedSubview(characterName)
     }
 }
