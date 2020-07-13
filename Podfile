@@ -7,5 +7,6 @@ target 'PORTFOLIO' do
 
   # Pods for PORTFOLIO
 	pod 'Alamofire', '5.2.1'
+  pod 'SwiftyJSON', '5.0.0'
 
 end

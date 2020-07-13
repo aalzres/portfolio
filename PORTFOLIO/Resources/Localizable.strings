@@ -11,6 +11,7 @@
 /* Main Screen */
 "main_screen_title" = "Portfolio";
 "main_screen_text_field" = "UITextField";
+"main_screen_marvel" = "Marvel";
 
 /* Text Field */
 "text_field_header_view" = "Datos del usuario";
@@ -24,3 +25,11 @@
 "text_field_sex_female" = "Femenino";
 "text_field_tel" = "Teléfono";
 "text_field_nationality" = "Nacionalidad";
+
+/* Marvel */
+"marvel_title_table" = "Marvel";
+
+/* Error */
+"error_generic" = "Hubo un error, inténtalo de nuevo más tarde.";
+"error_wrong_data" = "Parece que tenemos un problema, vuelve a intentarlo más tarde.";
+"error_parameters" = "Lo parámetros no son válidos.";

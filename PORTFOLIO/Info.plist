@@ -56,5 +56,16 @@
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
 	</array>
+	<key>PORTFOLIOConfiguration</key>
+	<dict>
+		<key>ServerHostMarvel</key>
+		<string>$(SERVER_HOST_MARVEL)</string>
+		<key>PublicKeyMarvel</key>
+		<string>$(PUBLIC_KEY_MARVEL)</string>
+		<key>PrivateKeyMarvel</key>
+		<string>$(PRIVATE_KEY_MARVEL)</string>
+		<key>ServerApiVersionMarvel</key>
+		<string>$(SERVER_API_VERSION_MARVEL)</string>
+	</dict>
 </dict>
 </plist>

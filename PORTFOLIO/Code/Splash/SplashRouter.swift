@@ -15,7 +15,10 @@ class SplashRouter {
     }
     
     class func create() -> SplashVC {
-        let repository = SplashRepositoryImpl()
+        let serviceLocator = UIApplication.serviceLocator
+        let networkManager = serviceLocator.networkManager
+        
+        let repository = SplashRepositoryImpl(networkManager: networkManager)
         let router = SplashRouter()
         let interactor = SplashImpl(repository: repository)
         let presenter = SplashPresenterImpl(router: router, interactor: interactor)

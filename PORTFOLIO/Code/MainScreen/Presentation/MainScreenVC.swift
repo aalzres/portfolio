@@ -28,6 +28,22 @@ class MainScreenVC: UIViewController {
         return arrow
     }()
     
+    private lazy var marvelView: UIView = {
+        let marvelView = UIView()
+        marvelView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goMarvel)))
+        return marvelView
+    }()
+    private lazy var marvelLabel: UILabel = {
+        let marvelLabel = UILabel()
+        marvelLabel.font = PFont.primary
+        marvelLabel.text = "main_screen_marvel".localized()
+        return marvelLabel
+    }()
+    private lazy var arrowMarvel: UIImageView = {
+        let arrow = UIImageView(image: UIImage(named: "arrow"))
+        return arrow
+    }()
+    
     init(presenter: MainScreenPresenter) {
         self.presenter = presenter
         
@@ -63,10 +79,11 @@ class MainScreenVC: UIViewController {
     }
     
     private func setupView() {
-        setupTextField()
+        setupTextFieldView()
+        setupMarvelView()
     }
     
-    private func setupTextField() {
+    private func setupTextFieldView() {
         textFieldView.anchor(view,
                              top: view.safeAreaLayoutGuide.topAnchor, paddingTop: PDimen.paddingS,
                              leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
@@ -82,6 +99,23 @@ class MainScreenVC: UIViewController {
                      trailing: textFieldView.trailingAnchor, paddingTrailing: -PDimen.paddingS,
                      centerY: textFieldView.centerYAnchor)
     }
+    
+    private func setupMarvelView() {
+        marvelView.anchor(view,
+                          top: textFieldView.bottomAnchor, paddingTop: PDimen.paddingS,
+                          leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
+                          trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS,
+                          heightConstant: PDimen.componentButtonHeight)
+        
+        marvelLabel.anchor(marvelView,
+                           top: marvelView.topAnchor, paddingTop: PDimen.paddingS,
+                           bottom: marvelView.bottomAnchor, paddingBottom: -PDimen.paddingS,
+                           leading: marvelView.leadingAnchor, paddingLeading: PDimen.paddingS)
+        
+        arrowMarvel.anchor(marvelView,
+                           trailing: marvelView.trailingAnchor, paddingTrailing: -PDimen.paddingS,
+                           centerY: marvelView.centerYAnchor)
+    }
 }
 // MARK: - Output
 extension MainScreenVC: MainScreenPresenterOutput {}
@@ -90,5 +124,10 @@ extension MainScreenVC {
     @objc
     func goTextFieldVC() {
         presenter.goTextFieldVC()
+    }
+    
+    @objc
+    func goMarvel() {
+        presenter.goMarvel()
     }
 }
