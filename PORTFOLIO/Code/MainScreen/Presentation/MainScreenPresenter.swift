@@ -12,6 +12,7 @@ protocol MainScreenPresenterOutput: class {}
 
 protocol MainScreenPresenter {
     func goTextFieldVC()
+    func goMarvel()
 }
 
 class MainScreenPresenterImpl: MainScreenPresenter {
@@ -27,6 +28,10 @@ class MainScreenPresenterImpl: MainScreenPresenter {
     
     func goTextFieldVC() {
         router.goTextFieldVC()
+    }
+    
+    func goMarvel() {
+        router.goMarvel()
     }
 }
 

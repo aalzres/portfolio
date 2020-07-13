@@ -14,4 +14,10 @@ protocol SplashRepository {}
 
 class SplashRepositoryImpl: SplashRepository {
     weak var output: SplashRepositoryOutput?
+    
+    let networkManager: NetworkManager
+    
+    init(networkManager: NetworkManager) {
+        self.networkManager = networkManager
+    }
 }

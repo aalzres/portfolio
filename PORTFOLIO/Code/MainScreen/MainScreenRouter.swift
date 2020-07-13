@@ -14,6 +14,11 @@ class MainScreenRouter {
         UIApplication.serviceLocator.mainRouter.push(vc: vc)
     }
     
+    func goMarvel() {
+        let vc = MarvelRouter.create()
+        UIApplication.serviceLocator.mainRouter.push(vc: vc)
+    }
+    
     class func create() -> MainScreenVC {
         let repository = MainScreenRepositoryImpl()
         let router = MainScreenRouter()

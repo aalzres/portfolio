@@ -60,7 +60,7 @@ class TextFieldVC: UIKeyboardController {
     private lazy var dateOfBirthInput: UIDatePicker = {
         let dateOfBirthInput = UIDatePicker()
         dateOfBirthInput.datePickerMode = .date
-        if #available(iOS 14.0, *) { dateOfBirthInput.preferredDatePickerStyle = .inline }
+//        if #available(iOS 14.0, *) { dateOfBirthInput.preferredDatePickerStyle = .inline }
         return dateOfBirthInput
     }()
     
