@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MarvelRepositoryOutput: class {
-    func getCharactersSuccess(characters: [CharacterEntity])
+    func getCharactersSuccess(responseData: CharacterDataContainerEntity)
     func getCharactersFailure(error: NetworkErrorEntity)
 }
 
@@ -30,12 +30,11 @@ class MarvelRepositoryImpl: MarvelRepository {
         let operation = CharactersOperation(characterRequest: characterRequest, completionSuccess: { [weak self] dataWrapper in
             guard
                 let dataWrapper = dataWrapper as? CharactersDataWrapperEntity,
-                let dataCotainter = dataWrapper.data,
-                let characterList = dataCotainter.results else {
+                let dataCotainter = dataWrapper.data else {
                     self?.output?.getCharactersFailure(error: .wrongDataError)
                     return
             }
-            self?.output?.getCharactersSuccess(characters: characterList)
+            self?.output?.getCharactersSuccess(responseData: dataCotainter)
             }, completionFailure: { [weak self] error in
                 self?.output?.getCharactersFailure(error: error)
         })

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MarvelOutput: class {
-    func getCharactersSuccess(characters: [CharacterEntity])
+    func getCharactersSuccess(responseData: CharacterDataContainerEntity)
     func getCharactersFailure(error: NetworkErrorEntity)
 }
 
@@ -32,8 +32,8 @@ class MarvelImpl: Marvel {
 }
 
 extension MarvelImpl: MarvelRepositoryOutput {
-    func getCharactersSuccess(characters: [CharacterEntity]) {
-        output?.getCharactersSuccess(characters: characters)
+    func getCharactersSuccess(responseData: CharacterDataContainerEntity) {
+        output?.getCharactersSuccess(responseData: responseData)
     }
     
     func getCharactersFailure(error: NetworkErrorEntity) {
