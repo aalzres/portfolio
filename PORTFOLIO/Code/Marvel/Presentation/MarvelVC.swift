@@ -23,8 +23,16 @@ class MarvelVC: UIViewController {
         return itemsTable
     }()
     
-    private var characterItems: [CharacterItem] = []
-    private var characterRequest = CharacterRequestEntity()
+    private var isRunningRequest = false
+    private var responseData: CharacterDataContainerEntity? = nil
+    private lazy var characterItems: [CharacterItem] = []
+    private lazy var characterRequest = CharacterRequestEntity()
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        searchBar.delegate = self
+        return searchBar
+    }()
     
     init(presenter: MarvelPresenter) {
         self.presenter = presenter
@@ -40,7 +48,6 @@ class MarvelVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.getCharacters(characterRequest: characterRequest)
         configNavBar()
     }
     
@@ -57,6 +64,7 @@ class MarvelVC: UIViewController {
     private func configNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode =  .always
+        showSearchBarButton(shouldShow: true)
     }
     
     private func setupView() {
@@ -70,13 +78,50 @@ class MarvelVC: UIViewController {
         itemsTable.anchor(view,
                           top: view.safeAreaLayoutGuide.topAnchor,
                           bottom: view.safeAreaLayoutGuide.bottomAnchor,
-                          leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
-                          trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                          leading: view.leadingAnchor,
+                          trailing: view.trailingAnchor)
+    }
+}
+// MARK: - Functions
+extension MarvelVC {
+    private func showSearchBarButton(shouldShow: Bool) {
+        if shouldShow {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
+                                                                     target: self,
+                                                                     action: #selector(self.handleShowSearchBar))
+        } else {
+            navigationItem.rightBarButtonItem = nil
+            UIView.animate(withDuration: 0.2,
+                           animations: {
+                            self.searchBar.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)})
+        }
+    }
+    
+    private func search(shouldShow: Bool) {
+        showSearchBarButton(shouldShow: !shouldShow)
+        searchBar.showsCancelButton = shouldShow
+        navigationItem.titleView = shouldShow ? searchBar : nil
+    }
+    
+    private func getCharacters() {
+        if !isRunningRequest  {
+            isRunningRequest.toggle()
+            presenter.getCharacters(characterRequest: self.characterRequest)
+        }
+    }
+    
+    private func clearTable() {
+        characterItems = []
+        itemsTable.reloadData()
     }
 }
 // MARK: - MarvelPresenterOutput
 extension MarvelVC: MarvelPresenterOutput {
-    func getCharactersSuccess(characters: [CharacterEntity]) {
+    func getCharactersSuccess(responseData: CharacterDataContainerEntity) {
+        isRunningRequest.toggle()
+        self.responseData = responseData
+        
+        guard let characters = responseData.results else { return }
         for character in characters {
             guard let name = character.name else { return }
             characterItems.append(CharacterItem(name: name))
@@ -86,6 +131,7 @@ extension MarvelVC: MarvelPresenterOutput {
     }
     
     func getCharactersFailure(_ error: String) {
+        isRunningRequest.toggle()
         debugPrint(error)
     }
 }
@@ -108,12 +154,46 @@ extension MarvelVC: UITableViewDataSource {
 // MARK: - UITableViewDataSourcePrefetching
 extension MarvelVC: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        let needsFetch = indexPaths.contains { $0.row >= self.characterItems.count-1 }
         
-        if needsFetch {
+        let needsFetch = indexPaths.contains { $0.row >= self.characterItems.count-1 }
+        guard let total = responseData?.total else { return }
+        
+        if needsFetch && characterItems.count < total {
             characterRequest.offset = characterItems.count
-            presenter.getCharacters(characterRequest: characterRequest)
+            getCharacters()
         }
+    }
+}
+// MARK: - UISearchResultsUpdating
+extension MarvelVC: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        clearTable()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        characterRequest.offset = characterItems.count
+        clearTable()
+        getCharacters()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        search(shouldShow: false)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        clearTable()
+        characterRequest.offset = characterItems.count
+        characterRequest.nameStartsWith = searchText
+        
+        self.getCharacters()
+    }
+}
+// MARK: - Selectors
+extension MarvelVC {
+    @objc
+    func handleShowSearchBar() {
+        searchBar.becomeFirstResponder()
+        search(shouldShow: true)
     }
 }
 // MARK: - Constans
