@@ -35,7 +35,7 @@ struct CharacterDataContainerEntity: Codable {
     /// The total number of results returned by this call
     let count: Int?
     /// The list of characters returned by the call
-    let results: [CharacterEntity]?
+    var results: [CharacterEntity]?
 }
 
 struct CharacterEntity: Codable {
@@ -81,8 +81,8 @@ struct CharacterRequestEntity {
     /// Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed
     var orderBy: CharacterOrderBy?
     /// Limit the result set to the specified number of resources.
-    var limit: Int?
-    ///
+    var limit: Int? = 40
+    /// The requested offset (number of skipped results) of the call
     var offset: Int?
 }
 

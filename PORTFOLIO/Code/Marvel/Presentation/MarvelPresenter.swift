@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MarvelPresenterOutput: class {
-    func getCharactersSuccess(characters: [CharacterEntity])
+    func getCharactersSuccess(responseData: CharacterDataContainerEntity)
     func getCharactersFailure(_ error: String)
 }
 
@@ -34,8 +34,8 @@ class MarvelPresenterImpl: MarvelPresenter {
 }
 
 extension MarvelPresenterImpl: MarvelOutput {
-    func getCharactersSuccess(characters: [CharacterEntity]) {
-        output?.getCharactersSuccess(characters: characters)
+    func getCharactersSuccess(responseData: CharacterDataContainerEntity) {
+        output?.getCharactersSuccess(responseData: responseData)
     }
     
     func getCharactersFailure(error: NetworkErrorEntity) {
