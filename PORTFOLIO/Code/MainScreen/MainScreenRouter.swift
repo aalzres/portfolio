@@ -19,6 +19,11 @@ class MainScreenRouter {
         UIApplication.serviceLocator.mainRouter.push(vc: vc)
     }
     
+    func goMeep() {
+        let vc = MeepRouter.create()
+        UIApplication.serviceLocator.mainRouter.push(vc: vc)
+    }
+    
     class func create() -> MainScreenVC {
         let repository = MainScreenRepositoryImpl()
         let router = MainScreenRouter()

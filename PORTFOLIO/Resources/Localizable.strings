@@ -29,6 +29,9 @@
 /* Marvel */
 "marvel_title_view" = "Marvel";
 
+/* Meep */
+"meep_title_view" = "Prueba técnica Meep";
+
 /* Error */
 "error_generic" = "Hubo un error, inténtalo de nuevo más tarde.";
 "error_wrong_data" = "Parece que tenemos un problema, vuelve a intentarlo más tarde.";

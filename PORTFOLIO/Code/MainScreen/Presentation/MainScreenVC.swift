@@ -11,6 +11,7 @@ import UIKit
 enum MainScreenTarget {
     case goTextView
     case goMarvel
+    case goMeep
 }
 
 struct MainScreenItem {
@@ -30,7 +31,8 @@ class MainScreenVC: UIViewController {
         return itemsTable
     }()
     private var menuItems: [MainScreenItem] = [MainScreenItem(name: "main_screen_text_field".localized(), target: .goTextView),
-                                               MainScreenItem(name: "main_screen_marvel".localized(), target: .goMarvel)]
+                                               MainScreenItem(name: "main_screen_marvel".localized(), target: .goMarvel),
+                                               MainScreenItem(name: "meep_title_view".localized(), target: .goMeep)]
     
     init(presenter: MainScreenPresenter) {
         self.presenter = presenter
@@ -92,6 +94,11 @@ extension MainScreenVC {
     func goMarvel() {
         presenter.goMarvel()
     }
+    
+    @objc
+    func goMeep() {
+        presenter.goMeep()
+    }
 }
 // MARK: - UITableViewDelegate
 extension MainScreenVC: UITableViewDataSource {
@@ -119,6 +126,8 @@ extension MainScreenVC: UITableViewDelegate {
             presenter.goTextFieldVC()
         case .goMarvel:
             presenter.goMarvel()
+        case .goMeep:
+            presenter.goMeep()
         }
     }
 }
