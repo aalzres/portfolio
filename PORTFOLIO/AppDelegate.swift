@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        configureGMaps()
+        
         createWindow()
         installInitialViewController()
         
@@ -21,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate {
+private extension AppDelegate {
     func createWindow() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
@@ -31,6 +34,10 @@ extension AppDelegate {
     func installInitialViewController() {
         let vc = SplashRouter.create()
         UIApplication.serviceLocator.mainRouter.set(vc: vc)
+    }
+    
+    func configureGMaps() {
+        GMSServices.provideAPIKey(UIApplication.serviceLocator.appConfiguration.gMapsApiKey)
     }
 }
 
