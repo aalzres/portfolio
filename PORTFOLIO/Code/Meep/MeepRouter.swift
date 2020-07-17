@@ -10,10 +10,14 @@ import UIKit
 
 class MeepRouter {
     class func create() -> MeepVC {
-        let repository = MeepRepositoryImpl()
+        let serviceLocator = UIApplication.serviceLocator
+        let networkManager = serviceLocator.networkManager
+        
+        let repository = MeepRepositoryImpl(networkManager: networkManager)
         let router = MeepRouter()
         let interactor = MeepImpl(repository: repository)
         let presenter = MeepPresenterImpl(router: router, interactor: interactor)
+        repository.output = interactor
         interactor.output = presenter
         let vc = MeepVC(presenter: presenter)
         presenter.output = vc

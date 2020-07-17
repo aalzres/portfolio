@@ -71,8 +71,12 @@
 		<string>$(PRIVATE_KEY_MARVEL)</string>
 		<key>ServerApiVersionMarvel</key>
 		<string>$(SERVER_API_VERSION_MARVEL)</string>
+		<key>ServerApiVersionMeep</key>
+		<string>$(SERVER_API_VERSION_MEEP)</string>
 		<key>GMapsApiKey</key>
 		<string>$(GMAPS_API_KEY)</string>
+		<key>ServerHostMeep</key>
+		<string>$(SERVER_HOST_MEEP)</string>
 	</dict>
 </dict>
 </plist>

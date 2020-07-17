@@ -11,6 +11,9 @@ import Alamofire
 
 struct AnyResponse: Codable {}
 
+// MARK: - Routing server host
+enum ServerHost { case marvel, meep, unowned }
+
 protocol NetworkManager {
     func request(_ operation: BasicOperation<Data?>)
 }
@@ -39,23 +42,23 @@ class NetworkManagerImpl: NetworkManager {
     }
     
     private func basicValidation<T>(withOperation operation: BasicOperation<T>) -> DataRequest {
-        let url = "\(appConfiguration.serverHostMarvel)/\(appConfiguration.serverApiVersionMarvel)\(operation.endpoint)"
-        
-        let debugMsg = "Execute \(operation.method.rawValue) => \(url) with Params: \(operation.params)"
-        print("\(operation.isMultipart ? "\(debugMsg) and is Multipart" : debugMsg)")
-        
-        return request(withOperation: operation, url: url)
+        return request(withOperation: operation)
             .validate(statusCode: 200..<300)
             .validate(contentType: [operation.mimeType])
     }
     
-    private func request<T>(withOperation operation: BasicOperation<T>, url: String) -> DataRequest {
-        return simpleRequest(withOperation: operation, url: url)
+    private func request<T>(withOperation operation: BasicOperation<T>) -> DataRequest {
+        return simpleRequest(withOperation: operation)
     }
     
-    private func simpleRequest<T>(withOperation operation: BasicOperation<T>, url: String) -> DataRequest {
-        var parameters = operation.params
-        if url.contains(appConfiguration.serverHostMarvel) { parameters = addAuthorization(parameters: parameters) }
+    private func simpleRequest<T>(withOperation operation: BasicOperation<T>) -> DataRequest {
+        let serverHost = setupServerHost(serverHost: operation.serverHost, parameters: operation.params)
+        
+        let url = "\(serverHost.url)\(operation.endpoint)"
+        let parameters = serverHost.params
+        
+        let debugMsg = "Execute \(operation.method.rawValue) => \(url) with Params: \(parameters)"
+        print("\(operation.isMultipart ? "\(debugMsg) and is Multipart" : debugMsg)")
         
         return AF.request(url, method: operation.method, parameters: parameters, encoding: operation.encoding, headers: operationHeader(operation: operation))
     }
@@ -78,5 +81,22 @@ class NetworkManagerImpl: NetworkManager {
         parameters["hash"] = hash
         
         return parameters
+    }
+    
+    private func setupServerHost(serverHost: ServerHost, parameters: Parameters) -> (url: String, params: Parameters) {
+        var parameters = parameters
+        var url = ""
+        
+        switch serverHost {
+        case .marvel:
+            url = "\(appConfiguration.serverHostMarvel)/\(appConfiguration.serverApiVersionMarvel)"
+            parameters = addAuthorization(parameters: parameters)
+        case .meep:
+            url = "\(appConfiguration.serverHostMeep)/tripplan/api/\(appConfiguration.serverApiVersionMeep)"
+        case .unowned:
+            debugPrint("Server host undefined")
+        }
+        
+        return (url, parameters)
     }
 }

@@ -11,6 +11,7 @@ import GoogleMaps
 
 class MeepVC: UIViewController {
     private let presenter: MeepPresenter
+    private lazy var resourceParams: ResourceParamsEntity? = nil
     
     private lazy var main = UIView()
     private var mapView: GMSMapView!
@@ -27,6 +28,8 @@ class MeepVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        getResources()
     }
     
     override func viewDidLoad() {
@@ -47,8 +50,8 @@ class MeepVC: UIViewController {
     }
     
     private func setupMap() {
-        let camera = GMSCameraPosition.camera(withLatitude: Constans.locationLisboaLat,
-                                              longitude: Constans.locationLisboaLong,
+        let camera = GMSCameraPosition.camera(withLatitude: Constans.locationLisboaUpLat,
+                                              longitude: Constans.locationLisboaUpLon,
                                               zoom: Constans.locationZoom)
         mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         mapView.setMinZoom(mapView.minZoom, maxZoom: Constans.maxZoom)
@@ -60,12 +63,32 @@ class MeepVC: UIViewController {
                        trailing: view.trailingAnchor)
     }
 }
+// MARK: - Funcion
+extension MeepVC {
+    private func getResources() {
+        resourceParams = ResourceParamsEntity()
+        resourceParams?.lowerLeft = Coordinates(lat: Constans.locationLisboaLowLat, lon: Constans.locationLisboaLowLon)
+        resourceParams?.upperRight = Coordinates(lat: Constans.locationLisboaUpLat, lon: Constans.locationLisboaUpLon)
+        presenter.getResources(resourceParams: resourceParams)
+    }
+}
 // MARK: - MeepPresenterOutput
-extension MeepVC: MeepPresenterOutput {}
+extension MeepVC: MeepPresenterOutput {
+    func getResourcesSuccess(resourcesList: [ResourceEntity]) {
+        print("-Test->\(resourcesList.count)")
+    }
+    
+    func getResourcesFailure(_ error: String) {
+        debugPrint(error)
+    }
+}
 // MARK: - Constants
 private struct Constans {
-    static let locationLisboaLat: Double = 38.7437396
-    static let locationLisboaLong: Double = -9.2302434
+    static let locationLisboaLowLat: Double = 38.711046
+    static let locationLisboaLowLon: Double = -9.160096
+    static let locationLisboaUpLat: Double = 38.739429
+    static let locationLisboaUpLon: Double = -9.137115
+    
     static let locationZoom: Float = 10
     static let maxZoom: Float = 20
 }

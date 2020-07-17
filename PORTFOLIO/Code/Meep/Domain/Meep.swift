@@ -9,11 +9,12 @@
 import Foundation
 
 protocol MeepOutput: class {
-    
+    func getResourcesSuccess(resourcesList: [ResourceEntity])
+    func getResourcesFailure(error: NetworkErrorEntity)
 }
 
 protocol Meep {
-    
+    func getResources(resourceParams: ResourceParamsEntity?)
 }
 
 class MeepImpl: Meep {
@@ -24,8 +25,18 @@ class MeepImpl: Meep {
     init(repository: MeepRepository) {
         self.repository = repository
     }
+    
+    func getResources(resourceParams: ResourceParamsEntity?) {
+        repository.getResources(resourceParams: resourceParams)
+    }
 }
 
 extension MeepImpl: MeepRepositoryOutput {
+    func getResourcesSuccess(resourcesList: [ResourceEntity]) {
+        output?.getResourcesSuccess(resourcesList: resourcesList)
+    }
     
+    func getResourcesFailure(error: NetworkErrorEntity) {
+        output?.getResourcesFailure(error: error)
+    }
 }

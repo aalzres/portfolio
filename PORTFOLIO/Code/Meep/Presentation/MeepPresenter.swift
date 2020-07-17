@@ -9,11 +9,12 @@
 import Foundation
 
 protocol MeepPresenterOutput: class {
-
+    func getResourcesSuccess(resourcesList: [ResourceEntity])
+    func getResourcesFailure(_ error: String)
 }
 
 protocol MeepPresenter {
-
+    func getResources(resourceParams: ResourceParamsEntity?)
 }
 
 class MeepPresenterImpl: MeepPresenter {
@@ -26,8 +27,18 @@ class MeepPresenterImpl: MeepPresenter {
         self.interactor = interactor
         self.router = router
     }
+    
+    func getResources(resourceParams: ResourceParamsEntity?) {
+        interactor.getResources(resourceParams: resourceParams)
+    }
 }
 
 extension MeepPresenterImpl: MeepOutput {
-
+    func getResourcesSuccess(resourcesList: [ResourceEntity]) {
+        output?.getResourcesSuccess(resourcesList: resourcesList)
+    }
+    
+    func getResourcesFailure(error: NetworkErrorEntity) {
+        output?.getResourcesFailure(error.errorDescription)
+    }
 }

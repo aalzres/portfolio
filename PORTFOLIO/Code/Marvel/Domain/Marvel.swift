@@ -14,7 +14,7 @@ protocol MarvelOutput: class {
 }
 
 protocol Marvel {
-    func getCharacters(characterRequest: CharacterRequestEntity?)
+    func getCharacters(characterParams: CharacterParamsEntity?)
 }
 
 class MarvelImpl: Marvel {
@@ -26,8 +26,8 @@ class MarvelImpl: Marvel {
         self.repository = repository
     }
     
-    func getCharacters(characterRequest: CharacterRequestEntity?) {
-        repository.getCharacters(characterRequest: characterRequest)
+    func getCharacters(characterParams: CharacterParamsEntity?) {
+        repository.getCharacters(characterParams: characterParams)
     }
 }
 

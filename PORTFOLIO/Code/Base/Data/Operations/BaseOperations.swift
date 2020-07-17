@@ -19,6 +19,7 @@ private enum OperationError: Error {
 }
 
 protocol BaseOperation {
+    var serverHost: ServerHost { get }
     var endpoint: String { get }
     var method: HTTPMethod { get }
     var headers: [String : String] { get }
@@ -30,6 +31,7 @@ protocol BaseOperation {
 }
 
 class BasicOperation<T>: BaseOperation {
+    var serverHost: ServerHost { return .unowned }
     var endpoint: String { return "" }
     var method: HTTPMethod { return .get }
     var headers: [String : String] { return multipartHeader }
@@ -46,7 +48,7 @@ class BasicOperation<T>: BaseOperation {
     var needAuthorization: Bool { return false }
     var canHandleAuthError: Bool { return false }
     var canRetryOnError: Bool { return false }
-
+    
     var isMultipart: Bool { return !imageParams.isEmpty }
     fileprivate var multipartHeader: [String : String] { return isMultipart ?
         ["Content-type": "multipart/form-data",
@@ -77,7 +79,7 @@ class JSONOperation<T: Codable>: BasicOperation<Data?> {
             decoder.dateDecodingStrategy = .iso8601
             return try decoder.decode(T.self, from: response)
         } catch {
-            debugPrint(error)
+            debugPrint("DecodingError: \(error)")
             return nil
         }
     }
