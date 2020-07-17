@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ResourceEntity: Codable {
     ///
@@ -34,6 +35,19 @@ struct ResourceEntity: Codable {
         case latitude = "lat"
         case longitude = "lon"
         case id, name, scheduledArrival, locationType, companyZoneId
+    }
+    
+    var color: UIColor {
+        switch self.companyZoneId {
+        case 382:
+            return .systemBlue
+        case 378:
+            return .systemGray
+        case 402:
+            return .systemOrange
+        default:
+            return .red
+        }
     }
 }
 

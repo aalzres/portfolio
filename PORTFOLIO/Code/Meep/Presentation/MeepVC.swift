@@ -10,12 +10,15 @@ import UIKit
 import GoogleMaps
 
 class MeepVC: UIViewController {
+    // MARK: - Presenter
     private let presenter: MeepPresenter
+    // MARK: - Params of request
     private lazy var resourceParams: ResourceParamsEntity? = nil
-    
+    // MARK: - MapView
     private lazy var main = UIView()
     private var mapView: GMSMapView!
-    
+    // MARK: - ResourceList
+    private var resourcesList: [ResourceEntity]?
     init(presenter: MeepPresenter) {
         self.presenter = presenter
         
@@ -46,15 +49,17 @@ class MeepVC: UIViewController {
                     bottom: view.bottomAnchor,
                     leading: view.leadingAnchor,
                     trailing: view.trailingAnchor)
+        
         setupMap()
     }
     
     private func setupMap() {
-        let camera = GMSCameraPosition.camera(withLatitude: Constans.locationLisboaUpLat,
-                                              longitude: Constans.locationLisboaUpLon,
-                                              zoom: Constans.locationZoom)
+        let camera = GMSCameraPosition.camera(withLatitude: Constants.locLisboaCameraLat,
+                                              longitude: Constants.locLisboaCameraLon,
+                                              zoom: Constants.locationZoom)
         mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        mapView.setMinZoom(mapView.minZoom, maxZoom: Constans.maxZoom)
+        mapView.delegate = self
+        mapView.setMinZoom(mapView.minZoom, maxZoom: Constants.maxZoom)
         
         mapView.anchor(main,
                        top: view.topAnchor,
@@ -62,33 +67,64 @@ class MeepVC: UIViewController {
                        leading: view.leadingAnchor,
                        trailing: view.trailingAnchor)
     }
+    
+    private func setupMarks() {
+        guard let resourcesList = resourcesList else { return }
+        for resource in resourcesList {
+            guard let lat = resource.latitude, let lon = resource.longitude  else { return }
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+            marker.userData = resource
+            marker.icon = GMSMarker.markerImage(with: resource.color)
+            marker.map = mapView
+        }
+    }
 }
 // MARK: - Funcion
 extension MeepVC {
     private func getResources() {
         resourceParams = ResourceParamsEntity()
-        resourceParams?.lowerLeft = Coordinates(lat: Constans.locationLisboaLowLat, lon: Constans.locationLisboaLowLon)
-        resourceParams?.upperRight = Coordinates(lat: Constans.locationLisboaUpLat, lon: Constans.locationLisboaUpLon)
+        resourceParams?.lowerLeft = Coordinates(lat: Constants.locLisboaLowLat, lon: Constants.locLisboaLowLon)
+        resourceParams?.upperRight = Coordinates(lat: Constants.locLisboaUpLat, lon: Constants.locLisboaUpLon)
         presenter.getResources(resourceParams: resourceParams)
+    }
+    
+    private func openResource(_ resource: ResourceEntity) {
+        mapView.animate(toZoom: Constants.maxZoom)
+        // TODO
     }
 }
 // MARK: - MeepPresenterOutput
 extension MeepVC: MeepPresenterOutput {
     func getResourcesSuccess(resourcesList: [ResourceEntity]) {
-        print("-Test->\(resourcesList.count)")
+        self.resourcesList = resourcesList
+        
+        setupMarks()
     }
     
     func getResourcesFailure(_ error: String) {
         debugPrint(error)
     }
 }
+// MARK: - GMSMapViewDelegate
+extension MeepVC: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        guard let resource = marker.userData as? ResourceEntity else { return false }
+        
+        openResource(resource)
+        
+        return false
+    }
+}
 // MARK: - Constants
-private struct Constans {
-    static let locationLisboaLowLat: Double = 38.711046
-    static let locationLisboaLowLon: Double = -9.160096
-    static let locationLisboaUpLat: Double = 38.739429
-    static let locationLisboaUpLon: Double = -9.137115
+private struct Constants {
+    static let locLisboaLowLat: Double = 38.711046
+    static let locLisboaLowLon: Double = -9.160096
+    static let locLisboaUpLat: Double = 38.739429
+    static let locLisboaUpLon: Double = -9.137115
+    static let locLisboaCameraLat: Double = 38.7261536
+    static let locLisboaCameraLon: Double = -9.1477123
     
-    static let locationZoom: Float = 10
+    static let locationZoom: Float = 14.5
     static let maxZoom: Float = 20
 }

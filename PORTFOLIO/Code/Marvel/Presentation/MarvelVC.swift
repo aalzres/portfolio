@@ -196,7 +196,7 @@ extension MarvelVC {
         search(shouldShow: true)
     }
 }
-// MARK: - Constans
+// MARK: - Constants
 private struct Constants {
     static let cellId = "cellId"
 }
