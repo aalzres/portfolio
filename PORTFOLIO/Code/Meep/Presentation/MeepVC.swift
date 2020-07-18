@@ -16,9 +16,11 @@ class MeepVC: UIViewController {
     private lazy var resourceParams: ResourceParamsEntity? = nil
     // MARK: - MapView
     lazy var main = UIView()
-    private var mapView: GMSMapView!
-    lazy var resourceDetailView: UIView = {
-        let resourceDetail = UIView()
+    var mapView: GMSMapView!
+    // MARK: - Resource DetailView
+    lazy var resourceDetailView: ResourceDetailView = {
+        let resourceDetail = ResourceDetailView()
+        resourceDetail.delegate = self
         resourceDetail.layer.cornerRadius = Constants.resourceDetailViewCornerRadius
         resourceDetail.backgroundColor = PColor.white
         resourceDetail.layer.shadowColor = PColor.black.cgColor
@@ -95,9 +97,9 @@ class MeepVC: UIViewController {
     
     private func setupResourceDetail() {
         resourceDetailView.anchor(main,
-                              bottom: main.bottomAnchor,
-                              leading: main.leadingAnchor,
-                              trailing: main.trailingAnchor)
+                                  bottom: main.bottomAnchor, paddingBottom: ConstantsResourceDetail.heightResourceDetail,
+                                  leading: main.leadingAnchor,
+                                  trailing: main.trailingAnchor)
         resourceDetailHidden = resourceDetailView.heightAnchor.constraint(equalToConstant: ConstantsResourceDetail.sizeViewHidden)
         resourceDetailSmall = resourceDetailView.heightAnchor.constraint(equalToConstant: ConstantsResourceDetail.sizeViewSmall)
         resourceDetailHidden.isActive = true
@@ -114,8 +116,8 @@ extension MeepVC {
     
     private func openResource(_ resource: ResourceEntity) {
         mapView.animate(toZoom: Constants.maxZoom)
-        
         switchSizeResourceDetail(size: .small)
+        resourceDetailView.updateResourceInfo(resource: resource)
     }
 }
 // MARK: - MeepPresenterOutput
@@ -141,6 +143,12 @@ extension MeepVC: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        switchSizeResourceDetail(size: .hidden)
+    }
+}
+// MARK: - ResourceDetailViewDelegate
+extension MeepVC: ResourceDetailViewDelegate {
+    func minimizeView() {
         switchSizeResourceDetail(size: .hidden)
     }
 }

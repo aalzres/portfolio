@@ -19,6 +19,7 @@
 		6700D1FA2497BC6500ED44AB /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1F52497BC6500ED44AB /* SplashVC.swift */; };
 		6700D1FB2497BC6500ED44AB /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1F62497BC6500ED44AB /* SplashPresenter.swift */; };
 		6715CCB824C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715CCB724C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift */; };
+		6715CCBA24C33E72009F1C26 /* ResourceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715CCB924C33E72009F1C26 /* ResourceDetailView.swift */; };
 		6716994524C0ACC500B4553C /* MeepRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716993D24C0ACC500B4553C /* MeepRouter.swift */; };
 		6716994624C0ACC500B4553C /* MeepRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716993F24C0ACC500B4553C /* MeepRepository.swift */; };
 		6716994724C0ACC500B4553C /* Meep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716994124C0ACC500B4553C /* Meep.swift */; };
@@ -93,6 +94,7 @@
 		6700D1F52497BC6500ED44AB /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		6700D1F62497BC6500ED44AB /* SplashPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		6715CCB724C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeepVC+ResourceDetail.swift"; sourceTree = "<group>"; };
+		6715CCB924C33E72009F1C26 /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailView.swift; sourceTree = "<group>"; };
 		6716993D24C0ACC500B4553C /* MeepRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeepRouter.swift; sourceTree = "<group>"; };
 		6716993F24C0ACC500B4553C /* MeepRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeepRepository.swift; sourceTree = "<group>"; };
 		6716994124C0ACC500B4553C /* Meep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meep.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				6715CCB724C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift */,
+				6715CCB924C33E72009F1C26 /* ResourceDetailView.swift */,
 			);
 			path = ResourceDetail;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				675FEE4024B2197D00644F5C /* NetworkManager.swift in Sources */,
 				674E33012498BC5F00428BD0 /* MainScreenPresenter.swift in Sources */,
 				67A6269E24B8F60B00E4D875 /* AppConfiguration.swift in Sources */,
+				6715CCBA24C33E72009F1C26 /* ResourceDetailView.swift in Sources */,
 				6700D1FA2497BC6500ED44AB /* SplashVC.swift in Sources */,
 				67844EB624C0E0090073D83B /* ResourcesOperation.swift in Sources */,
 			);

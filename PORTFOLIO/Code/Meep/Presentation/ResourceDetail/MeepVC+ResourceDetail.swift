@@ -6,7 +6,6 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // MARK: - MeepVC Details components
@@ -38,6 +37,7 @@ extension MeepVC {
 }
 // MARK: - Constants
 struct ConstantsResourceDetail {
-    static let sizeViewHidden: CGFloat = 0
-    static let sizeViewSmall: CGFloat = 200
+    static let sizeViewHidden: CGFloat = heightResourceDetail
+    static let sizeViewSmall: CGFloat = heightResourceDetail + 200
+    static let heightResourceDetail: CGFloat = 200
 }
