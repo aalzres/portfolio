@@ -32,6 +32,8 @@ class MarvelTableCell: UITableViewCell {
     }
     
     private func setupCellView() {
+        contentView.backgroundColor = PColor.white
+        
         characterValues.anchor(contentView,
                                top: contentView.topAnchor, paddingTop: PDimen.paddingS,
                                bottom: contentView.bottomAnchor, paddingBottom: -PDimen.paddingS,

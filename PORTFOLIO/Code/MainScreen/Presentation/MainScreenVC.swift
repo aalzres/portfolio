@@ -27,6 +27,7 @@ class MainScreenVC: UIViewController {
         itemsTable.dataSource = self
         itemsTable.delegate = self
         itemsTable.separatorStyle = .none
+        itemsTable.backgroundColor = PColor.white
         itemsTable.register(MainScreenTableCell.self, forCellReuseIdentifier: Constants.cellId)
         return itemsTable
     }()

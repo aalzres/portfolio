@@ -16,6 +16,7 @@ class TextFieldVC: UIKeyboardController {
     private lazy var headerView: UILabel = {
         let headerView = UILabel()
         headerView.font = PFont.title
+        headerView.textColor = PColor.black
         headerView.text = "text_field_header_view".localized()
         return headerView
     }()
@@ -23,12 +24,14 @@ class TextFieldVC: UIKeyboardController {
     private lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.font = PFont.inputPrimary
+        nameLabel.textColor = PColor.black
         nameLabel.text = "text_field_name_label".localized()
         return nameLabel
     }()
     private lazy var nameInput: UITextField = {
         let nameInput = UITextField()
         nameInput.font = PFont.inputSecondary
+        nameInput.textColor = PColor.black
         nameInput.addLine(position: .bottom)
         return nameInput
     }()
@@ -36,12 +39,14 @@ class TextFieldVC: UIKeyboardController {
     private lazy var documentNumberLabel: UILabel = {
         let documentNumberLabel = UILabel()
         documentNumberLabel.font = PFont.inputPrimary
+        documentNumberLabel.textColor = PColor.black
         documentNumberLabel.text = "text_field_document_number_label".localized()
         return documentNumberLabel
     }()
     private lazy var documentNumberInput: UITextField = {
         let documentNumberInput = UITextField()
         documentNumberInput.font = PFont.inputSecondary
+        documentNumberInput.textColor = PColor.black
         documentNumberInput.addLine(position: .bottom)
         documentNumberInput.autocorrectionType = .no
         documentNumberInput.keyboardType = .namePhonePad
@@ -54,11 +59,14 @@ class TextFieldVC: UIKeyboardController {
     private lazy var dateOfBirthLabel: UILabel = {
         let dateOfBirthLabel = UILabel()
         dateOfBirthLabel.font = PFont.inputPrimary
+        dateOfBirthLabel.textColor = PColor.black
         dateOfBirthLabel.text = "text_field_date_of_birth".localized()
         return dateOfBirthLabel
     }()
     private lazy var dateOfBirthInput: UIDatePicker = {
         let dateOfBirthInput = UIDatePicker()
+        dateOfBirthInput.backgroundColor = PColor.white
+        dateOfBirthInput.setValue(PColor.black, forKey: "textColor")
         dateOfBirthInput.datePickerMode = .date
 //        if #available(iOS 14.0, *) { dateOfBirthInput.preferredDatePickerStyle = .inline }
         return dateOfBirthInput
@@ -67,12 +75,14 @@ class TextFieldVC: UIKeyboardController {
     private lazy var mailLabel: UILabel = {
         let mailLabel = UILabel()
         mailLabel.font = PFont.inputPrimary
+        mailLabel.textColor = PColor.black
         mailLabel.text = "text_field_mail".localized()
         return mailLabel
     }()
     private lazy var mailInput: UITextField = {
         let mailInput = UITextField()
         mailInput.font = PFont.inputSecondary
+        mailInput.textColor = PColor.black
         mailInput.addLine(position: .bottom)
         return mailInput
     }()
@@ -80,12 +90,14 @@ class TextFieldVC: UIKeyboardController {
     private lazy var addressLabel: UILabel = {
         let addressLabel = UILabel()
         addressLabel.font = PFont.inputPrimary
+        addressLabel.textColor = PColor.black
         addressLabel.text = "text_field_address".localized()
         return addressLabel
     }()
     private lazy var addressInput: UITextField = {
         let addressInput = UITextField()
         addressInput.font = PFont.inputSecondary
+        addressInput.textColor = PColor.black
         addressInput.addLine(position: .bottom)
         return addressInput
     }()
@@ -93,6 +105,7 @@ class TextFieldVC: UIKeyboardController {
     private lazy var sexLabel: UILabel = {
         let sexLabel = UILabel()
         sexLabel.font = PFont.inputPrimary
+        sexLabel.textColor = PColor.black
         sexLabel.text = "text_field_sex".localized()
         return sexLabel
     }()
@@ -101,18 +114,23 @@ class TextFieldVC: UIKeyboardController {
             "text_field_sex_male".localized(),
             "text_field_sex_female".localized()
         ]
-        return UISegmentedControl(items: items)
+        let sexInput = UISegmentedControl(items: items)
+        sexInput.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: PColor.black], for: .selected)
+        sexInput.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: PColor.black], for: .normal)
+        return sexInput
     }()
     
     private lazy var telLabel: UILabel = {
         let telLabel = UILabel()
         telLabel.font = PFont.inputPrimary
+        telLabel.textColor = PColor.black
         telLabel.text = "text_field_tel".localized()
         return telLabel
     }()
     private lazy var telInput: UITextField = {
         let telInput = UITextField()
         telInput.font = PFont.inputSecondary
+        telInput.textColor = PColor.black
         telInput.addLine(position: .bottom)
         return telInput
     }()
@@ -120,12 +138,14 @@ class TextFieldVC: UIKeyboardController {
     private lazy var nationalityLabel: UILabel = {
         let nationalityLabel = UILabel()
         nationalityLabel.font = PFont.inputPrimary
+        nationalityLabel.textColor = PColor.black
         nationalityLabel.text = "text_field_nationality".localized()
         return nationalityLabel
     }()
     private lazy var nationalityInput: UITextField = {
         let nationalityInput = UITextField()
         nationalityInput.font = PFont.inputSecondary
+        nationalityInput.textColor = PColor.black
         nationalityInput.addLine(position: .bottom)
         return nationalityInput
     }()
@@ -141,12 +161,6 @@ class TextFieldVC: UIKeyboardController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        configNavController()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = PColor.white
@@ -155,10 +169,6 @@ class TextFieldVC: UIKeyboardController {
     }
     //MARK: - Setups
     private func setupTitleView() { title = "main_screen_text_field".localized() }
-    
-    private func configNavController() {
-        navigationItem.largeTitleDisplayMode =  .never
-    }
     
     private func setupView() {
         setupContentView()

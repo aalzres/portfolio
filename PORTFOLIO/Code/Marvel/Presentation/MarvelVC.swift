@@ -19,6 +19,7 @@ class MarvelVC: UIViewController {
         let itemsTable = UITableView()
         itemsTable.dataSource = self
         itemsTable.prefetchDataSource = self
+        itemsTable.backgroundColor = PColor.white
         itemsTable.register(MarvelTableCell.self, forCellReuseIdentifier: Constants.cellId)
         return itemsTable
     }()

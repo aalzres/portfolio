@@ -15,8 +15,20 @@ class MeepVC: UIViewController {
     // MARK: - Params of request
     private lazy var resourceParams: ResourceParamsEntity? = nil
     // MARK: - MapView
-    private lazy var main = UIView()
+    lazy var main = UIView()
     private var mapView: GMSMapView!
+    lazy var resourceDetailView: UIView = {
+        let resourceDetail = UIView()
+        resourceDetail.layer.cornerRadius = Constants.resourceDetailViewCornerRadius
+        resourceDetail.backgroundColor = PColor.white
+        resourceDetail.layer.shadowColor = PColor.black.cgColor
+        resourceDetail.layer.shadowRadius = Constants.resourceDetailViewShadowRadius
+        resourceDetail.layer.shadowOpacity = Constants.resourceDetailViewShadowOpacity
+        resourceDetail.layer.shadowOffset = .zero
+        return resourceDetail
+    }()
+    var resourceDetailHidden: NSLayoutConstraint!
+    var resourceDetailSmall: NSLayoutConstraint!
     // MARK: - ResourceList
     private var resourcesList: [ResourceEntity]?
     init(presenter: MeepPresenter) {
@@ -51,6 +63,7 @@ class MeepVC: UIViewController {
                     trailing: view.trailingAnchor)
         
         setupMap()
+        setupResourceDetail()
     }
     
     private func setupMap() {
@@ -79,6 +92,16 @@ class MeepVC: UIViewController {
             marker.map = mapView
         }
     }
+    
+    private func setupResourceDetail() {
+        resourceDetailView.anchor(main,
+                              bottom: main.bottomAnchor,
+                              leading: main.leadingAnchor,
+                              trailing: main.trailingAnchor)
+        resourceDetailHidden = resourceDetailView.heightAnchor.constraint(equalToConstant: ConstantsResourceDetail.sizeViewHidden)
+        resourceDetailSmall = resourceDetailView.heightAnchor.constraint(equalToConstant: ConstantsResourceDetail.sizeViewSmall)
+        resourceDetailHidden.isActive = true
+    }
 }
 // MARK: - Funcion
 extension MeepVC {
@@ -91,7 +114,8 @@ extension MeepVC {
     
     private func openResource(_ resource: ResourceEntity) {
         mapView.animate(toZoom: Constants.maxZoom)
-        // TODO
+        
+        switchSizeResourceDetail(size: .small)
     }
 }
 // MARK: - MeepPresenterOutput
@@ -115,6 +139,10 @@ extension MeepVC: GMSMapViewDelegate {
         
         return false
     }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        switchSizeResourceDetail(size: .hidden)
+    }
 }
 // MARK: - Constants
 private struct Constants {
@@ -127,4 +155,8 @@ private struct Constants {
     
     static let locationZoom: Float = 14.5
     static let maxZoom: Float = 20
+    
+    static let resourceDetailViewCornerRadius: CGFloat = 16
+    static let resourceDetailViewShadowRadius: CGFloat = 16
+    static let resourceDetailViewShadowOpacity: Float = 0.2
 }
