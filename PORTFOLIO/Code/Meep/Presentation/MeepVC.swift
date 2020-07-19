@@ -46,7 +46,7 @@ class MeepVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getResources()
+        getResources(coordinatesOrigin: Coordinates(lat: Constants.locLisboaCameraLat, lon: Constants.locLisboaCameraLon))
     }
     
     override func viewDidLoad() {
@@ -71,10 +71,11 @@ class MeepVC: UIViewController {
     private func setupMap() {
         let camera = GMSCameraPosition.camera(withLatitude: Constants.locLisboaCameraLat,
                                               longitude: Constants.locLisboaCameraLon,
-                                              zoom: Constants.locationZoom)
+                                              zoom: Constants.zoomStreets)
         mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         mapView.delegate = self
-        mapView.setMinZoom(mapView.minZoom, maxZoom: Constants.maxZoom)
+        mapView.settings.indoorPicker = false
+        mapView.setMinZoom(Constants.zoomCity, maxZoom: Constants.zoomBuildings)
         
         mapView.anchor(main,
                        top: view.topAnchor,
@@ -84,6 +85,7 @@ class MeepVC: UIViewController {
     }
     
     private func setupMarks() {
+        mapView.clear()
         guard let resourcesList = resourcesList else { return }
         for resource in resourcesList {
             guard let lat = resource.latitude, let lon = resource.longitude  else { return }
@@ -107,15 +109,14 @@ class MeepVC: UIViewController {
 }
 // MARK: - Funcion
 extension MeepVC {
-    private func getResources() {
+    private func getResources(coordinatesOrigin coords: Coordinates) {
         resourceParams = ResourceParamsEntity()
-        resourceParams?.lowerLeft = Coordinates(lat: Constants.locLisboaLowLat, lon: Constants.locLisboaLowLon)
-        resourceParams?.upperRight = Coordinates(lat: Constants.locLisboaUpLat, lon: Constants.locLisboaUpLon)
+        resourceParams?.createFrame(coordinatesOrigin: coords, multiplier: Constants.baseMultiplier)
         presenter.getResources(resourceParams: resourceParams)
     }
     
     private func openResource(_ resource: ResourceEntity) {
-        mapView.animate(toZoom: Constants.maxZoom)
+        mapView.animate(toZoom: Constants.zoomBuildings)
         switchSizeResourceDetail(size: .small)
         resourceDetailView.updateResourceInfo(resource: resource)
     }
@@ -145,6 +146,10 @@ extension MeepVC: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         switchSizeResourceDetail(size: .hidden)
     }
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        getResources(coordinatesOrigin: Coordinates(lat: position.target.latitude, lon: position.target.longitude))
+    }
 }
 // MARK: - ResourceDetailViewDelegate
 extension MeepVC: ResourceDetailViewDelegate {
@@ -154,15 +159,15 @@ extension MeepVC: ResourceDetailViewDelegate {
 }
 // MARK: - Constants
 private struct Constants {
-    static let locLisboaLowLat: Double = 38.711046
-    static let locLisboaLowLon: Double = -9.160096
-    static let locLisboaUpLat: Double = 38.739429
-    static let locLisboaUpLon: Double = -9.137115
+    static let baseMultiplier: Double = 1.5
     static let locLisboaCameraLat: Double = 38.7261536
     static let locLisboaCameraLon: Double = -9.1477123
     
-    static let locationZoom: Float = 14.5
-    static let maxZoom: Float = 20
+    static let zoomWorld: Float = 1
+    static let zoomContinent: Float = 5
+    static let zoomCity: Float = 10
+    static let zoomStreets: Float = 15
+    static let zoomBuildings: Float = 20
     
     static let resourceDetailViewCornerRadius: CGFloat = 16
     static let resourceDetailViewShadowRadius: CGFloat = 16
