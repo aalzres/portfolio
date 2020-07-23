@@ -63,7 +63,7 @@ struct CharacterEntity: Codable {
     let series: SeriesListEntity?
 }
 
-struct CharacterRequestEntity {
+struct CharacterParamsEntity {
     /// Return only characters matching the specified full character name (e.g. Spider-Man)
     var name: String?
     /// Return characters with names that begin with the specified string (e.g. Sp)

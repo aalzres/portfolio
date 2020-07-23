@@ -18,6 +18,7 @@ class MainScreenTableCell: UITableViewCell {
     lazy var nameItem: UILabel = {
         let nameItem = UILabel()
         nameItem.font = PFont.primary
+        nameItem.textColor = PColor.black
         return nameItem
     }()
     private lazy var arrow: UIImageView = UIImageView(image: UIImage(named: "arrow"))
@@ -34,6 +35,8 @@ class MainScreenTableCell: UITableViewCell {
     }
     
     private func setupCellView() {
+        contentView.backgroundColor = PColor.white
+        
         menuItems.anchor(contentView,
                          top: contentView.topAnchor, paddingTop: PDimen.paddingS,
                          bottom: contentView.bottomAnchor, paddingBottom: -PDimen.paddingS,

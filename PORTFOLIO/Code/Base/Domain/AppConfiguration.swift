@@ -13,6 +13,9 @@ struct AppConfiguration {
     let publicKeyMarvel: String = Bundle.portfolioConfigurationValue("PublicKeyMarvel")!
     let privateKeyMarvel: String = Bundle.portfolioConfigurationValue("PrivateKeyMarvel")!
     let serverApiVersionMarvel: String = Bundle.portfolioConfigurationValue("ServerApiVersionMarvel")!
+    let gMapsApiKey: String = Bundle.portfolioConfigurationValue("GMapsApiKey")!
+    let serverHostMeep: String = Bundle.portfolioConfigurationValue("ServerHostMeep")!
+    let serverApiVersionMeep: String = Bundle.portfolioConfigurationValue("ServerApiVersionMeep")!
 }
 
 fileprivate extension Bundle {

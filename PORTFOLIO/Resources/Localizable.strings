@@ -8,6 +8,9 @@
 
 // <WHERE>_<DESCRIPTION>
 
+/* Common */
+"not_available" = "n/a";
+
 /* Main Screen */
 "main_screen_title" = "Portfolio";
 "main_screen_text_field" = "UITextField";
@@ -28,6 +31,13 @@
 
 /* Marvel */
 "marvel_title_view" = "Marvel";
+
+/* Meep */
+"meep_title_view" = "Prueba técnica Meep";
+
+/* Resource Detail */
+"resource_detail_latitude" = "Latitud: %@";
+"resource_detail_longitude" = "Longitud: %@";
 
 /* Error */
 "error_generic" = "Hubo un error, inténtalo de nuevo más tarde.";

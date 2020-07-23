@@ -19,6 +19,7 @@ class MarvelVC: UIViewController {
         let itemsTable = UITableView()
         itemsTable.dataSource = self
         itemsTable.prefetchDataSource = self
+        itemsTable.backgroundColor = PColor.white
         itemsTable.register(MarvelTableCell.self, forCellReuseIdentifier: Constants.cellId)
         return itemsTable
     }()
@@ -26,7 +27,7 @@ class MarvelVC: UIViewController {
     private var isRunningRequest = false
     private var responseData: CharacterDataContainerEntity? = nil
     private lazy var characterItems: [CharacterItem] = []
-    private lazy var characterRequest = CharacterRequestEntity()
+    private lazy var characterParams = CharacterParamsEntity()
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.sizeToFit()
@@ -106,7 +107,7 @@ extension MarvelVC {
     private func getCharacters() {
         if !isRunningRequest  {
             isRunningRequest.toggle()
-            presenter.getCharacters(characterRequest: self.characterRequest)
+            presenter.getCharacters(characterParams: self.characterParams)
         }
     }
     
@@ -159,7 +160,7 @@ extension MarvelVC: UITableViewDataSourcePrefetching {
         guard let total = responseData?.total else { return }
         
         if needsFetch && characterItems.count < total {
-            characterRequest.offset = characterItems.count
+            characterParams.offset = characterItems.count
             getCharacters()
         }
     }
@@ -171,7 +172,7 @@ extension MarvelVC: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        characterRequest.offset = characterItems.count
+        characterParams.offset = characterItems.count
         clearTable()
         getCharacters()
     }
@@ -182,8 +183,8 @@ extension MarvelVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         clearTable()
-        characterRequest.offset = characterItems.count
-        characterRequest.nameStartsWith = searchText
+        characterParams.offset = characterItems.count
+        characterParams.nameStartsWith = searchText
         
         self.getCharacters()
     }
@@ -196,7 +197,7 @@ extension MarvelVC {
         search(shouldShow: true)
     }
 }
-// MARK: - Constans
+// MARK: - Constants
 private struct Constants {
     static let cellId = "cellId"
 }

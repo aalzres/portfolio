@@ -14,7 +14,7 @@ protocol MarvelPresenterOutput: class {
 }
 
 protocol MarvelPresenter {
-    func getCharacters(characterRequest: CharacterRequestEntity?)
+    func getCharacters(characterParams: CharacterParamsEntity?)
 }
 
 class MarvelPresenterImpl: MarvelPresenter {
@@ -28,8 +28,8 @@ class MarvelPresenterImpl: MarvelPresenter {
         self.router = router
     }
     
-    func getCharacters(characterRequest: CharacterRequestEntity?) {
-        interactor.getCharacters(characterRequest: characterRequest)
+    func getCharacters(characterParams: CharacterParamsEntity?) {
+        interactor.getCharacters(characterParams: characterParams)
     }
 }
 

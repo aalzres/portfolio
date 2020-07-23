@@ -14,7 +14,7 @@ protocol MarvelRepositoryOutput: class {
 }
 
 protocol MarvelRepository {
-    func getCharacters(characterRequest: CharacterRequestEntity?)
+    func getCharacters(characterParams: CharacterParamsEntity?)
 }
 
 class MarvelRepositoryImpl: MarvelRepository {
@@ -26,8 +26,8 @@ class MarvelRepositoryImpl: MarvelRepository {
         self.networkManager = networkManager
     }
     
-    func getCharacters(characterRequest: CharacterRequestEntity?) {
-        let operation = CharactersOperation(characterRequest: characterRequest, completionSuccess: { [weak self] dataWrapper in
+    func getCharacters(characterParams: CharacterParamsEntity?) {
+        let operation = CharactersOperation(characterParams: characterParams, completionSuccess: { [weak self] dataWrapper in
             guard
                 let dataWrapper = dataWrapper as? CharactersDataWrapperEntity,
                 let dataCotainter = dataWrapper.data else {

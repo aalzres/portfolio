@@ -18,6 +18,14 @@
 		6700D1F92497BC6500ED44AB /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1F32497BC6500ED44AB /* Splash.swift */; };
 		6700D1FA2497BC6500ED44AB /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1F52497BC6500ED44AB /* SplashVC.swift */; };
 		6700D1FB2497BC6500ED44AB /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1F62497BC6500ED44AB /* SplashPresenter.swift */; };
+		6715CCB824C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715CCB724C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift */; };
+		6715CCBA24C33E72009F1C26 /* ResourceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715CCB924C33E72009F1C26 /* ResourceDetailView.swift */; };
+		6715CCBE24C4DF6A009F1C26 /* ResourceParams+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715CCBD24C4DF6A009F1C26 /* ResourceParams+Extension.swift */; };
+		6716994524C0ACC500B4553C /* MeepRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716993D24C0ACC500B4553C /* MeepRouter.swift */; };
+		6716994624C0ACC500B4553C /* MeepRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716993F24C0ACC500B4553C /* MeepRepository.swift */; };
+		6716994724C0ACC500B4553C /* Meep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716994124C0ACC500B4553C /* Meep.swift */; };
+		6716994824C0ACC500B4553C /* MeepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716994324C0ACC500B4553C /* MeepVC.swift */; };
+		6716994924C0ACC500B4553C /* MeepPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6716994424C0ACC500B4553C /* MeepPresenter.swift */; };
 		673C5462249A46E800BDF5EB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673C5461249A46E800BDF5EB /* UIView+Extension.swift */; };
 		674E32FD2498BC5F00428BD0 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E32F52498BC5E00428BD0 /* MainScreenRouter.swift */; };
 		674E32FE2498BC5F00428BD0 /* MainScreenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E32F72498BC5E00428BD0 /* MainScreenRepository.swift */; };
@@ -48,6 +56,9 @@
 		6781701A24BB86CB00A85A3E /* SeriesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6781701924BB86CB00A85A3E /* SeriesEntity.swift */; };
 		6781701E24BBCD9C00A85A3E /* MarvelTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6781701D24BBCD9C00A85A3E /* MarvelTableCell.swift */; };
 		6781702024BC67DB00A85A3E /* MainScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6781701F24BC67DB00A85A3E /* MainScreenTableCell.swift */; };
+		67844EB424C0DDEE0073D83B /* ResourceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67844EB324C0DDEE0073D83B /* ResourceEntity.swift */; };
+		67844EB624C0E0090073D83B /* ResourcesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67844EB524C0E0090073D83B /* ResourcesOperation.swift */; };
+		67844EB824C0F5B40073D83B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67844EB724C0F5B40073D83B /* Coordinates.swift */; };
 		6785D07A249FDF5600148B01 /* UIKeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785D079249FDF5600148B01 /* UIKeyboardController.swift */; };
 		678BD35F24BB252100E1FD2D /* UrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678BD35E24BB252100E1FD2D /* UrlEntity.swift */; };
 		678BD36124BB25DB00E1FD2D /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678BD36024BB25DB00E1FD2D /* ImageEntity.swift */; };
@@ -83,6 +94,14 @@
 		6700D1F32497BC6500ED44AB /* Splash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		6700D1F52497BC6500ED44AB /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		6700D1F62497BC6500ED44AB /* SplashPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		6715CCB724C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeepVC+ResourceDetail.swift"; sourceTree = "<group>"; };
+		6715CCB924C33E72009F1C26 /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailView.swift; sourceTree = "<group>"; };
+		6715CCBD24C4DF6A009F1C26 /* ResourceParams+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResourceParams+Extension.swift"; sourceTree = "<group>"; };
+		6716993D24C0ACC500B4553C /* MeepRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeepRouter.swift; sourceTree = "<group>"; };
+		6716993F24C0ACC500B4553C /* MeepRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeepRepository.swift; sourceTree = "<group>"; };
+		6716994124C0ACC500B4553C /* Meep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meep.swift; sourceTree = "<group>"; };
+		6716994324C0ACC500B4553C /* MeepVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeepVC.swift; sourceTree = "<group>"; };
+		6716994424C0ACC500B4553C /* MeepPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeepPresenter.swift; sourceTree = "<group>"; };
 		673C5461249A46E800BDF5EB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		674E32F52498BC5E00428BD0 /* MainScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		674E32F72498BC5E00428BD0 /* MainScreenRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenRepository.swift; sourceTree = "<group>"; };
@@ -113,6 +132,9 @@
 		6781701924BB86CB00A85A3E /* SeriesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesEntity.swift; sourceTree = "<group>"; };
 		6781701D24BBCD9C00A85A3E /* MarvelTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTableCell.swift; sourceTree = "<group>"; };
 		6781701F24BC67DB00A85A3E /* MainScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableCell.swift; sourceTree = "<group>"; };
+		67844EB324C0DDEE0073D83B /* ResourceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceEntity.swift; sourceTree = "<group>"; };
+		67844EB524C0E0090073D83B /* ResourcesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesOperation.swift; sourceTree = "<group>"; };
+		67844EB724C0F5B40073D83B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		6785D079249FDF5600148B01 /* UIKeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardController.swift; sourceTree = "<group>"; };
 		678BD35E24BB252100E1FD2D /* UrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlEntity.swift; sourceTree = "<group>"; };
 		678BD36024BB25DB00E1FD2D /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
@@ -184,6 +206,7 @@
 			children = (
 				6700D1E52497B4EA00ED44AB /* Base */,
 				674E32F42498BC5E00428BD0 /* MainScreen */,
+				6716993C24C0ACC500B4553C /* Meep */,
 				67D44CAF24B901A200452BB8 /* Marvel */,
 				6700D1EE2497BC6500ED44AB /* Splash */,
 				6795C110249D07A600A8589B /* TextField */,
@@ -249,6 +272,52 @@
 			children = (
 				6700D1F62497BC6500ED44AB /* SplashPresenter.swift */,
 				6700D1F52497BC6500ED44AB /* SplashVC.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		6715CCB624C2EC24009F1C26 /* ResourceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6715CCB724C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift */,
+				6715CCB924C33E72009F1C26 /* ResourceDetailView.swift */,
+			);
+			path = ResourceDetail;
+			sourceTree = "<group>";
+		};
+		6716993C24C0ACC500B4553C /* Meep */ = {
+			isa = PBXGroup;
+			children = (
+				6716993E24C0ACC500B4553C /* Data */,
+				6716994024C0ACC500B4553C /* Domain */,
+				6716994224C0ACC500B4553C /* Presentation */,
+				6716993D24C0ACC500B4553C /* MeepRouter.swift */,
+			);
+			path = Meep;
+			sourceTree = "<group>";
+		};
+		6716993E24C0ACC500B4553C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6716993F24C0ACC500B4553C /* MeepRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6716994024C0ACC500B4553C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6716994124C0ACC500B4553C /* Meep.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6716994224C0ACC500B4553C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6716994424C0ACC500B4553C /* MeepPresenter.swift */,
+				6716994324C0ACC500B4553C /* MeepVC.swift */,
+				6715CCB624C2EC24009F1C26 /* ResourceDetail */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -320,8 +389,9 @@
 			isa = PBXGroup;
 			children = (
 				674E330D2498E2B700428BD0 /* String+Extension.swift */,
-				673C5461249A46E800BDF5EB /* UIView+Extension.swift */,
 				67B1964624BA55E900BE7C2E /* TimeInterval+Extension.swift */,
+				673C5461249A46E800BDF5EB /* UIView+Extension.swift */,
+				6715CCBD24C4DF6A009F1C26 /* ResourceParams+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -366,7 +436,8 @@
 			isa = PBXGroup;
 			children = (
 				675FEE4224B222A600644F5C /* BaseOperations.swift */,
-				67D44CBD24B905EC00452BB8 /* CharactersOperation.swift */,
+				67AA607924C0DB6F00458FEC /* Marvel */,
+				67AA607A24C0DB7B00458FEC /* Meep */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -429,6 +500,31 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		67AA607924C0DB6F00458FEC /* Marvel */ = {
+			isa = PBXGroup;
+			children = (
+				67D44CBD24B905EC00452BB8 /* CharactersOperation.swift */,
+			);
+			path = Marvel;
+			sourceTree = "<group>";
+		};
+		67AA607A24C0DB7B00458FEC /* Meep */ = {
+			isa = PBXGroup;
+			children = (
+				67844EB524C0E0090073D83B /* ResourcesOperation.swift */,
+			);
+			path = Meep;
+			sourceTree = "<group>";
+		};
+		67AA607B24C0DBB900458FEC /* Meep */ = {
+			isa = PBXGroup;
+			children = (
+				67844EB324C0DDEE0073D83B /* ResourceEntity.swift */,
+				67844EB724C0F5B40073D83B /* Coordinates.swift */,
+			);
+			path = Meep;
+			sourceTree = "<group>";
+		};
 		67D44CAF24B901A200452BB8 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +565,7 @@
 		67D44CBF24B9103600452BB8 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				67AA607B24C0DBB900458FEC /* Meep */,
 				6781701C24BB877E00A85A3E /* Marvel */,
 				67D44CC224B9A33000452BB8 /* NetworkError.swift */,
 			);
@@ -504,6 +601,7 @@
 				6700D1C924979D1F00ED44AB /* Frameworks */,
 				6700D1CA24979D1F00ED44AB /* Resources */,
 				0906C3F0D9ED72E7BF8250C7 /* [CP] Embed Pods Frameworks */,
+				827D01545B6B1CE4CAAD9F8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -612,6 +710,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		827D01545B6B1CE4CAAD9F8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PORTFOLIO/Pods-PORTFOLIO-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PORTFOLIO/Pods-PORTFOLIO-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PORTFOLIO/Pods-PORTFOLIO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -622,7 +737,9 @@
 				6795C11A249D07A600A8589B /* TextFieldRepository.swift in Sources */,
 				6781701824BB861D00A85A3E /* EventEntity.swift in Sources */,
 				67D44CB824B901A200452BB8 /* MarvelRouter.swift in Sources */,
+				6716994724C0ACC500B4553C /* Meep.swift in Sources */,
 				674E330E2498E2B700428BD0 /* String+Extension.swift in Sources */,
+				6716994524C0ACC500B4553C /* MeepRouter.swift in Sources */,
 				674E33072498DCB000428BD0 /* PColor.swift in Sources */,
 				6781702024BC67DB00A85A3E /* MainScreenTableCell.swift in Sources */,
 				6795C11B249D07A600A8589B /* TextField.swift in Sources */,
@@ -631,6 +748,7 @@
 				6781701624BB854400A85A3E /* StoryEntity.swift in Sources */,
 				675FEE4324B222A600644F5C /* BaseOperations.swift in Sources */,
 				67D44CBB24B901A200452BB8 /* MarvelVC.swift in Sources */,
+				6716994924C0ACC500B4553C /* MeepPresenter.swift in Sources */,
 				6781701A24BB86CB00A85A3E /* SeriesEntity.swift in Sources */,
 				6700D1E72497B50000ED44AB /* ServicesLocator.swift in Sources */,
 				674E33002498BC5F00428BD0 /* MainScreenVC.swift in Sources */,
@@ -640,14 +758,20 @@
 				67D44CB924B901A200452BB8 /* MarvelRepository.swift in Sources */,
 				67D44CBC24B901A200452BB8 /* MarvelPresenter.swift in Sources */,
 				6781701E24BBCD9C00A85A3E /* MarvelTableCell.swift in Sources */,
+				6716994824C0ACC500B4553C /* MeepVC.swift in Sources */,
+				6716994624C0ACC500B4553C /* MeepRepository.swift in Sources */,
 				678BD36524BB449300E1FD2D /* CharacterEntity.swift in Sources */,
+				6715CCBE24C4DF6A009F1C26 /* ResourceParams+Extension.swift in Sources */,
 				6700D1FB2497BC6500ED44AB /* SplashPresenter.swift in Sources */,
 				6700D1D024979D1F00ED44AB /* AppDelegate.swift in Sources */,
 				674E33092498DFD500428BD0 /* PDimen.swift in Sources */,
 				673C5462249A46E800BDF5EB /* UIView+Extension.swift in Sources */,
+				6715CCB824C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift in Sources */,
 				67B1964724BA55E900BE7C2E /* TimeInterval+Extension.swift in Sources */,
 				67D44CBA24B901A200452BB8 /* Marvel.swift in Sources */,
+				67844EB424C0DDEE0073D83B /* ResourceEntity.swift in Sources */,
 				6700D1F92497BC6500ED44AB /* Splash.swift in Sources */,
+				67844EB824C0F5B40073D83B /* Coordinates.swift in Sources */,
 				6785D07A249FDF5600148B01 /* UIKeyboardController.swift in Sources */,
 				6795C11D249D07A600A8589B /* TextFieldPresenter.swift in Sources */,
 				678BD36124BB25DB00E1FD2D /* ImageEntity.swift in Sources */,
@@ -662,7 +786,9 @@
 				675FEE4024B2197D00644F5C /* NetworkManager.swift in Sources */,
 				674E33012498BC5F00428BD0 /* MainScreenPresenter.swift in Sources */,
 				67A6269E24B8F60B00E4D875 /* AppConfiguration.swift in Sources */,
+				6715CCBA24C33E72009F1C26 /* ResourceDetailView.swift in Sources */,
 				6700D1FA2497BC6500ED44AB /* SplashVC.swift in Sources */,
+				67844EB624C0E0090073D83B /* ResourcesOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +927,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53347QZ87F;
+				GMAPS_API_KEY = AIzaSyAh7bC8pluisOpHtaboJSoixuh3mwWCrDE;
 				INFOPLIST_FILE = PORTFOLIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -811,7 +938,9 @@
 				PRODUCT_NAME = portfolio;
 				PUBLIC_KEY_MARVEL = d5aa879179ab8874716c9db4f6ab8ded;
 				SERVER_API_VERSION_MARVEL = v1;
+				SERVER_API_VERSION_MEEP = v1;
 				SERVER_HOST_MARVEL = "https://gateway.marvel.com";
+				SERVER_HOST_MEEP = "https://apidev.meep.me";
 				SWIFT_OBJC_BRIDGING_HEADER = "PORTFOLIO/PORTFOLIO-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -825,6 +954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53347QZ87F;
+				GMAPS_API_KEY = AIzaSyAh7bC8pluisOpHtaboJSoixuh3mwWCrDE;
 				INFOPLIST_FILE = PORTFOLIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -835,7 +965,9 @@
 				PRODUCT_NAME = portfolio;
 				PUBLIC_KEY_MARVEL = d5aa879179ab8874716c9db4f6ab8ded;
 				SERVER_API_VERSION_MARVEL = v1;
+				SERVER_API_VERSION_MEEP = v1;
 				SERVER_HOST_MARVEL = "https://gateway.marvel.com";
+				SERVER_HOST_MEEP = "https://apidev.meep.me";
 				SWIFT_OBJC_BRIDGING_HEADER = "PORTFOLIO/PORTFOLIO-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
