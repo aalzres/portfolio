@@ -1,4 +1,5 @@
 *.xcworkspacedata
+*.xcuserstate
 PORTFOLIO.xcodeproj/project.xcworkspace/xcshareddata
 PORTFOLIO.xcodeproj/project.xcworkspace/xcuserdata
 xcschememanagement.plist
