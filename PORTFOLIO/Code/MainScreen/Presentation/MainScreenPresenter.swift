@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MainScreenPresenterOutput: class {}
+protocol MainScreenPresenterOutput: AnyObject {}
 
 protocol MainScreenPresenter {
     func goTextFieldVC()

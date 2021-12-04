@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MainScreenOutput: class {}
+protocol MainScreenOutput: AnyObject {}
 
 protocol MainScreen {}
 
