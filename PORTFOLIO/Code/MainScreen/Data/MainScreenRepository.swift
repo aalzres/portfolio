@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MainScreenRepositoryOutput: class {}
+protocol MainScreenRepositoryOutput: AnyObject {}
 
 protocol MainScreenRepository {}
 

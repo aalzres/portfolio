@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SplashOutput: class {}
+protocol SplashOutput: AnyObject {}
 
 protocol Splash {}
 
