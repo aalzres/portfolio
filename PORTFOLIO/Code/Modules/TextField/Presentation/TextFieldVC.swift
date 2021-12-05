@@ -68,7 +68,6 @@ class TextFieldVC: UIKeyboardController {
         dateOfBirthInput.backgroundColor = PColor.white
         dateOfBirthInput.setValue(PColor.black, forKey: "textColor")
         dateOfBirthInput.datePickerMode = .date
-//        if #available(iOS 14.0, *) { dateOfBirthInput.preferredDatePickerStyle = .inline }
         return dateOfBirthInput
     }()
     

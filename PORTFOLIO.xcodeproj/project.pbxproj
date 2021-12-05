@@ -171,6 +171,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		551C64B7275CDE3A00304510 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6795C110249D07A600A8589B /* TextField */,
+				6700D1EE2497BC6500ED44AB /* Splash */,
+				67D44CAF24B901A200452BB8 /* Marvel */,
+				6716993C24C0ACC500B4553C /* Meep */,
+				674E32F42498BC5E00428BD0 /* MainScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		6700D1C324979D1F00ED44AB = {
 			isa = PBXGroup;
 			children = (
@@ -204,12 +216,8 @@
 		6700D1E324979D6B00ED44AB /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				551C64B7275CDE3A00304510 /* Modules */,
 				6700D1E52497B4EA00ED44AB /* Base */,
-				674E32F42498BC5E00428BD0 /* MainScreen */,
-				6716993C24C0ACC500B4553C /* Meep */,
-				67D44CAF24B901A200452BB8 /* Marvel */,
-				6700D1EE2497BC6500ED44AB /* Splash */,
-				6795C110249D07A600A8589B /* TextField */,
 				674E330A2498E1F900428BD0 /* Utils */,
 			);
 			path = Code;
