@@ -5,12 +5,15 @@
       location = "group:PORTFOLIO.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Architecture/Architecture.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:SnapKit/SnapKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UserInterface/UserInterface.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
