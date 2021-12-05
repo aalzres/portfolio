@@ -63,10 +63,6 @@ xcuserdata/
 # Package.pins
 .build/
 
-# CocoaPods - Refactored to standalone file
-
-# Carthage - Refactored to standalone file
-
 ### Xcode ###
 # Xcode
 #

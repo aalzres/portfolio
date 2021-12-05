@@ -15,6 +15,7 @@
 "main_screen_title" = "Portfolio";
 "main_screen_text_field" = "UITextField";
 "main_screen_marvel" = "Marvel";
+"main_screen_map_kit" = "Map kit";
 
 /* Text Field */
 "text_field_header_view" = "Datos del usuario";
@@ -33,7 +34,7 @@
 "marvel_title_view" = "Marvel";
 
 /* Meep */
-"meep_title_view" = "Prueba técnica Meep";
+"map_kit_title_view" = "Map kit";
 
 /* Resource Detail */
 "resource_detail_latitude" = "Latitud: %@";

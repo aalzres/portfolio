@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Architecture
 
 final class ServiceLocator {
-    lazy var mainRouter: MainRouter = {
+    lazy var mainRouter: Router = {
         let window = UIApplication.shared.keyWindow
-        return MainRouterImpl(window: window)
+        return RouterImpl(window: window)
     }()
     
     lazy var networkManager: NetworkManager = {
