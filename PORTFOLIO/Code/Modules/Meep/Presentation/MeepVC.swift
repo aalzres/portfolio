@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class MeepVC: UIViewController {
     // MARK: - Presenter
@@ -15,6 +16,7 @@ class MeepVC: UIViewController {
     private lazy var resourceParams: ResourceParamsEntity? = nil
     // MARK: - MapView
     lazy var main = UIView()
+    lazy var mapView = MKMapView()
     // MARK: - Resource DetailView
     lazy var resourceDetailView: ResourceDetailView = {
         let resourceDetail = ResourceDetailView()
@@ -31,6 +33,7 @@ class MeepVC: UIViewController {
     var resourceDetailSmall: NSLayoutConstraint!
     // MARK: - ResourceList
     private var resourcesList: [ResourceEntity]?
+
     init(presenter: MeepPresenter) {
         self.presenter = presenter
         
@@ -67,6 +70,11 @@ class MeepVC: UIViewController {
     }
     
     private func setupMap() {
+        mapView.anchor(main,
+                       top: view.topAnchor,
+                       bottom: view.bottomAnchor,
+                       leading: view.leadingAnchor,
+                       trailing: view.trailingAnchor)
     }
 
     private func setupResourceDetail() {
