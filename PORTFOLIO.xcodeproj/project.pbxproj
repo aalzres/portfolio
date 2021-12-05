@@ -11,6 +11,7 @@
 		55A96330275D1BA5009DC548 /* Architecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55A9632E275D1BA5009DC548 /* Architecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55A96332275D1BA8009DC548 /* UserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A96331275D1BA8009DC548 /* UserInterface.framework */; };
 		55A96333275D1BA8009DC548 /* UserInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55A96331275D1BA8009DC548 /* UserInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55C9364D275D56ED004A4715 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C9364C275D56ED004A4715 /* Colors.xcassets */; };
 		6700D1D024979D1F00ED44AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1CF24979D1F00ED44AB /* AppDelegate.swift */; };
 		6700D1D924979D2500ED44AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1D824979D2500ED44AB /* Assets.xcassets */; };
 		6700D1DC24979D2500ED44AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1DA24979D2500ED44AB /* LaunchScreen.storyboard */; };
@@ -98,6 +99,7 @@
 /* Begin PBXFileReference section */
 		55A9632E275D1BA5009DC548 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A96331275D1BA8009DC548 /* UserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C9364C275D56ED004A4715 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5F35043EBCF086B711823CE7 /* Pods-PORTFOLIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PORTFOLIO.debug.xcconfig"; path = "Target Support Files/Pods-PORTFOLIO/Pods-PORTFOLIO.debug.xcconfig"; sourceTree = "<group>"; };
 		6700D1CC24979D1F00ED44AB /* portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6700D1CF24979D1F00ED44AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				675FDB7424A39CBF00126476 /* Fonts */,
 				6700D1D824979D2500ED44AB /* Assets.xcassets */,
+				55C9364C275D56ED004A4715 /* Colors.xcassets */,
 				6700D1DA24979D2500ED44AB /* LaunchScreen.storyboard */,
 				674E330F2498E50C00428BD0 /* Localizable.strings */,
 			);
@@ -676,6 +679,7 @@
 				675FDB8A24A39CBF00126476 /* Roboto-BlackItalic.ttf in Resources */,
 				675FDB8524A39CBF00126476 /* Roboto-MediumItalic.ttf in Resources */,
 				674E33102498E50C00428BD0 /* Localizable.strings in Resources */,
+				55C9364D275D56ED004A4715 /* Colors.xcassets in Resources */,
 				675FDB8924A39CBF00126476 /* Roboto-Italic.ttf in Resources */,
 				6700D1D924979D2500ED44AB /* Assets.xcassets in Resources */,
 			);
