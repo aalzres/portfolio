@@ -6,9 +6,7 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
-
-protocol SplashRepositoryOutput: class {}
+protocol SplashRepositoryOutput: AnyObject {}
 
 protocol SplashRepository {}
 

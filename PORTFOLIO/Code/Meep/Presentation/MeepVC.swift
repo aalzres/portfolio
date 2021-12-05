@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleMaps
 
 class MeepVC: UIViewController {
     // MARK: - Presenter
@@ -16,7 +15,6 @@ class MeepVC: UIViewController {
     private lazy var resourceParams: ResourceParamsEntity? = nil
     // MARK: - MapView
     lazy var main = UIView()
-    var mapView: GMSMapView!
     // MARK: - Resource DetailView
     lazy var resourceDetailView: ResourceDetailView = {
         let resourceDetail = ResourceDetailView()
@@ -69,34 +67,8 @@ class MeepVC: UIViewController {
     }
     
     private func setupMap() {
-        let camera = GMSCameraPosition.camera(withLatitude: Constants.locLisboaCameraLat,
-                                              longitude: Constants.locLisboaCameraLon,
-                                              zoom: Constants.zoomStreets)
-        mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        mapView.delegate = self
-        mapView.settings.indoorPicker = false
-        mapView.setMinZoom(Constants.zoomCity, maxZoom: Constants.zoomBuildings)
-        
-        mapView.anchor(main,
-                       top: view.topAnchor,
-                       bottom: view.bottomAnchor,
-                       leading: view.leadingAnchor,
-                       trailing: view.trailingAnchor)
     }
-    
-    private func setupMarks() {
-        mapView.clear()
-        guard let resourcesList = resourcesList else { return }
-        for resource in resourcesList {
-            guard let lat = resource.latitude, let lon = resource.longitude  else { return }
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-            marker.userData = resource
-            marker.icon = GMSMarker.markerImage(with: resource.color)
-            marker.map = mapView
-        }
-    }
-    
+
     private func setupResourceDetail() {
         resourceDetailView.anchor(main,
                                   bottom: main.bottomAnchor, paddingBottom: ConstantsResourceDetail.heightResourceDetail,
@@ -116,7 +88,6 @@ extension MeepVC {
     }
     
     private func openResource(_ resource: ResourceEntity) {
-        mapView.animate(toZoom: Constants.zoomBuildings)
         switchSizeResourceDetail(size: .small)
         resourceDetailView.updateResourceInfo(resource: resource)
     }
@@ -125,30 +96,10 @@ extension MeepVC {
 extension MeepVC: MeepPresenterOutput {
     func getResourcesSuccess(resourcesList: [ResourceEntity]) {
         self.resourcesList = resourcesList
-        
-        setupMarks()
     }
     
     func getResourcesFailure(_ error: String) {
         debugPrint(error)
-    }
-}
-// MARK: - GMSMapViewDelegate
-extension MeepVC: GMSMapViewDelegate {
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        guard let resource = marker.userData as? ResourceEntity else { return false }
-        
-        openResource(resource)
-        
-        return false
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        switchSizeResourceDetail(size: .hidden)
-    }
-    
-    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        getResources(coordinatesOrigin: Coordinates(lat: position.target.latitude, lon: position.target.longitude))
     }
 }
 // MARK: - ResourceDetailViewDelegate

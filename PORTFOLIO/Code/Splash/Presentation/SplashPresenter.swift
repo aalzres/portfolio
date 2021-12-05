@@ -6,9 +6,7 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
-
-protocol SplashPresenterOutput: class {}
+protocol SplashPresenterOutput: AnyObject {}
 
 protocol SplashPresenter {
     func goMainScreen()

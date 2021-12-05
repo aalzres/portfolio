@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MeepOutput: class {
+protocol MeepOutput: AnyObject {
     func getResourcesSuccess(resourcesList: [ResourceEntity])
     func getResourcesFailure(error: NetworkErrorEntity)
 }

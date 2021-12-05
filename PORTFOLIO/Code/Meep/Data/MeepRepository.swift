@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-protocol MeepRepositoryOutput: class {
+protocol MeepRepositoryOutput: AnyObject {
     func getResourcesSuccess(resourcesList: [ResourceEntity])
     func getResourcesFailure(error: NetworkErrorEntity)
 }

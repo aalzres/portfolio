@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MeepPresenterOutput: class {
+protocol MeepPresenterOutput: AnyObject {
     func getResourcesSuccess(resourcesList: [ResourceEntity])
     func getResourcesFailure(_ error: String)
 }

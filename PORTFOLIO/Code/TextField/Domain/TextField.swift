@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TextFieldOutput: class {}
+protocol TextFieldOutput: AnyObject {}
 
 protocol TextField {}
 

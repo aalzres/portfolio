@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ResourceDetailViewDelegate: class {
+protocol ResourceDetailViewDelegate: AnyObject {
     func minimizeView()
 }
 

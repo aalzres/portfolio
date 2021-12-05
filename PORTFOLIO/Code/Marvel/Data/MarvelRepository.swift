@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MarvelRepositoryOutput: class {
+protocol MarvelRepositoryOutput: AnyObject {
     func getCharactersSuccess(responseData: CharacterDataContainerEntity)
     func getCharactersFailure(error: NetworkErrorEntity)
 }
