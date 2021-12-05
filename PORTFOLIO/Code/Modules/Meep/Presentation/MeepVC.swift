@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Architecture
 
 class MeepVC: UIViewController {
     // MARK: - Presenter
@@ -42,6 +43,10 @@ class MeepVC: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    deinit {
+        BaseDeinit.shared.printDeinit(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		033860320143B1EE2F153968 /* Pods_PORTFOLIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79BC85A8EA6CA339293D604 /* Pods_PORTFOLIO.framework */; };
+		5504A5A4275CED5500710A91 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5504A5A3275CED5500710A91 /* Architecture.framework */; };
+		5504A5A5275CED5500710A91 /* Architecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5504A5A3275CED5500710A91 /* Architecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6700D1D024979D1F00ED44AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1CF24979D1F00ED44AB /* AppDelegate.swift */; };
 		6700D1D924979D2500ED44AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1D824979D2500ED44AB /* Assets.xcassets */; };
 		6700D1DC24979D2500ED44AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1DA24979D2500ED44AB /* LaunchScreen.storyboard */; };
@@ -78,9 +79,26 @@
 		67D44CBC24B901A200452BB8 /* MarvelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D44CB724B901A200452BB8 /* MarvelPresenter.swift */; };
 		67D44CBE24B905EC00452BB8 /* CharactersOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D44CBD24B905EC00452BB8 /* CharactersOperation.swift */; };
 		67D44CC324B9A33000452BB8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D44CC224B9A33000452BB8 /* NetworkError.swift */; };
+		9B607FF248555FB619315CAF /* Pods_PORTFOLIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BDE42C7A86380F85EDE8DD /* Pods_PORTFOLIO.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		55FAD8C9275CE7CD006EA007 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5504A5A5275CED5500710A91 /* Architecture.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		20BDE42C7A86380F85EDE8DD /* Pods_PORTFOLIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PORTFOLIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5504A5A3275CED5500710A91 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F35043EBCF086B711823CE7 /* Pods-PORTFOLIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PORTFOLIO.debug.xcconfig"; path = "Target Support Files/Pods-PORTFOLIO/Pods-PORTFOLIO.debug.xcconfig"; sourceTree = "<group>"; };
 		6700D1CC24979D1F00ED44AB /* portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6700D1CF24979D1F00ED44AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,7 +174,6 @@
 		67D44CBD24B905EC00452BB8 /* CharactersOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersOperation.swift; sourceTree = "<group>"; };
 		67D44CC224B9A33000452BB8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		8C87BAAEEEEE0A24C4D8DB74 /* Pods-PORTFOLIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PORTFOLIO.release.xcconfig"; path = "Target Support Files/Pods-PORTFOLIO/Pods-PORTFOLIO.release.xcconfig"; sourceTree = "<group>"; };
-		F79BC85A8EA6CA339293D604 /* Pods_PORTFOLIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PORTFOLIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,13 +181,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				033860320143B1EE2F153968 /* Pods_PORTFOLIO.framework in Frameworks */,
+				9B607FF248555FB619315CAF /* Pods_PORTFOLIO.framework in Frameworks */,
+				5504A5A4275CED5500710A91 /* Architecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19628E58DE48F56A1C2999CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5504A5A3275CED5500710A91 /* Architecture.framework */,
+				20BDE42C7A86380F85EDE8DD /* Pods_PORTFOLIO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		551C64B7275CDE3A00304510 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +216,7 @@
 				6700D1CE24979D1F00ED44AB /* PORTFOLIO */,
 				6700D1CD24979D1F00ED44AB /* Products */,
 				91266F95D92E4CA973537745 /* Pods */,
-				684DBAC000C0039C3D211A93 /* Frameworks */,
+				19628E58DE48F56A1C2999CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -580,14 +607,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		684DBAC000C0039C3D211A93 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F79BC85A8EA6CA339293D604 /* Pods_PORTFOLIO.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		91266F95D92E4CA973537745 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +628,7 @@
 				6700D1C924979D1F00ED44AB /* Frameworks */,
 				6700D1CA24979D1F00ED44AB /* Resources */,
 				0906C3F0D9ED72E7BF8250C7 /* [CP] Embed Pods Frameworks */,
+				55FAD8C9275CE7CD006EA007 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
