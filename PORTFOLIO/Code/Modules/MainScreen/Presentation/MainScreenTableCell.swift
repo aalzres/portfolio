@@ -11,14 +11,14 @@ import UIKit
 class MainScreenTableCell: UITableViewCell {
     lazy var menuItems: UIStackView = {
         let menuItems = UIStackView()
-        menuItems.spacing = PDimen.paddingS
+        menuItems.spacing = .paddingS
         menuItems.axis = .vertical
         return menuItems
     }()
     lazy var nameItem: UILabel = {
         let nameItem = UILabel()
-        nameItem.font = PFont.primary
-        nameItem.textColor = PColor.black
+        nameItem.font = .primary
+        nameItem.textColor = .black
         return nameItem
     }()
     private lazy var arrow: UIImageView = UIImageView(image: UIImage(named: "arrow"))
@@ -35,19 +35,19 @@ class MainScreenTableCell: UITableViewCell {
     }
     
     private func setupCellView() {
-        contentView.backgroundColor = PColor.white
+        contentView.backgroundColor = .white
         
         menuItems.anchor(contentView,
-                         top: contentView.topAnchor, paddingTop: PDimen.paddingS,
-                         bottom: contentView.bottomAnchor, paddingBottom: -PDimen.paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS)
+                         top: contentView.topAnchor, paddingTop: .paddingS,
+                         bottom: contentView.bottomAnchor, paddingBottom: -.paddingS,
+                         leading: contentView.leadingAnchor, paddingLeading: .paddingS)
         menuItems.addArrangedSubview(nameItem)
     }
     
     private func setupArrow() {
         arrow.anchor(contentView,
-                     leading: menuItems.trailingAnchor, paddingLeading: PDimen.paddingS,
-                     trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS,
+                     leading: menuItems.trailingAnchor, paddingLeading: .paddingS,
+                     trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS,
                      centerY: menuItems.centerYAnchor)
     }
 }

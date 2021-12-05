@@ -8,13 +8,13 @@
 
 import UIKit
 
-struct PFont {
-    static let title: UIFont = .robotoLight(PDimen.title)
-    static let subtitle: UIFont = .robotoLight(PDimen.subtitle)
-    static let primary: UIFont = .robotoLight(PDimen.primary)
-    static let secondary: UIFont = .robotoLight(PDimen.secondary)
-    static let inputPrimary: UIFont = .robotoRegular(PDimen.primary)
-    static let inputSecondary: UIFont = .robotoLight(PDimen.secondary)
+public extension UIFont {
+    static let title: UIFont = .robotoLight(.title)
+    static let subtitle: UIFont = .robotoLight(.subtitle)
+    static let primary: UIFont = .robotoLight(.primary)
+    static let secondary: UIFont = .robotoLight(.secondary)
+    static let inputPrimary: UIFont = .robotoRegular(.primary)
+    static let inputSecondary: UIFont = .robotoLight(.secondary)
 }
 
 extension UIFont {

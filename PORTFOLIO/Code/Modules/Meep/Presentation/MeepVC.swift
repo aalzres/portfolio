@@ -23,8 +23,8 @@ class MeepVC: UIViewController {
         let resourceDetail = ResourceDetailView()
         resourceDetail.delegate = self
         resourceDetail.layer.cornerRadius = Constants.resourceDetailViewCornerRadius
-        resourceDetail.backgroundColor = PColor.white
-        resourceDetail.layer.shadowColor = PColor.black.cgColor
+        resourceDetail.backgroundColor = .white
+        resourceDetail.layer.shadowColor = .black
         resourceDetail.layer.shadowRadius = Constants.resourceDetailViewShadowRadius
         resourceDetail.layer.shadowOpacity = Constants.resourceDetailViewShadowOpacity
         resourceDetail.layer.shadowOffset = .zero
@@ -45,7 +45,7 @@ class MeepVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    deinit { 
+    deinit {
         BaseDeinit.shared.printDeinit(self)
     }
     

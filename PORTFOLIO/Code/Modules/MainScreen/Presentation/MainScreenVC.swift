@@ -27,7 +27,7 @@ class MainScreenVC: UIViewController {
         itemsTable.dataSource = self
         itemsTable.delegate = self
         itemsTable.separatorStyle = .none
-        itemsTable.backgroundColor = PColor.white
+        itemsTable.backgroundColor = .white
         itemsTable.register(MainScreenTableCell.self, forCellReuseIdentifier: Constants.cellId)
         return itemsTable
     }()
@@ -54,7 +54,7 @@ class MainScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = PColor.white
+        view.backgroundColor = .white
         
         setupView()
     }
@@ -78,8 +78,8 @@ class MainScreenVC: UIViewController {
         itemsTable.anchor(view,
                           top: view.safeAreaLayoutGuide.topAnchor,
                           bottom: view.safeAreaLayoutGuide.bottomAnchor,
-                          leading: view.leadingAnchor, paddingLeading: PDimen.paddingS,
-                          trailing: view.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                          leading: view.leadingAnchor, paddingLeading: .paddingS,
+                          trailing: view.trailingAnchor, paddingTrailing: -.paddingS)
     }
 }
 // MARK: - Output

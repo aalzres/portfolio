@@ -1,147 +1,130 @@
 //
-//  MainRouter.swift
-//  PORTFOLIO
+//  Router.swift
+//  Architecture
 //
-//  Created by Andres Felipe Alzate on 15/06/2020.
-//  Copyright © 2020 aalzres. All rights reserved.
+//  Created by Andres Felipe Alzate Restrepo on 5/12/21.
 //
 
 import UIKit
+import UserInterface
 
-enum TypeDialog {
-    case goSetting
-    case error
-}
-
-protocol MainRouter {
+public protocol Router {
     func set(vc: UIViewController)
     func present(vc: UIViewController)
     func push(vc: UIViewController)
     func push(vc: UIViewController, markCurrent: Bool)
     func pop()
-    func popTo(vc: UIViewController)
     func popToRoot()
     func addPopMark(onVC: UIViewController)
     func popToLastMark()
-    func showDialog(_ message: String, type: TypeDialog, completionHandler completion: ((Bool) -> Void)?)
 }
 
-class MainRouterImpl: MainRouter {
+public class RouterImpl: Router {
     let window: UIWindow?
     private var backMarks: [AnyObject.Type] = []
     private var navController: UINavigationController? { return window?.rootViewController as? UINavigationController }
     private var currentViewController: UIViewController? { return navController?.topViewController }
-    
-    init(window: UIWindow?) {
+
+    public init(window: UIWindow?) {
         self.window = window
         window?.rootViewController = UINavigationController()
     }
-    
-    func set(vc: UIViewController) {
+
+    public func set(vc: UIViewController) {
         configNavBar(vc: vc)
         navController?.setViewControllers([vc], animated: true)
         backMarks.removeAll()
     }
-    
-    func present(vc: UIViewController) {
+
+    public func present(vc: UIViewController) {
         navController?.present(vc, animated: true, completion: nil)
     }
-    
-    func push(vc: UIViewController) {
+
+    public func push(vc: UIViewController) {
         push(vc: vc, markCurrent: false)
     }
-    
-    func push(vc: UIViewController, markCurrent popMark: Bool) {
+
+    public func push(vc: UIViewController, markCurrent popMark: Bool) {
         configNavBar(vc: vc)
         if popMark { addPopMarkOnCurrentVC() }
         navController?.pushViewController(vc, animated: true)
     }
-    
+
     @objc
-    func pop() {
+    public func pop() {
         let oldVC = navController?.popViewController(animated: true)
         removeIfNeedOldMark(oldVC)
     }
-    
+
     func popTo(vc: UIViewController) {
         let poppedVCs = navController?.popToViewController(vc, animated: true)
-        
+
         poppedVCs?.forEach { removeIfNeedOldMark($0) }
     }
-    
-    func popToRoot() {
+
+    public func popToRoot() {
         navController?.popToRootViewController(animated: true)
         backMarks.removeAll()
     }
-    
+
     func addPopMarkOnCurrentVC() {
         guard let vc = currentViewController else { return }
-        
+
         addPopMark(onVC: vc)
     }
-    
-    func addPopMark(onVC vc: UIViewController) {
+
+    public func addPopMark(onVC vc: UIViewController) {
         let newMark: AnyObject.Type = type(of: vc)
         removeIfNeedOldMark(newMark)
         backMarks.append(newMark)
     }
-    
-    func popToLastMark() {
+
+    public func popToLastMark() {
         guard let mark = backMarks.last else {
             pop()
             return
         }
-        
+
         let vc = navController?.viewControllers.last(where: {
             let popMark: AnyObject.Type = type(of: $0)
             return mark == popMark
         })
-        
+
         guard let vcToPop = vc else {
             pop()
             return
         }
-        
+
         backMarks.removeLast()
         popTo(vc: vcToPop)
     }
-    
-    func showDialog(_ message: String, type: TypeDialog, completionHandler completion: ((Bool) -> Void)? = nil) {
-        switch type {
-        case .goSetting:
-            // TODO Alert for show message before go to setting
-            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: completion)
-        default:
-            break // TODO Alert basic
-        }
-    }
-    
+
     private func configNavBar(vc: UIViewController) {
         vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: vc.title ?? "", style: .plain, target: self, action: #selector(pop))
-            
-        let textAttributes = [NSAttributedString.Key.foregroundColor: PColor.black]
+
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.dark]
         let backButton = UIImage(named: "iconBack")
-        
+
         navController?.navigationBar.backIndicatorImage = backButton
         navController?.navigationBar.backIndicatorTransitionMaskImage = backButton
-        navController?.navigationBar.barTintColor = PColor.white
-        navController?.navigationBar.tintColor = PColor.black
+        navController?.navigationBar.barTintColor = .dark
+        navController?.navigationBar.tintColor = .dark
         navController?.navigationBar.titleTextAttributes = textAttributes
         navController?.navigationBar.largeTitleTextAttributes = textAttributes
     }
 }
 
-private extension MainRouterImpl {
+private extension RouterImpl {
     func removeIfNeedOldMark(_ newVC: UIViewController?) {
         guard let vc = newVC else { return }
-        
+
         let newMark: AnyObject.Type = type(of: vc)
         removeIfNeedOldMark(newMark)
     }
-    
+
     func removeIfNeedOldMark(_ newMark:AnyObject.Type) {
         let index = backMarks.firstIndex { mark in mark == newMark }
-        
+
         if let index = index { backMarks.remove(at: index) }
     }
 }

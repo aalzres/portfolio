@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserInterface
 
 // MARK: - MeepVC Details components
 enum SizeResourceDetail {
@@ -21,7 +22,7 @@ enum SizeResourceDetail {
 }
 extension MeepVC {
     func switchSizeResourceDetail(size: SizeResourceDetail) {
-        UIView.animate(withDuration: PDimen.animationDuration) { [weak self] in
+        UIView.animate(withDuration: .animationDuration) { [weak self] in
             self?.resourceDetailHidden.isActive = false
             self?.resourceDetailSmall.isActive = false
             

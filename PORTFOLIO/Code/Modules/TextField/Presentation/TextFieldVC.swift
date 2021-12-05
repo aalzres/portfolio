@@ -15,38 +15,38 @@ class TextFieldVC: UIKeyboardController {
     
     private lazy var headerView: UILabel = {
         let headerView = UILabel()
-        headerView.font = PFont.title
-        headerView.textColor = PColor.black
+        headerView.font = .title
+        headerView.textColor = .black
         headerView.text = "text_field_header_view".localized()
         return headerView
     }()
     
     private lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
-        nameLabel.font = PFont.inputPrimary
-        nameLabel.textColor = PColor.black
+        nameLabel.font = .inputPrimary
+        nameLabel.textColor = .black
         nameLabel.text = "text_field_name_label".localized()
         return nameLabel
     }()
     private lazy var nameInput: UITextField = {
         let nameInput = UITextField()
-        nameInput.font = PFont.inputSecondary
-        nameInput.textColor = PColor.black
+        nameInput.font = .inputSecondary
+        nameInput.textColor = .black
         nameInput.addLine(position: .bottom)
         return nameInput
     }()
     
     private lazy var documentNumberLabel: UILabel = {
         let documentNumberLabel = UILabel()
-        documentNumberLabel.font = PFont.inputPrimary
-        documentNumberLabel.textColor = PColor.black
+        documentNumberLabel.font = .inputPrimary
+        documentNumberLabel.textColor = .black
         documentNumberLabel.text = "text_field_document_number_label".localized()
         return documentNumberLabel
     }()
     private lazy var documentNumberInput: UITextField = {
         let documentNumberInput = UITextField()
-        documentNumberInput.font = PFont.inputSecondary
-        documentNumberInput.textColor = PColor.black
+        documentNumberInput.font = .inputSecondary
+        documentNumberInput.textColor = .black
         documentNumberInput.addLine(position: .bottom)
         documentNumberInput.autocorrectionType = .no
         documentNumberInput.keyboardType = .namePhonePad
@@ -58,53 +58,53 @@ class TextFieldVC: UIKeyboardController {
     
     private lazy var dateOfBirthLabel: UILabel = {
         let dateOfBirthLabel = UILabel()
-        dateOfBirthLabel.font = PFont.inputPrimary
-        dateOfBirthLabel.textColor = PColor.black
+        dateOfBirthLabel.font = .inputPrimary
+        dateOfBirthLabel.textColor = .black
         dateOfBirthLabel.text = "text_field_date_of_birth".localized()
         return dateOfBirthLabel
     }()
     private lazy var dateOfBirthInput: UIDatePicker = {
         let dateOfBirthInput = UIDatePicker()
-        dateOfBirthInput.backgroundColor = PColor.white
-        dateOfBirthInput.setValue(PColor.black, forKey: "textColor")
+        dateOfBirthInput.backgroundColor = .white
+        dateOfBirthInput.setValue(UIColor.black, forKey: "textColor")
         dateOfBirthInput.datePickerMode = .date
         return dateOfBirthInput
     }()
     
     private lazy var mailLabel: UILabel = {
         let mailLabel = UILabel()
-        mailLabel.font = PFont.inputPrimary
-        mailLabel.textColor = PColor.black
+        mailLabel.font = .inputPrimary
+        mailLabel.textColor = .black
         mailLabel.text = "text_field_mail".localized()
         return mailLabel
     }()
     private lazy var mailInput: UITextField = {
         let mailInput = UITextField()
-        mailInput.font = PFont.inputSecondary
-        mailInput.textColor = PColor.black
+        mailInput.font = .inputSecondary
+        mailInput.textColor = .black
         mailInput.addLine(position: .bottom)
         return mailInput
     }()
     
     private lazy var addressLabel: UILabel = {
         let addressLabel = UILabel()
-        addressLabel.font = PFont.inputPrimary
-        addressLabel.textColor = PColor.black
+        addressLabel.font = .inputPrimary
+        addressLabel.textColor = .black
         addressLabel.text = "text_field_address".localized()
         return addressLabel
     }()
     private lazy var addressInput: UITextField = {
         let addressInput = UITextField()
-        addressInput.font = PFont.inputSecondary
-        addressInput.textColor = PColor.black
+        addressInput.font = .inputSecondary
+        addressInput.textColor = .black
         addressInput.addLine(position: .bottom)
         return addressInput
     }()
     
     private lazy var sexLabel: UILabel = {
         let sexLabel = UILabel()
-        sexLabel.font = PFont.inputPrimary
-        sexLabel.textColor = PColor.black
+        sexLabel.font = .inputPrimary
+        sexLabel.textColor = .black
         sexLabel.text = "text_field_sex".localized()
         return sexLabel
     }()
@@ -114,37 +114,37 @@ class TextFieldVC: UIKeyboardController {
             "text_field_sex_female".localized()
         ]
         let sexInput = UISegmentedControl(items: items)
-        sexInput.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: PColor.black], for: .selected)
-        sexInput.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: PColor.black], for: .normal)
+        sexInput.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        sexInput.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         return sexInput
     }()
     
     private lazy var telLabel: UILabel = {
         let telLabel = UILabel()
-        telLabel.font = PFont.inputPrimary
-        telLabel.textColor = PColor.black
+        telLabel.font = .inputPrimary
+        telLabel.textColor = .black
         telLabel.text = "text_field_tel".localized()
         return telLabel
     }()
     private lazy var telInput: UITextField = {
         let telInput = UITextField()
-        telInput.font = PFont.inputSecondary
-        telInput.textColor = PColor.black
+        telInput.font = .inputSecondary
+        telInput.textColor = .black
         telInput.addLine(position: .bottom)
         return telInput
     }()
     
     private lazy var nationalityLabel: UILabel = {
         let nationalityLabel = UILabel()
-        nationalityLabel.font = PFont.inputPrimary
-        nationalityLabel.textColor = PColor.black
+        nationalityLabel.font = .inputPrimary
+        nationalityLabel.textColor = .black
         nationalityLabel.text = "text_field_nationality".localized()
         return nationalityLabel
     }()
     private lazy var nationalityInput: UITextField = {
         let nationalityInput = UITextField()
-        nationalityInput.font = PFont.inputSecondary
-        nationalityInput.textColor = PColor.black
+        nationalityInput.font = .inputSecondary
+        nationalityInput.textColor = .black
         nationalityInput.addLine(position: .bottom)
         return nationalityInput
     }()
@@ -162,7 +162,7 @@ class TextFieldVC: UIKeyboardController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = PColor.white
+        view.backgroundColor = .white
         
         setupView()
     }
@@ -199,107 +199,107 @@ class TextFieldVC: UIKeyboardController {
     
     private func setupHeaderView() {
         headerView.anchor(contentView,
-                         top: contentView.topAnchor, paddingTop: PDimen.paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                         top: contentView.topAnchor, paddingTop: .paddingS,
+                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
     }
     
     private func setupName() {
         nameLabel.anchor(contentView,
-                         top: headerView.bottomAnchor, paddingTop: PDimen.paddingM,
-                         leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                         top: headerView.bottomAnchor, paddingTop: .paddingM,
+                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         nameInput.anchor(contentView,
-                         top: nameLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                         top: nameLabel.bottomAnchor, paddingTop: .paddingS,
+                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
     
     private func setupDocumentNumber() {
         documentNumberLabel.anchor(contentView,
-                                   top: nameInput.bottomAnchor, paddingTop: PDimen.paddingM,
-                                   leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                                   trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                                   top: nameInput.bottomAnchor, paddingTop: .paddingM,
+                                   leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                                   trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         documentNumberInput.anchor(contentView,
-                                   top: documentNumberLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                                   leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                                   trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                                   top: documentNumberLabel.bottomAnchor, paddingTop: .paddingS,
+                                   leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                                   trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
     
     private func setupDateOfBirth() {
         dateOfBirthLabel.anchor(contentView,
-                                top: documentNumberInput.bottomAnchor, paddingTop: PDimen.paddingM,
-                                leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                                top: documentNumberInput.bottomAnchor, paddingTop: .paddingM,
+                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         dateOfBirthInput.anchor(contentView,
-                                top: dateOfBirthLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                                leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                                top: dateOfBirthLabel.bottomAnchor, paddingTop: .paddingS,
+                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
     
     private func setupMail() {
         mailLabel.anchor(contentView,
-                         top: dateOfBirthInput.bottomAnchor, paddingTop: PDimen.paddingM,
-                         leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                         top: dateOfBirthInput.bottomAnchor, paddingTop: .paddingM,
+                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         mailInput.anchor(contentView,
-                         top: mailLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                         top: mailLabel.bottomAnchor, paddingTop: .paddingS,
+                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
     
     private func setupAddress() {
         addressLabel.anchor(contentView,
-                            top: mailInput.bottomAnchor, paddingTop: PDimen.paddingM,
-                            leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                            trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                            top: mailInput.bottomAnchor, paddingTop: .paddingM,
+                            leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                            trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         addressInput.anchor(contentView,
-                            top: addressLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                            leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                            trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                            top: addressLabel.bottomAnchor, paddingTop: .paddingS,
+                            leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                            trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
     
     private func setupSex() {
         sexLabel.anchor(contentView,
-                        top: addressInput.bottomAnchor, paddingTop: PDimen.paddingM,
-                        leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                        top: addressInput.bottomAnchor, paddingTop: .paddingM,
+                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         sexInput.anchor(contentView,
-                        top: sexLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                        leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                        top: sexLabel.bottomAnchor, paddingTop: .paddingS,
+                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
     
     private func setupTel() {
         telLabel.anchor(contentView,
-                        top: sexInput.bottomAnchor, paddingTop: PDimen.paddingM,
-                        leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                        top: sexInput.bottomAnchor, paddingTop: .paddingM,
+                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         telInput.anchor(contentView,
-                        top: telLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                        leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                        top: telLabel.bottomAnchor, paddingTop: .paddingS,
+                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
     
     private func setupNationality() {
         nationalityLabel.anchor(contentView,
-                                top: telInput.bottomAnchor, paddingTop: PDimen.paddingM,
-                                leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                                top: telInput.bottomAnchor, paddingTop: .paddingM,
+                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
         nationalityInput.anchor(contentView,
-                                top: nationalityLabel.bottomAnchor, paddingTop: PDimen.paddingS,
-                                bottom: contentView.bottomAnchor, paddingBottom: -PDimen.paddingS,
-                                leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                                top: nationalityLabel.bottomAnchor, paddingTop: .paddingS,
+                                bottom: contentView.bottomAnchor, paddingBottom: -.paddingS,
+                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
     }
 }
 // MARK: - Output

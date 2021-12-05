@@ -25,30 +25,30 @@ class ResourceDetailView: UIView {
     }()
     lazy var id: UILabel = {
         let id = UILabel()
-        id.font = PFont.subtitle
-        id.textColor = PColor.black
+        id.font = .subtitle
+        id.textColor = .black
         id.lineBreakMode = .byWordWrapping
         id.numberOfLines = 0
         return id
     }()
     lazy var companyZoneId: UILabel = {
         let companyZoneId = UILabel()
-        companyZoneId.font = PFont.secondary
-        companyZoneId.textColor = PColor.black
+        companyZoneId.font = .secondary
+        companyZoneId.textColor = .black
         companyZoneId.textAlignment = .right
         return companyZoneId
     }()
     lazy var lat: UILabel = {
         let lat = UILabel()
-        lat.font = PFont.primary
-        lat.textColor = PColor.black
+        lat.font = .primary
+        lat.textColor = .black
         lat.text = "not_available".localized()
         return lat
     }()
     lazy var lon: UILabel = {
         let lon = UILabel()
-        lon.font = PFont.primary
-        lon.textColor = PColor.black
+        lon.font = .primary
+        lon.textColor = .black
         lon.text = "not_available".localized()
         return lon
     }()
@@ -63,41 +63,41 @@ class ResourceDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = PColor.white
+        backgroundColor = .white
         
         setupResourceView()
     }
     
     private func setupResourceView() {
-        main.backgroundColor = PColor.white
+        main.backgroundColor = .white
         
         main.anchor(self,
                     top: self.topAnchor,
                     bottom: self.bottomAnchor,
-                    leading: self.leadingAnchor, paddingLeading: PDimen.paddingM,
-                    trailing: self.trailingAnchor, paddingTrailing: -PDimen.paddingM)
+                    leading: self.leadingAnchor, paddingLeading: .paddingM,
+                    trailing: self.trailingAnchor, paddingTrailing: -.paddingM)
         
         arrow.anchor(main,
-                        top: main.topAnchor, paddingTop: PDimen.paddingXS,
+                        top: main.topAnchor, paddingTop: .paddingXS,
                         leading: main.leadingAnchor,
                         trailing: main.trailingAnchor)
         
         id.anchor(main,
-                  top: arrow.bottomAnchor, paddingTop: PDimen.paddingS,
+                  top: arrow.bottomAnchor, paddingTop: .paddingS,
                   leading: main.leadingAnchor)
         
         companyZoneId.anchor(main,
-                             top: arrow.bottomAnchor, paddingTop: PDimen.paddingS,
-                             leading: id.trailingAnchor, paddingLeading: PDimen.paddingS,
+                             top: arrow.bottomAnchor, paddingTop: .paddingS,
+                             leading: id.trailingAnchor, paddingLeading: .paddingS,
                              trailing: main.trailingAnchor)
         
         lat.anchor(main,
-                   top: id.bottomAnchor, paddingTop: PDimen.paddingS,
+                   top: id.bottomAnchor, paddingTop: .paddingS,
                    leading: main.leadingAnchor)
         
         lon.anchor(main,
-                   top: id.bottomAnchor, paddingTop: PDimen.paddingS,
-                   leading: lat.trailingAnchor, paddingLeading: PDimen.paddingS,
+                   top: id.bottomAnchor, paddingTop: .paddingS,
+                   leading: lat.trailingAnchor, paddingLeading: .paddingS,
                    trailing: main.trailingAnchor)
     }
     

@@ -11,13 +11,13 @@ import UIKit
 class MarvelTableCell: UITableViewCell {
     private lazy var characterValues: UIStackView = {
         let characterValues = UIStackView()
-        characterValues.spacing = PDimen.paddingS
+        characterValues.spacing = .paddingS
         characterValues.axis = .vertical
         return characterValues
     }()
     lazy var characterName: UILabel = {
         let characterName = UILabel()
-        characterName.font = PFont.primary
+        characterName.font = .primary
         return characterName
     }()
     
@@ -32,13 +32,13 @@ class MarvelTableCell: UITableViewCell {
     }
     
     private func setupCellView() {
-        contentView.backgroundColor = PColor.white
+        contentView.backgroundColor = .white
         
         characterValues.anchor(contentView,
-                               top: contentView.topAnchor, paddingTop: PDimen.paddingS,
-                               bottom: contentView.bottomAnchor, paddingBottom: -PDimen.paddingS,
-                               leading: contentView.leadingAnchor, paddingLeading: PDimen.paddingS,
-                               trailing: contentView.trailingAnchor, paddingTrailing: -PDimen.paddingS)
+                               top: contentView.topAnchor, paddingTop: .paddingS,
+                               bottom: contentView.bottomAnchor, paddingBottom: -.paddingS,
+                               leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                               trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         characterValues.addArrangedSubview(characterName)
     }
 }

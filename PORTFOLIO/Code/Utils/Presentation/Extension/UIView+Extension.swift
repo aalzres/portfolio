@@ -16,14 +16,14 @@ enum LinePosition {
 extension UIView {
     func addNeumorphismStyle(colorLight: UIColor,
                              colorDark: UIColor,
-                             shadowRadius: CGFloat = PDimen.shadowRadius,
-                             cornerRadius: CGFloat = PDimen.cornerRadius) {
+                             shadowRadius: CGFloat = .shadowRadius,
+                             cornerRadius: CGFloat = .cornerRadius) {
         self.layoutIfNeeded()
         let shadowWhite = CALayer()
         shadowWhite.frame = self.bounds
         shadowWhite.backgroundColor = colorLight.cgColor
         shadowWhite.cornerRadius = cornerRadius
-        shadowWhite.shadowColor = PColor.white.cgColor
+        shadowWhite.shadowColor = .white
         shadowWhite.shadowOffset = CGSize(width: -shadowRadius, height: -shadowRadius)
         shadowWhite.shadowOpacity = 1
         shadowWhite.shadowRadius = shadowRadius
@@ -88,27 +88,18 @@ extension UIView {
         if let leading = leading    { leadingAnchor.constraint(equalTo: leading, constant: paddingLeading).isActive = true }
         if let trailing = trailing  { trailingAnchor.constraint(equalTo: trailing, constant: paddingTrailing).isActive = true }
     }
-    
-    func addGradientLayer() {
-        let layer = CAGradientLayer()
-        layer.frame = self.bounds
-        layer.colors = [PColor.grayL.cgColor, PColor.grayM.cgColor]
-        layer.startPoint = CGPoint(x: 0, y: 0)
-        layer.endPoint = CGPoint(x: 1, y: 1)
-        self.layer.addSublayer(layer)
-    }
-    
-    func addLine(position : LinePosition, color: UIColor = PColor.lineColor, width: CGFloat = PDimen.underlineWidth) {
+
+    func addLine(position : LinePosition, color: UIColor = .darkGray, width: CGFloat = 1) {
         let lineView = UIView()
         lineView.translatesAutoresizingMaskIntoConstraints = false
         lineView.backgroundColor = color
-        
+
         addSubview(lineView)
-        
+
         let metrics = ["width" : width]
         let views = ["lineView" : lineView]
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lineView]|", options: [], metrics: metrics, views: views))
-        
+
         switch position {
         case .top:
             addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lineView(width)]", options: [], metrics: metrics, views: views))
