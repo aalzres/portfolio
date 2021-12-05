@@ -45,7 +45,7 @@ class MeepVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    deinit {
+    deinit { 
         BaseDeinit.shared.printDeinit(self)
     }
     
