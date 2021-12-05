@@ -21,7 +21,7 @@ struct MainScreenItem {
 
 class MainScreenVC: UIViewController {
     private let presenter: MainScreenPresenter
-    
+
     private lazy var itemsTable: UITableView = {
         let itemsTable = UITableView()
         itemsTable.dataSource = self
