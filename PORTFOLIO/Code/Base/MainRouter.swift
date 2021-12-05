@@ -118,10 +118,16 @@ class MainRouterImpl: MainRouter {
     
     private func configNavBar(vc: UIViewController) {
         vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: vc.title ?? "", style: .plain, target: self, action: #selector(pop))
-        
+            
+        let textAttributes = [NSAttributedString.Key.foregroundColor: PColor.black]
         let backButton = UIImage(named: "iconBack")
+        
         navController?.navigationBar.backIndicatorImage = backButton
         navController?.navigationBar.backIndicatorTransitionMaskImage = backButton
+        navController?.navigationBar.barTintColor = PColor.white
+        navController?.navigationBar.tintColor = PColor.black
+        navController?.navigationBar.titleTextAttributes = textAttributes
+        navController?.navigationBar.largeTitleTextAttributes = textAttributes
     }
 }
 

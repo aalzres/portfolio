@@ -22,6 +22,11 @@
 	<true/>
 	<key>NSMainStoryboardFile</key>
 	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -56,5 +61,22 @@
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
 	</array>
+	<key>PORTFOLIOConfiguration</key>
+	<dict>
+		<key>ServerHostMarvel</key>
+		<string>$(SERVER_HOST_MARVEL)</string>
+		<key>PublicKeyMarvel</key>
+		<string>$(PUBLIC_KEY_MARVEL)</string>
+		<key>PrivateKeyMarvel</key>
+		<string>$(PRIVATE_KEY_MARVEL)</string>
+		<key>ServerApiVersionMarvel</key>
+		<string>$(SERVER_API_VERSION_MARVEL)</string>
+		<key>ServerApiVersionMeep</key>
+		<string>$(SERVER_API_VERSION_MEEP)</string>
+		<key>GMapsApiKey</key>
+		<string>$(GMAPS_API_KEY)</string>
+		<key>ServerHostMeep</key>
+		<string>$(SERVER_HOST_MEEP)</string>
+	</dict>
 </dict>
 </plist>

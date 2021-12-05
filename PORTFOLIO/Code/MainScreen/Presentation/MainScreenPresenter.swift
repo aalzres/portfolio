@@ -12,6 +12,8 @@ protocol MainScreenPresenterOutput: AnyObject {}
 
 protocol MainScreenPresenter {
     func goTextFieldVC()
+    func goMarvel()
+    func goMeep()
 }
 
 class MainScreenPresenterImpl: MainScreenPresenter {
@@ -27,6 +29,14 @@ class MainScreenPresenterImpl: MainScreenPresenter {
     
     func goTextFieldVC() {
         router.goTextFieldVC()
+    }
+    
+    func goMarvel() {
+        router.goMarvel()
+    }
+    
+    func goMeep() {
+        router.goMeep()
     }
 }
 

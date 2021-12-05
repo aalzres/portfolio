@@ -2,10 +2,11 @@
 platform :ios, '12.0'
 
 target 'PORTFOLIO' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+# Comment the next line if you don't want to use dynamic frameworks
+use_frameworks!
 
-  # Pods for PORTFOLIO
-	pod 'Alamofire', '5.2.1'
+# Pods for PORTFOLIO
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end
