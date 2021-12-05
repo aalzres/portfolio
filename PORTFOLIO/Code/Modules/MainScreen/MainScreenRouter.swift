@@ -19,7 +19,7 @@ class MainScreenRouter {
         UIApplication.serviceLocator.mainRouter.push(vc: vc)
     }
     
-    func goMeep() {
+    func goMapKit() {
         let vc = MeepRouter.create()
         UIApplication.serviceLocator.mainRouter.push(vc: vc)
     }
