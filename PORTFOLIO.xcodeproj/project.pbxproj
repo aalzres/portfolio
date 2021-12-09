@@ -12,6 +12,7 @@
 		55C93745275D62A5004A4715 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C93744275D62A5004A4715 /* NSObject+.swift */; };
 		55E768F42762BEA0007CDBFE /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55E768F32762BEA0007CDBFE /* Architecture */; };
 		55E768F62762C0C4007CDBFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E768F52762C0C4007CDBFE /* Colors.xcassets */; };
+		55E768F92762C1AB007CDBFE /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55E768F82762C1AB007CDBFE /* CakeList */; };
 		6700D1D024979D1F00ED44AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1CF24979D1F00ED44AB /* AppDelegate.swift */; };
 		6700D1D924979D2500ED44AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1D824979D2500ED44AB /* Assets.xcassets */; };
 		6700D1DC24979D2500ED44AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1DA24979D2500ED44AB /* LaunchScreen.storyboard */; };
@@ -91,6 +92,7 @@
 		55C93744275D62A5004A4715 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		55E768F22762BE92007CDBFE /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
 		55E768F52762C0C4007CDBFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		55E768F72762C19C007CDBFE /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
 		6700D1CC24979D1F00ED44AB /* portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6700D1CF24979D1F00ED44AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6700D1D824979D2500ED44AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			files = (
 				55757B4B2762BB5500E04A1A /* Utilities in Frameworks */,
 				55757B482762B9D200E04A1A /* UserInterface in Frameworks */,
+				55E768F92762C1AB007CDBFE /* CakeList in Frameworks */,
 				77A0D5E63DA609A8A58F7A8B /* libPods-PORTFOLIO.a in Frameworks */,
 				55E768F42762BEA0007CDBFE /* Architecture in Frameworks */,
 			);
@@ -206,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				55E768F22762BE92007CDBFE /* Architecture */,
+				55E768F72762C19C007CDBFE /* CakeList */,
 				55757B462762B9C300E04A1A /* UserInterface */,
 				55757B492762BB4800E04A1A /* Utilities */,
 			);
@@ -630,6 +634,7 @@
 				55757B472762B9D200E04A1A /* UserInterface */,
 				55757B4A2762BB5500E04A1A /* Utilities */,
 				55E768F32762BEA0007CDBFE /* Architecture */,
+				55E768F82762C1AB007CDBFE /* CakeList */,
 			);
 			productName = PORTFOLIO;
 			productReference = 6700D1CC24979D1F00ED44AB /* portfolio.app */;
@@ -1000,6 +1005,10 @@
 		55E768F32762BEA0007CDBFE /* Architecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Architecture;
+		};
+		55E768F82762C1AB007CDBFE /* CakeList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CakeList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
