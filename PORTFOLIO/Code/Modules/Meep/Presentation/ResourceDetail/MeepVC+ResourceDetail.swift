@@ -25,12 +25,12 @@ extension MeepVC {
         UIView.animate(withDuration: .animationDuration) { [weak self] in
             self?.resourceDetailHidden.isActive = false
             self?.resourceDetailSmall.isActive = false
-            
+
             switch size {
             case .hidden:   self?.resourceDetailHidden.isActive = true
             case .small:    self?.resourceDetailSmall.isActive = true
             }
-            
+
             self?.main.layoutIfNeeded()
             self?.main.setNeedsUpdateConstraints()
         }

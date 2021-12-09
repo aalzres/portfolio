@@ -1,9 +1,41 @@
 PODS:
   - Alamofire (5.4.4)
+  - SnapKit (5.0.1)
+  - SwifterSwift (5.3.0):
+    - SwifterSwift/AppKit (= 5.3.0)
+    - SwifterSwift/CoreAnimation (= 5.3.0)
+    - SwifterSwift/CoreGraphics (= 5.3.0)
+    - SwifterSwift/CoreLocation (= 5.3.0)
+    - SwifterSwift/Dispatch (= 5.3.0)
+    - SwifterSwift/Foundation (= 5.3.0)
+    - SwifterSwift/HealthKit (= 5.3.0)
+    - SwifterSwift/MapKit (= 5.3.0)
+    - SwifterSwift/SceneKit (= 5.3.0)
+    - SwifterSwift/SpriteKit (= 5.3.0)
+    - SwifterSwift/StoreKit (= 5.3.0)
+    - SwifterSwift/SwiftStdlib (= 5.3.0)
+    - SwifterSwift/UIKit (= 5.3.0)
+    - SwifterSwift/WebKit (= 5.3.0)
+  - SwifterSwift/AppKit (5.3.0)
+  - SwifterSwift/CoreAnimation (5.3.0)
+  - SwifterSwift/CoreGraphics (5.3.0)
+  - SwifterSwift/CoreLocation (5.3.0)
+  - SwifterSwift/Dispatch (5.3.0)
+  - SwifterSwift/Foundation (5.3.0)
+  - SwifterSwift/HealthKit (5.3.0)
+  - SwifterSwift/MapKit (5.3.0)
+  - SwifterSwift/SceneKit (5.3.0)
+  - SwifterSwift/SpriteKit (5.3.0)
+  - SwifterSwift/StoreKit (5.3.0)
+  - SwifterSwift/SwiftStdlib (5.3.0)
+  - SwifterSwift/UIKit (5.3.0)
+  - SwifterSwift/WebKit (5.3.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - "SnapKit (from `git@github.com:aalzres/Snapkit.git`, branch `develop`)"
+  - "SwifterSwift (from `git@github.com:aalzres/SwifterSwift.git`, branch `master`)"
   - SwiftyJSON
 
 SPEC REPOS:
@@ -11,10 +43,28 @@ SPEC REPOS:
     - Alamofire
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  SnapKit:
+    :branch: develop
+    :git: "git@github.com:aalzres/Snapkit.git"
+  SwifterSwift:
+    :branch: master
+    :git: "git@github.com:aalzres/SwifterSwift.git"
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :commit: 466db39ee4ef32b0f7c8cd9f009aaf42f80beace
+    :git: "git@github.com:aalzres/Snapkit.git"
+  SwifterSwift:
+    :commit: 425b82ae37d7ed256b75407e5dae66062b397f3c
+    :git: "git@github.com:aalzres/SwifterSwift.git"
+
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  SnapKit: 953b6dbadafbf0ad57fb657c84f8c479cba4483b
+  SwifterSwift: 03a3e5fe175b6696193b2c9d0dfa7f0bf9ac02cc
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 7526d7ac8e1cc67cc0a2f604bbf87e226f44f974
+PODFILE CHECKSUM: 2e51fa4c01c6994f0d9d2153471bc7c5aef5aab6
 
 COCOAPODS: 1.11.2

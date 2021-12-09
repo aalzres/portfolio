@@ -1,12 +1,14 @@
-# Uncomment the next line to define a global platform for your project
 platform :ios, '12.0'
 
-target 'PORTFOLIO' do
-# Comment the next line if you don't want to use dynamic frameworks
-use_frameworks!
+workspace 'PORTFOLIO'
+project 'PORTFOLIO.xcodeproj'
+#project 'Module/Architecture/Example/Pods/Pods.xcodeproj'
 
-# Pods for PORTFOLIO
+target 'PORTFOLIO' do
+
+  # Pods for PORTFOLIO
   pod 'Alamofire'
   pod 'SwiftyJSON'
-
+  pod 'SnapKit', :git => 'git@github.com:aalzres/Snapkit.git', :branch => 'develop'
+  pod 'SwifterSwift', :git => 'git@github.com:aalzres/SwifterSwift.git', :branch => 'master'
 end
