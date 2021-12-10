@@ -12,6 +12,7 @@ enum MainScreenTarget {
     case goTextView
     case goMarvel
     case goMapKit
+    case goCakeList
 }
 
 struct MainScreenItem {
@@ -33,8 +34,9 @@ class MainScreenVC: UIViewController {
     }()
     private var menuItems: [MainScreenItem] = [MainScreenItem(name: "main_screen_text_field".localized(), target: .goTextView),
                                                MainScreenItem(name: "main_screen_marvel".localized(), target: .goMarvel),
-                                               MainScreenItem(name: "main_screen_map_kit".localized(), target: .goMapKit)]
-    
+                                               MainScreenItem(name: "main_screen_map_kit".localized(), target: .goMapKit),
+                                               MainScreenItem(name: "main_screen_cake_list".localized(), target: .goCakeList)]
+
     init(presenter: MainScreenPresenter) {
         self.presenter = presenter
         
@@ -112,6 +114,8 @@ extension MainScreenVC: UITableViewDelegate {
             presenter.goMarvel()
         case .goMapKit:
             presenter.goMapKit()
+        case .goCakeList:
+            presenter.goCakeList()
         }
     }
 }

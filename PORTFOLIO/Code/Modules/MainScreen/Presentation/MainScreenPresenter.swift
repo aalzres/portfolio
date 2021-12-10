@@ -14,6 +14,7 @@ protocol MainScreenPresenter {
     func goTextFieldVC()
     func goMarvel()
     func goMapKit()
+    func goCakeList()
 }
 
 class MainScreenPresenterImpl: MainScreenPresenter {
@@ -37,6 +38,10 @@ class MainScreenPresenterImpl: MainScreenPresenter {
     
     func goMapKit() {
         router.goMapKit()
+    }
+
+    func goCakeList() {
+        router.goCakeList()
     }
 }
 

@@ -16,6 +16,7 @@
 "main_screen_text_field" = "UITextField";
 "main_screen_marvel" = "Marvel";
 "main_screen_map_kit" = "Map kit";
+"main_screen_cake_list" = "Cake list";
 
 /* Text Field */
 "text_field_header_view" = "Datos del usuario";
