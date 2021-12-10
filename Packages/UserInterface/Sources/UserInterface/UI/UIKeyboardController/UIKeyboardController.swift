@@ -9,7 +9,7 @@
 import UIKit
 
 open class UIKeyboardController: UIViewController  {
-    lazy var scrollView = UIScrollView()
+    public lazy var scrollView = UIScrollView()
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

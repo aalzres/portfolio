@@ -9,6 +9,4 @@ target 'PORTFOLIO' do
   # Pods for PORTFOLIO
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'SnapKit', :git => 'git@github.com:aalzres/Snapkit.git', :branch => 'develop'
-  pod 'SwifterSwift', :git => 'git@github.com:aalzres/SwifterSwift.git', :branch => 'master'
 end

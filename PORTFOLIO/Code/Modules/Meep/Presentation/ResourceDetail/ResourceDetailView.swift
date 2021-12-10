@@ -106,8 +106,8 @@ class ResourceDetailView: UIView {
         companyZoneId.text = "\(resource.companyZoneId)"
         
         guard let latitude = resource.latitude, let longitude = resource.longitude else { return }
-        lat.text = "resource_detail_latitude".localizedWithFormat(arguments: "\(latitude)")
-        lon.text = "resource_detail_longitude".localizedWithFormat(arguments: "\(longitude)")
+        lat.text = "resource_detail_latitude".localizedWith(args: "\(latitude)")
+        lon.text = "resource_detail_longitude".localizedWith(args: "\(longitude)")
     }
 }
 // MARK: - Delegate
