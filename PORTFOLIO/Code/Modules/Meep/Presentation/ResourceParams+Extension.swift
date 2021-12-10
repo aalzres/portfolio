@@ -6,7 +6,7 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
+import Domain
 
 // MARK: - Base on https://stackoverflow.com/questions/7477003/calculating-new-longitude-latitude-from-old-n-meters
 extension ResourceParamsEntity {

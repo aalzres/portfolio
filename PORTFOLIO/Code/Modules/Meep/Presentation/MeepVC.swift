@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Architecture
+import Domain
 
 class MeepVC: UIViewController {
     // MARK: - Presenter

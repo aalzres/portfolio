@@ -6,6 +6,8 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
+import Data
+
 protocol SplashRepositoryOutput: AnyObject {}
 
 protocol SplashRepository {}

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwifterSwift
 
 extension String {
     public var isValidEmail: Bool {

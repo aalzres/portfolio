@@ -6,7 +6,7 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
+import Domain
 
 protocol MeepOutput: AnyObject {
     func getResourcesSuccess(resourcesList: [ResourceEntity])
