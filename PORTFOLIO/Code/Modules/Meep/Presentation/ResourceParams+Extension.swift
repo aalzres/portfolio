@@ -14,16 +14,16 @@ extension ResourceParamsEntity {
         self.upperRight = calculateFrame(coordinatesOrigin: coords, multiplier: multiplier)
         self.lowerLeft = calculateFrame(coordinatesOrigin: coords, multiplier: -multiplier )
     }
-    
+
     func calculateFrame(coordinatesOrigin coords: Coordinates, multiplier: Double = 1 ) -> Coordinates {
         func calculateLatitude() -> Double {
             return coords.lat + ( multiplier * Constants.baseMultiplierLat / Constants.radiusEarth * Constants.radianToDegree)
         }
-        
+
         func calculateLongitude() -> Double {
             return coords.lon + ( multiplier * Constants.baseMultiplierLon / Constants.radiusEarth * Constants.radianToDegree / cos(coords.lat * Constants.degreeToRadian))
         }
-        
+
         return  Coordinates(lat: calculateLatitude(), lon: calculateLongitude())
     }
 }
