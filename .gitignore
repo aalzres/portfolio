@@ -78,5 +78,6 @@ xcuserdata/
 portfolio/!*.xcodeproj/xcshareddata/
 portfolio/!*.xcworkspace/contents.xcworkspacedata
 portfolio//*.gcno
+portfolio/Packages/!*/.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods
