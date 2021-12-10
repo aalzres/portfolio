@@ -21,7 +21,7 @@ struct MainScreenItem {
 
 class MainScreenVC: UIViewController {
     private let presenter: MainScreenPresenter
-    
+
     private lazy var itemsTable: UITableView = {
         let itemsTable = UITableView()
         itemsTable.dataSource = self
@@ -84,23 +84,6 @@ class MainScreenVC: UIViewController {
 }
 // MARK: - Output
 extension MainScreenVC: MainScreenPresenterOutput {}
-// MARK: - Selector
-extension MainScreenVC {
-    @objc
-    func goTextFieldVC() {
-        presenter.goTextFieldVC()
-    }
-    
-    @objc
-    func goMarvel() {
-        presenter.goMarvel()
-    }
-    
-    @objc
-    func goMeep() {
-        presenter.goMapKit()
-    }
-}
 // MARK: - UITableViewDelegate
 extension MainScreenVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

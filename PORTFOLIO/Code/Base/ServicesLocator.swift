@@ -14,10 +14,10 @@ final class ServiceLocator {
         let window = UIApplication.shared.keyWindow
         return RouterImpl(window: window)
     }()
-    
+
     lazy var networkManager: NetworkManager = {
         return NetworkManagerImpl(appConfiguration: appConfiguration)
     }()
-    
+
     lazy var appConfiguration: AppConfiguration = AppConfiguration()
 }

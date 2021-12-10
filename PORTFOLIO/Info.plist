@@ -18,14 +18,46 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>NSMainStoryboardFile</key>
-	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSMainStoryboardFile</key>
+	<string></string>
+	<key>PORTFOLIOConfiguration</key>
+	<dict>
+		<key>GMapsApiKey</key>
+		<string>$(GMAPS_API_KEY)</string>
+		<key>PrivateKeyMarvel</key>
+		<string>$(PRIVATE_KEY_MARVEL)</string>
+		<key>PublicKeyMarvel</key>
+		<string>$(PUBLIC_KEY_MARVEL)</string>
+		<key>ServerApiVersionMarvel</key>
+		<string>$(SERVER_API_VERSION_MARVEL)</string>
+		<key>ServerApiVersionMeep</key>
+		<string>$(SERVER_API_VERSION_MEEP)</string>
+		<key>ServerHostMarvel</key>
+		<string>$(SERVER_HOST_MARVEL)</string>
+		<key>ServerHostMeep</key>
+		<string>$(SERVER_HOST_MEEP)</string>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Black.ttf</string>
+		<string>Roboto-BlackItalic.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-BoldItalic.ttf</string>
+		<string>Roboto-Italic.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-LightItalic.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-MediumItalic.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Thin.ttf</string>
+		<string>Roboto-ThinItalic.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -46,37 +78,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Roboto-Black.ttf</string>
-		<string>Roboto-BlackItalic.ttf</string>
-		<string>Roboto-Bold.ttf</string>
-		<string>Roboto-BoldItalic.ttf</string>
-		<string>Roboto-Italic.ttf</string>
-		<string>Roboto-Light.ttf</string>
-		<string>Roboto-LightItalic.ttf</string>
-		<string>Roboto-Medium.ttf</string>
-		<string>Roboto-MediumItalic.ttf</string>
-		<string>Roboto-Regular.ttf</string>
-		<string>Roboto-Thin.ttf</string>
-		<string>Roboto-ThinItalic.ttf</string>
-	</array>
-	<key>PORTFOLIOConfiguration</key>
-	<dict>
-		<key>ServerHostMarvel</key>
-		<string>$(SERVER_HOST_MARVEL)</string>
-		<key>PublicKeyMarvel</key>
-		<string>$(PUBLIC_KEY_MARVEL)</string>
-		<key>PrivateKeyMarvel</key>
-		<string>$(PRIVATE_KEY_MARVEL)</string>
-		<key>ServerApiVersionMarvel</key>
-		<string>$(SERVER_API_VERSION_MARVEL)</string>
-		<key>ServerApiVersionMeep</key>
-		<string>$(SERVER_API_VERSION_MEEP)</string>
-		<key>GMapsApiKey</key>
-		<string>$(GMAPS_API_KEY)</string>
-		<key>ServerHostMeep</key>
-		<string>$(SERVER_HOST_MEEP)</string>
-	</dict>
 </dict>
 </plist>

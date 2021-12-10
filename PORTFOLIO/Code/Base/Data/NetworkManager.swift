@@ -72,7 +72,7 @@ class NetworkManagerImpl: NetworkManager {
     }
     
     private func addAuthorization(parameters: Parameters) -> Parameters {
-        let ts = TimeInterval().currentTimestamp()
+        let ts = TimeInterval(NSDate().timeIntervalSince1970)
         let hash = "\(ts)\(appConfiguration.privateKeyMarvel)\(appConfiguration.publicKeyMarvel)".hashMD5()
         
         var parameters = parameters
