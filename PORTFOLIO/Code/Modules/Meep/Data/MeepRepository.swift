@@ -6,19 +6,21 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
+import Domain
+import Data
+
 import Alamofire
 
-protocol MeepRepositoryOutput: AnyObject {
+public protocol MeepRepositoryOutput: AnyObject {
     func getResourcesSuccess(resourcesList: [ResourceEntity])
     func getResourcesFailure(error: NetworkErrorEntity)
 }
 
-protocol MeepRepository {
+public protocol MeepRepository {
     func getResources(resourceParams: ResourceParamsEntity?)
 }
 
-class MeepRepositoryImpl: MeepRepository {
+public class MeepRepositoryImpl: MeepRepository {
     weak var output: MeepRepositoryOutput?
     
     private let networkManager: NetworkManager
@@ -27,7 +29,7 @@ class MeepRepositoryImpl: MeepRepository {
         self.networkManager = networkManager
     }
     
-    func getResources(resourceParams: ResourceParamsEntity?) {
+    public func getResources(resourceParams: ResourceParamsEntity?) {
         let operation = ResourcesOperation(resourceParams: resourceParams, completionSuccess: { [weak self] resourcesList in
             guard let resourcesList = resourcesList as? [ResourceEntity]  else {
                 self?.output?.getResourcesFailure(error: .wrongDataError)

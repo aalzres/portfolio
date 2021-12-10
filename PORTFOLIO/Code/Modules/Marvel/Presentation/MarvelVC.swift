@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Domain
 
 struct CharacterItem {
     var name: String

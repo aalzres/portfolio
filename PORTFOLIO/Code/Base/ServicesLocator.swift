@@ -8,6 +8,7 @@
 
 import UIKit
 import Architecture
+import Data
 
 final class ServiceLocator {
     lazy var mainRouter: Router = {

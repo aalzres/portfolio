@@ -6,7 +6,8 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
+import Domain
+import Data
 
 protocol MarvelRepositoryOutput: AnyObject {
     func getCharactersSuccess(responseData: CharacterDataContainerEntity)
