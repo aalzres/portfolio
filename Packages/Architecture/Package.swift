@@ -14,14 +14,22 @@ let package =  Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-         .package(name: "UserInterface", path: "../UserInterface"),
+        .package(name: "Utilities", path: "../Utilities"),
+        .package(name: "UserInterface", path: "../UserInterface"),
+         .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.2.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Architecture",
-            dependencies: ["UserInterface"]),
+            dependencies: [
+                "Utilities",
+                "UserInterface",
+                "RxSwift",
+                .product(name: "RxCocoa", package: "RxSwift")
+            ]
+        ),
         .testTarget(
             name: "ArchitectureTests",
             dependencies: ["Architecture"]),
