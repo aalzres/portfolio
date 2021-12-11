@@ -101,9 +101,9 @@ open class BaseViewControllerImpl: UIViewController, BaseViewController {
 
     private func setupActivityIndicator() {
         view.addSubview(activityIndicator)
-//        activityIndicator.snp.makeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
+        activityIndicator.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 
     private func bindActivityIndicator() {
