@@ -50,7 +50,8 @@ final class ModuleCakeCommanderImpl: BaseCommander, ModuleCakeCommander {
             contentsOf: [
                 ModuleCakeGetOperation(
                     interactor: interactor,
-                    coordinator: coordinator
+                    coordinator: coordinator,
+                    stateSubject: stateSubject
                 ),
                 ModuleCakeGetErrorOperation(
                     interactor: interactor,

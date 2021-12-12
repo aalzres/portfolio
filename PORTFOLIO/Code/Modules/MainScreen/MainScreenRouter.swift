@@ -28,8 +28,8 @@ class MainScreenRouter {
     }
 
     func goCakeList() {
-        let useCase = CakeListUseCaseMock(.success)
-//        let useCase = CakeListUseCaseMock(.failure)
+//        let useCase = CakeListUseCaseMock(.success)
+        let useCase = CakeListUseCaseMock(.failure)
 //        let useCase = CakeListUseCaseMock(.isEmpty)
 
         ModuleCakeCoordinatorImpl(

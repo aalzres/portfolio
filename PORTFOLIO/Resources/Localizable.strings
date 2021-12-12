@@ -50,3 +50,7 @@
 "alert_view_action_title_by_default" = "Continuar";
 "alert_view_action_cancel_by_default" = "Cancelar";
 "alert_view_action_try_again_by_default" = "Try again";
+
+/* Cake List */
+"module_cake_list_is_empty_alert_title" = "Lo sentimos";
+"module_cake_list_is_empty_alert_message" = "No hay tartas disponibles";
