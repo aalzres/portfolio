@@ -1,5 +1,5 @@
 //
-//  ModuleCakeErrorOperation.swift
+//  ModuleCakeGetErrorOperation.swift
 //  PORTFOLIO
 //
 //  Created by Andres Felipe Alzate Restrepo on 11/12/21.
@@ -7,9 +7,12 @@
 //
 
 import RxSwift
-import Architecture
+import UIKit
 
-final class ModuleCakeErrorOperation: BaseOperation {
+import Architecture
+import UserInterface
+
+final class ModuleCakeGetErrorOperation: BaseOperation {
     private let interactor: ModuleCakeInteractor
     private let stateSubject: BehaviorSubject<ModuleCakeViewState>
 
@@ -25,9 +28,13 @@ final class ModuleCakeErrorOperation: BaseOperation {
     }
 
     private func bind() {
-//        interactor.getCakeListItem.underlyingError
-//            .withLatestFrom(stateSubject) { $1.changing(alert: $0.alert) }
-//            .bind(to: stateSubject)
-//            .disposed(by: disposeBag)
+        let completion: ((UIAlertAction) -> Void)? = { [weak self] _ in
+            self?.interactor.getCakeListItem.execute()
+        }
+
+        interactor.getCakeListItem.underlyingError
+            .withLatestFrom(stateSubject) { $1.changing(alert: $0.alert(completion)) }
+            .bind(to: stateSubject)
+            .disposed(by: disposeBag)
     }
 }

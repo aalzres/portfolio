@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CakeList
+import Domain
 
 class MainScreenRouter {
     func goTextFieldVC() {
@@ -25,7 +27,12 @@ class MainScreenRouter {
     }
 
     func goCakeList() {
-        print("limit::", #function, "In Proress")
+        let repository = CakeListRepositoryImpl()
+        let useCase = CakeListUseCaseImpl(repository: repository)
+        ModuleCakeCoordinatorImpl(
+            router: UIApplication.serviceLocator.mainRouter,
+            cakeListUseCase: useCase
+        ).present(animated: true)
     }
 
     class func create() -> MainScreenVC {
@@ -38,5 +45,13 @@ class MainScreenRouter {
         presenter.output = vc
         
         return vc
+    }
+}
+
+import RxSwift
+
+class CakeListRepositoryImpl: CakeListRepository {
+    func getCakeList() -> Single<Result<[CakeItem], Error>> {
+        .just(.success([]))
     }
 }

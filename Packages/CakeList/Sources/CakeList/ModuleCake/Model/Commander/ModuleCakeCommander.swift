@@ -48,7 +48,7 @@ final class ModuleCakeCommanderImpl: BaseCommander, ModuleCakeCommander {
         
         operations.append(
             contentsOf: [
-                ModuleCakeErrorOperation(
+                ModuleCakeGetErrorOperation(
                     interactor: interactor,
                     stateSubject: stateSubject
                 ),
