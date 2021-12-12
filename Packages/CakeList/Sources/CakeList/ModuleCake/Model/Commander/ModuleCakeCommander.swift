@@ -48,6 +48,10 @@ final class ModuleCakeCommanderImpl: BaseCommander, ModuleCakeCommander {
         
         operations.append(
             contentsOf: [
+                ModuleCakeGetOperation(
+                    interactor: interactor,
+                    coordinator: coordinator
+                ),
                 ModuleCakeGetErrorOperation(
                     interactor: interactor,
                     stateSubject: stateSubject

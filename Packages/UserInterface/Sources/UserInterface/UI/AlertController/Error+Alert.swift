@@ -12,8 +12,8 @@ public extension Error {
         .init(
             message: localizedDescription,
             actions: [
-                .init(title: "alert_view_action_cancel_by_default", style: .cancel),
-                .init(title: "alert_view_action_try_again_by_default", action: completion)
+                .init(title: "alert_view_action_cancel_by_default".localized(), style: .cancel),
+                .init(title: "alert_view_action_try_again_by_default".localized(), action: completion)
             ]
         )
     }

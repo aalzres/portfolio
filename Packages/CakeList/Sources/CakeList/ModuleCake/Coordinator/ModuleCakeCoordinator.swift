@@ -10,10 +10,12 @@ import UIKit
 import Architecture
 import Domain
 
-protocol ModuleCakeCoordinator { }
+protocol ModuleCakeCoordinator {
+    func navigateToCakeList()
+}
 
 public final class ModuleCakeCoordinatorImpl: BaseCoordinator, ModuleCakeCoordinator {
-    weak var viewController: UIViewController?
+    private weak var viewController: UIViewController?
     private let cakeListUseCase: CakeListUseCase
 
     public init(
@@ -46,5 +48,9 @@ public final class ModuleCakeCoordinatorImpl: BaseCoordinator, ModuleCakeCoordin
         self.viewController = viewController
 
         router.push(vc: viewController)
+    }
+
+    func navigateToCakeList() {
+        print("limit::", #function)
     }
 }
