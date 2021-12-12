@@ -33,6 +33,10 @@ final class ModuleCakeCommanderImpl: BaseCommander, ModuleCakeCommander {
         
         commands.append(
             contentsOf: [
+                ModuleCakeGetCommand(
+                    viewAction: viewAction,
+                    interator: interactor
+                ),
                 ModuleCakeScreenTimeCommand(
                     viewAction: viewAction
                 ),

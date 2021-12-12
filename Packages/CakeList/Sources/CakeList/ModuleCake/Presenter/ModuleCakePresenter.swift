@@ -26,6 +26,7 @@ final class ModuleCakePresenter: BasePresenter {
                 guard let self = self else { return }
                 switch value {
                 case .viewDidLoad: self.binding()
+                case .viewWillAppear: self.bindViewWillAppear()
                 default:
                     return
                 }
@@ -42,5 +43,9 @@ final class ModuleCakePresenter: BasePresenter {
             .asObservable()
             .bind(to: commander.viewAction)
             .disposed(by: disposeBag)
+    }
+
+    private func bindViewWillAppear() {
+        commander.viewAction.onNext(.onGetCakeList)
     }
 }

@@ -9,6 +9,7 @@
 enum ModuleCakeViewAction {
     case onBack
     case onScreenTime(Int)
+    case onGetCakeList
 }
 
 extension ModuleCakeViewAction {
@@ -19,5 +20,9 @@ extension ModuleCakeViewAction {
     var screenTime: Int? {
         guard case let .onScreenTime(time) = self else { return nil }
         return time
+    }
+    var getCakeList: Void? {
+        guard case let .onGetCakeList = self else { return nil }
+        return ()
     }
 }

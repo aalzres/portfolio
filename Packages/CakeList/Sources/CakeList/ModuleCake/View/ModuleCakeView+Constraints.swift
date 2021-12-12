@@ -16,7 +16,6 @@ extension ModuleCakeViewControllerImpl {
         logoImageView.snp.makeConstraints {
             $0.size.equalTo(CGSize.logoImageSize)
             $0.center.equalToSuperview()
-
         }
     }
 }
