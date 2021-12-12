@@ -1,18 +1,18 @@
 //
-//  ModuleCakeViewAction.swift
+//  CakeListViewAction.swift
 //  PORTFOLIO
 //
-//  Created by Andres Felipe Alzate Restrepo on 11/12/21.
+//  Created by Andres Felipe Alzate Restrepo on 12/12/21.
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
-enum ModuleCakeViewAction {
+enum CakeListViewAction {
     case onBack
     case onScreenTime(Int)
     case onGetCakeList
 }
 
-extension ModuleCakeViewAction {
+extension CakeListViewAction {
     var back: Void? {
         guard case .onBack = self else { return nil }
         return ()

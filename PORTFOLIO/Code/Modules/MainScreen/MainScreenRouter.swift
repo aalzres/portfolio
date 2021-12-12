@@ -35,7 +35,7 @@ class MainScreenRouter {
         ModuleCakeCoordinatorImpl(
             router: UIApplication.serviceLocator.mainRouter,
             cakeListUseCase: useCase
-        ).present(animated: true)
+        ).present()
     }
 
     class func create() -> MainScreenVC {

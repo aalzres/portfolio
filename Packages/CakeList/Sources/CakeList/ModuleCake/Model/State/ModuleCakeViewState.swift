@@ -12,14 +12,4 @@ import UserInterface
 struct ModuleCakeViewState: BaseViewState {
     var alert: AlertRepresentable? = nil
     var isLoading: Bool = false
-
-    var dynamicData: String = ""
-}
-
-extension ModuleCakeViewState {
-    func changing(dynamicData: String) -> Self {
-        var copy = copyMe()
-        copy.dynamicData = dynamicData
-        return copy
-    }
 }
