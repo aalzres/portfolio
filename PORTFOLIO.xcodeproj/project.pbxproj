@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		551131AA276341740058042B /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 551131A9276341740058042B /* Architecture */; };
-		551131AC276341770058042B /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 551131AB276341770058042B /* CakeList */; };
-		551131AE2763417E0058042B /* UserInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 551131AD2763417E0058042B /* UserInterface */; };
-		551131B0276341820058042B /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 551131AF276341820058042B /* Utilities */; };
-		55C93745275D62A5004A4715 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C93744275D62A5004A4715 /* NSObject+.swift */; };
-		55C9865D2763EA77006F9E69 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 55C9865C2763EA77006F9E69 /* Data */; };
-		55C9865F2763EA7C006F9E69 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55C9865E2763EA7C006F9E69 /* Domain */; };
+		5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 5508D7C92766216D002AD2E7 /* DomainMock */; };
+		5521738A2765330300F0132C /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 552173892765330300F0132C /* Data */; };
+		5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5597ED942765F9FD00A0B3AE /* Assets.xcassets */; };
 		55E768F62762C0C4007CDBFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E768F52762C0C4007CDBFE /* Colors.xcassets */; };
+		55EC6B06276534550002C7DB /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B05276534550002C7DB /* Architecture */; };
+		55EC6B08276534590002C7DB /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B07276534590002C7DB /* CakeList */; };
+		55EC6B0A2765345D0002C7DB /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B092765345D0002C7DB /* Domain */; };
+		55EC6B0C276534610002C7DB /* UserInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B0B276534610002C7DB /* UserInterface */; };
+		55EC6B0E276534650002C7DB /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B0D276534650002C7DB /* Utilities */; };
+		55F7709427655FC1003681A9 /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 55F7709327655FC1003681A9 /* Action */; };
 		6700D1D024979D1F00ED44AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1CF24979D1F00ED44AB /* AppDelegate.swift */; };
-		6700D1D924979D2500ED44AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1D824979D2500ED44AB /* Assets.xcassets */; };
 		6700D1DC24979D2500ED44AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1DA24979D2500ED44AB /* LaunchScreen.storyboard */; };
 		6700D1E72497B50000ED44AB /* ServicesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1E62497B50000ED44AB /* ServicesLocator.swift */; };
 		6700D1F72497BC6500ED44AB /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1EF2497BC6500ED44AB /* SplashRouter.swift */; };
@@ -65,20 +66,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5500EE3F2762CDB800A8137D /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
-		550F3004275E6026001E85E5 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		550F3007275E602A001E85E5 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		550F3081275E6237001E85E5 /* UserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5581649827634068003CFAEE /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
-		55C93744275D62A5004A4715 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
-		55C986572763E62B006F9E69 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
-		55C9865B2763EA6D006F9E69 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
-		55E768F22762BE92007CDBFE /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
+		5508D7C82766215D002AD2E7 /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
+		55217387276532F600F0132C /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
+		5521738B2765330C00F0132C /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
+		5521738C2765334C00F0132C /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
+		5521738D2765337200F0132C /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
+		5521738E2765337E00F0132C /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
+		5521738F2765338700F0132C /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
+		5597ED942765F9FD00A0B3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E768F52762C0C4007CDBFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		55E768F72762C19C007CDBFE /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
+		55F7709227655E3C003681A9 /* Action */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Action; path = Packages/Action; sourceTree = "<group>"; };
 		6700D1CC24979D1F00ED44AB /* portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6700D1CF24979D1F00ED44AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6700D1D824979D2500ED44AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6700D1DB24979D2500ED44AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6700D1DD24979D2500ED44AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6700D1E62497B50000ED44AB /* ServicesLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesLocator.swift; sourceTree = "<group>"; };
@@ -133,28 +132,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C9865F2763EA7C006F9E69 /* Domain in Frameworks */,
-				551131AE2763417E0058042B /* UserInterface in Frameworks */,
-				55C9865D2763EA77006F9E69 /* Data in Frameworks */,
-				551131AA276341740058042B /* Architecture in Frameworks */,
-				551131B0276341820058042B /* Utilities in Frameworks */,
-				551131AC276341770058042B /* CakeList in Frameworks */,
+				5521738A2765330300F0132C /* Data in Frameworks */,
+				55EC6B0E276534650002C7DB /* Utilities in Frameworks */,
+				55EC6B0C276534610002C7DB /* UserInterface in Frameworks */,
+				55F7709427655FC1003681A9 /* Action in Frameworks */,
+				5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */,
+				55EC6B06276534550002C7DB /* Architecture in Frameworks */,
+				55EC6B0A2765345D0002C7DB /* Domain in Frameworks */,
+				55EC6B08276534590002C7DB /* CakeList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		550F3003275E6026001E85E5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				550F3081275E6237001E85E5 /* UserInterface.framework */,
-				550F3007275E602A001E85E5 /* Utilities.framework */,
-				550F3004275E6026001E85E5 /* Architecture.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		551C64B7275CDE3A00304510 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,50 +158,35 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		5594C31527629C2900768421 /* Packages */ = {
+		55217386276532F600F0132C /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				55E768F22762BE92007CDBFE /* Architecture */,
-				55E768F72762C19C007CDBFE /* CakeList */,
-				55C9865B2763EA6D006F9E69 /* Data */,
-				55C986572763E62B006F9E69 /* Domain */,
-				5581649827634068003CFAEE /* UserInterface */,
-				5500EE3F2762CDB800A8137D /* Utilities */,
+				55F7709227655E3C003681A9 /* Action */,
+				5521738D2765337200F0132C /* Architecture */,
+				5521738C2765334C00F0132C /* CakeList */,
+				55217387276532F600F0132C /* Data */,
+				5521738B2765330C00F0132C /* Domain */,
+				5508D7C82766215D002AD2E7 /* DomainMock */,
+				5521738F2765338700F0132C /* UserInterface */,
+				5521738E2765337E00F0132C /* Utilities */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		55E768FA2762C1FA007CDBFE /* Extension */ = {
+		552173882765330300F0132C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				55E768FB2762C20C007CDBFE /* Foundation */,
 			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		55E768FB2762C20C007CDBFE /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				55E768FC2762C214007CDBFE /* NSObject */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		55E768FC2762C214007CDBFE /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				55C93744275D62A5004A4715 /* NSObject+.swift */,
-			);
-			path = NSObject;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6700D1C324979D1F00ED44AB = {
 			isa = PBXGroup;
 			children = (
-				5594C31527629C2900768421 /* Packages */,
+				55217386276532F600F0132C /* Packages */,
 				6700D1CE24979D1F00ED44AB /* PORTFOLIO */,
 				6700D1CD24979D1F00ED44AB /* Products */,
-				550F3003275E6026001E85E5 /* Frameworks */,
+				552173882765330300F0132C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,7 +222,7 @@
 		6700D1E424979D7B00ED44AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6700D1D824979D2500ED44AB /* Assets.xcassets */,
+				5597ED942765F9FD00A0B3AE /* Assets.xcassets */,
 				55E768F52762C0C4007CDBFE /* Colors.xcassets */,
 				675FDB7424A39CBF00126476 /* Fonts */,
 				6700D1DA24979D2500ED44AB /* LaunchScreen.storyboard */,
@@ -258,7 +234,6 @@
 		6700D1E52497B4EA00ED44AB /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				55E768FA2762C1FA007CDBFE /* Extension */,
 				6700D1E62497B50000ED44AB /* ServicesLocator.swift */,
 			);
 			path = Base;
@@ -501,12 +476,14 @@
 			);
 			name = PORTFOLIO;
 			packageProductDependencies = (
-				551131A9276341740058042B /* Architecture */,
-				551131AB276341770058042B /* CakeList */,
-				551131AD2763417E0058042B /* UserInterface */,
-				551131AF276341820058042B /* Utilities */,
-				55C9865C2763EA77006F9E69 /* Data */,
-				55C9865E2763EA7C006F9E69 /* Domain */,
+				552173892765330300F0132C /* Data */,
+				55EC6B05276534550002C7DB /* Architecture */,
+				55EC6B07276534590002C7DB /* CakeList */,
+				55EC6B092765345D0002C7DB /* Domain */,
+				55EC6B0B276534610002C7DB /* UserInterface */,
+				55EC6B0D276534650002C7DB /* Utilities */,
+				55F7709327655FC1003681A9 /* Action */,
+				5508D7C92766216D002AD2E7 /* DomainMock */,
 			);
 			productName = PORTFOLIO;
 			productReference = 6700D1CC24979D1F00ED44AB /* portfolio.app */;
@@ -564,8 +541,8 @@
 				675FDB8524A39CBF00126476 /* Roboto-MediumItalic.ttf in Resources */,
 				674E33102498E50C00428BD0 /* Localizable.strings in Resources */,
 				55E768F62762C0C4007CDBFE /* Colors.xcassets in Resources */,
+				5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */,
 				675FDB8924A39CBF00126476 /* Roboto-Italic.ttf in Resources */,
-				6700D1D924979D2500ED44AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +584,6 @@
 				674E32FE2498BC5F00428BD0 /* MainScreenRepository.swift in Sources */,
 				674E33012498BC5F00428BD0 /* MainScreenPresenter.swift in Sources */,
 				6715CCBA24C33E72009F1C26 /* ResourceDetailView.swift in Sources */,
-				55C93745275D62A5004A4715 /* NSObject+.swift in Sources */,
 				6700D1FA2497BC6500ED44AB /* SplashVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,29 +796,37 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		551131A9276341740058042B /* Architecture */ = {
+		5508D7C92766216D002AD2E7 /* DomainMock */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Architecture;
+			productName = DomainMock;
 		};
-		551131AB276341770058042B /* CakeList */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CakeList;
-		};
-		551131AD2763417E0058042B /* UserInterface */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UserInterface;
-		};
-		551131AF276341820058042B /* Utilities */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Utilities;
-		};
-		55C9865C2763EA77006F9E69 /* Data */ = {
+		552173892765330300F0132C /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
 		};
-		55C9865E2763EA7C006F9E69 /* Domain */ = {
+		55EC6B05276534550002C7DB /* Architecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Architecture;
+		};
+		55EC6B07276534590002C7DB /* CakeList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CakeList;
+		};
+		55EC6B092765345D0002C7DB /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
+		};
+		55EC6B0B276534610002C7DB /* UserInterface */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserInterface;
+		};
+		55EC6B0D276534650002C7DB /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
+		};
+		55F7709327655FC1003681A9 /* Action */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Action;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

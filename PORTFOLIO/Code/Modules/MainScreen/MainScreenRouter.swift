@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CakeList
+import Domain
+import DomainMock
 
 class MainScreenRouter {
     func goTextFieldVC() {
@@ -23,7 +26,18 @@ class MainScreenRouter {
         let vc = MeepRouter.create()
         UIApplication.serviceLocator.mainRouter.push(vc: vc)
     }
-    
+
+    func goCakeList() {
+//        let useCase = CakeListUseCaseMock(.success)
+        let useCase = CakeListUseCaseMock(.failure)
+//        let useCase = CakeListUseCaseMock(.isEmpty)
+
+        ModuleCakeCoordinatorImpl(
+            router: UIApplication.serviceLocator.mainRouter,
+            cakeListUseCase: useCase
+        ).present(animated: true)
+    }
+
     class func create() -> MainScreenVC {
         let repository = MainScreenRepositoryImpl()
         let router = MainScreenRouter()
