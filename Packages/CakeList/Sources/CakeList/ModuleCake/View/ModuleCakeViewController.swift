@@ -45,7 +45,15 @@ final class ModuleCakeViewControllerImpl: BaseViewControllerImpl, ModuleCakeView
 
     // MARK: - Binding
     private func bindState() {
+        bindAlert()
         bindLoading()
+    }
+
+    private func bindAlert() {
+        dataSubject
+            .map(\.alert)
+            .bind(to: view.rx.presentAlert)
+            .disposed(by: rx.disposeBag)
     }
 
     private func bindLoading() {

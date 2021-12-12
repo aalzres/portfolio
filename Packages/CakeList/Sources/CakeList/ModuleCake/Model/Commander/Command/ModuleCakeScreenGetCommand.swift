@@ -9,7 +9,7 @@ import RxSwift
 import Architecture
 
 final class ModuleCakeGetCommand: BaseCommand {
-    private var interator: ModuleCakeInteractor
+    private let interator: ModuleCakeInteractor
 
     init(
         viewAction: Observable<ModuleCakeViewAction>,

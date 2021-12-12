@@ -7,8 +7,10 @@
 //
 
 import Architecture
+import UserInterface
 
 struct ModuleCakeViewState: BaseViewState {
+    var alert: AlertRepresentable? = nil
     var isLoading: Bool = false
 
     var dynamicData: String = ""
