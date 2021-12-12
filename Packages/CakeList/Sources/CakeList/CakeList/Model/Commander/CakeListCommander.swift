@@ -34,6 +34,10 @@ final class CakeListCommanderImpl: BaseCommander, CakeListCommander {
         
         commands.append(
             contentsOf: [
+                CakeListGetCommand(
+                    viewAction: viewAction,
+                    interator: interactor
+                ),
                 CakeListScreenTimeCommand(
                     viewAction: viewAction
                 ),
