@@ -9,6 +9,7 @@
 import UIKit
 import CakeList
 import Domain
+import DomainMock
 
 class MainScreenRouter {
     func goTextFieldVC() {
@@ -27,8 +28,10 @@ class MainScreenRouter {
     }
 
     func goCakeList() {
-        let repository = CakeListRepositoryImpl()
-        let useCase = CakeListUseCaseImpl(repository: repository)
+        let useCase = CakeListUseCaseMock(.success)
+//        let useCase = CakeListUseCaseMock(.failure)
+//        let useCase = CakeListUseCaseMock(.isEmpty)
+
         ModuleCakeCoordinatorImpl(
             router: UIApplication.serviceLocator.mainRouter,
             cakeListUseCase: useCase
@@ -45,13 +48,5 @@ class MainScreenRouter {
         presenter.output = vc
         
         return vc
-    }
-}
-
-import RxSwift
-
-class CakeListRepositoryImpl: CakeListRepository {
-    func getCakeList() -> Single<Result<[CakeItem], Error>> {
-        .just(.success([]))
     }
 }

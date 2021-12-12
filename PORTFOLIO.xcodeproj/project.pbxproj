@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 5508D7C92766216D002AD2E7 /* DomainMock */; };
 		5521738A2765330300F0132C /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 552173892765330300F0132C /* Data */; };
 		5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5597ED942765F9FD00A0B3AE /* Assets.xcassets */; };
 		55E768F62762C0C4007CDBFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E768F52762C0C4007CDBFE /* Colors.xcassets */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5508D7C82766215D002AD2E7 /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
 		55217387276532F600F0132C /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
 		5521738B2765330C00F0132C /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
 		5521738C2765334C00F0132C /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				55EC6B0E276534650002C7DB /* Utilities in Frameworks */,
 				55EC6B0C276534610002C7DB /* UserInterface in Frameworks */,
 				55F7709427655FC1003681A9 /* Action in Frameworks */,
+				5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */,
 				55EC6B06276534550002C7DB /* Architecture in Frameworks */,
 				55EC6B0A2765345D0002C7DB /* Domain in Frameworks */,
 				55EC6B08276534590002C7DB /* CakeList in Frameworks */,
@@ -163,6 +166,7 @@
 				5521738C2765334C00F0132C /* CakeList */,
 				55217387276532F600F0132C /* Data */,
 				5521738B2765330C00F0132C /* Domain */,
+				5508D7C82766215D002AD2E7 /* DomainMock */,
 				5521738F2765338700F0132C /* UserInterface */,
 				5521738E2765337E00F0132C /* Utilities */,
 			);
@@ -479,6 +483,7 @@
 				55EC6B0B276534610002C7DB /* UserInterface */,
 				55EC6B0D276534650002C7DB /* Utilities */,
 				55F7709327655FC1003681A9 /* Action */,
+				5508D7C92766216D002AD2E7 /* DomainMock */,
 			);
 			productName = PORTFOLIO;
 			productReference = 6700D1CC24979D1F00ED44AB /* portfolio.app */;
@@ -791,6 +796,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5508D7C92766216D002AD2E7 /* DomainMock */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DomainMock;
+		};
 		552173892765330300F0132C /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
