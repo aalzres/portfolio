@@ -6,7 +6,21 @@
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
+import CoreGraphics
+
 extension ModuleCakeViewControllerImpl {
-    func addAllSubviews() {}
-    func addAllConstraints() {}
+    func addAllSubviews() {
+        view.addSubview(logoImageView)
+    }
+    func addAllConstraints() {
+        logoImageView.snp.makeConstraints {
+            $0.size.equalTo(CGSize.logoImageSize)
+            $0.center.equalToSuperview()
+
+        }
+    }
+}
+
+extension CGSize {
+    static let logoImageSize: CGSize = .init(width: 128, height: 128)
 }
