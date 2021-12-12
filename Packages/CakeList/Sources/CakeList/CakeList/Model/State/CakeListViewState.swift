@@ -13,13 +13,13 @@ struct CakeListViewState: BaseViewState {
     var alert: AlertRepresentable? = nil
     var isLoading: Bool = false
 
-    var dynamicData: String = ""
+    var cakeViewState: [CakeRepresentable] = []
 }
 
 extension CakeListViewState {
-    func changing(dynamicData: String) -> Self {
+    func changing(cakeViewState: [CakeRepresentable]) -> Self {
         var copy = copyMe()
-        copy.dynamicData = dynamicData
+        copy.cakeViewState = cakeViewState
         return copy
     }
 }

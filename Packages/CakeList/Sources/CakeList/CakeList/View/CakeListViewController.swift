@@ -17,8 +17,16 @@ protocol CakeListViewController: BaseViewController {
     var action: Driver<CakeListViewAction> { get }
 }
 
-final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewController {
+final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewController, UIScrollViewDelegate {
     // MARK: - UIElements
+    lazy var cakeItemSize = CGSize(width: (view.width - .paddingXS * 4) / 2, height: view.height/4)
+    lazy var collectionViewLayout = UICollectionViewFlowLayout()
+        .set(\.sectionInset, UIEdgeInsets(inset: .paddingXS))
+        .set(\.itemSize, cakeItemSize)
+
+    lazy var cakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        .set(\.register, CakeCollectionViewCell.self)
+        .set(\.backgroundColor, .background)
 
     // MARK: - Reactive State and Actions
     private let dataSubject = PublishSubject<CakeListViewState>()
@@ -34,6 +42,7 @@ final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewCont
     // MARK: - Setup
     override func setupView() {
         super.setupView()
+        title = "cake_list_title_view".localized()
         view.backgroundColor = .background
         addAllSubviews()
         addAllConstraints()
@@ -43,8 +52,19 @@ final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewCont
 
     // MARK: - Binding
     private func bindState() {
+        bindCakeCollectionView()
         bindAlert()
         bindLoading()
+    }
+
+    private func bindCakeCollectionView() {
+        let items = (CakeCollectionViewCell.reuseIdentifier, CakeCollectionViewCell.self)
+        dataSubject
+            .map(\.cakeViewState)
+            .bind(to: cakeCollectionView.rx.items(cellIdentifier: items.0, cellType: items.1))  { _, viewState, cell in
+                cell.representable = viewState
+            }
+            .disposed(by: rx.disposeBag)
     }
 
     private func bindAlert() {
