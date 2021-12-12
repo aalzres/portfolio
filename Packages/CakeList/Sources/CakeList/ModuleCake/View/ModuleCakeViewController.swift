@@ -64,9 +64,9 @@ final class ModuleCakeViewControllerImpl: BaseViewControllerImpl, ModuleCakeView
     }
 
     private func bindBack() {
-//        onBack
-//            .mapTo(.onBack)
-//            .drive(actionSubject)
-//            .disposed(by: rx.disposeBag)
+        onBack
+            .mapTo(.onBack)
+            .drive(actionSubject)
+            .disposed(by: rx.disposeBag)
     }
 }
