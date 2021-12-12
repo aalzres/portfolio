@@ -12,3 +12,9 @@ extension SharedSequence {
         filter { $0 != nil }.map { $0! }
     }
 }
+
+extension SharedSequenceConvertibleType {
+    public func mapTo<Result>(_ value: Result) -> SharedSequence<SharingStrategy, Result> {
+        map { _ in value }
+    }
+}
