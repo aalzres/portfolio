@@ -19,10 +19,10 @@ protocol CakeListCommander {
 final class CakeListCommanderImpl: BaseCommander, CakeListCommander {
     private let actionSubject = PublishSubject<CakeListViewAction>()
     var viewAction: AnyObserver<CakeListViewAction> { actionSubject.asObserver() }
-
+    
     private let stateSubject: BehaviorSubject<CakeListViewState>
     var model: Driver<CakeListViewState> { stateSubject.asDriverIgnoringErrors() }
-
+    
     init(
         coordinator: CakeListCoordinator,
         interactor: CakeListInteractor
@@ -49,6 +49,10 @@ final class CakeListCommanderImpl: BaseCommander, CakeListCommander {
         
         operations.append(
             contentsOf: [
+                CakeListGetOperation(
+                    interactor: interactor,
+                    stateSubject: stateSubject
+                ),
                 CakeListErrorOperation(
                     interactor: interactor,
                     stateSubject: stateSubject
