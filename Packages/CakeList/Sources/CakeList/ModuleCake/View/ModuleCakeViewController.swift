@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 
 import Architecture
+import UIKit
 
 protocol ModuleCakeViewController: BaseViewController {
     var data: AnyObserver<ModuleCakeViewState> { get }
@@ -18,7 +19,9 @@ protocol ModuleCakeViewController: BaseViewController {
 
 final class ModuleCakeViewControllerImpl: BaseViewControllerImpl, ModuleCakeViewController {
     // MARK: - UIElements
-
+    lazy var logoImageView = UIImageView()
+        .set(\.image, UIImage(cakeListNamed: "module_cake_logo"))
+        .set(\.tintColor, .light)
     // MARK: - Reactive State and Actions
     private let dataSubject = PublishSubject<ModuleCakeViewState>()
     var data: AnyObserver<ModuleCakeViewState> {
@@ -33,6 +36,7 @@ final class ModuleCakeViewControllerImpl: BaseViewControllerImpl, ModuleCakeView
     // MARK: - Setup
     override func setupView() {
         super.setupView()
+        view.backgroundColor = .first
         addAllSubviews()
         addAllConstraints()
         bindState()
