@@ -25,8 +25,9 @@ final class ModuleCakePresenter: BasePresenter {
             .subscribe(onNext: { [weak self] value in
                 guard let self = self else { return }
                 switch value {
-                case .viewDidLoad: self.binding()
-                case .viewWillAppear: self.bindViewWillAppear()
+                case .viewDidLoad:
+                    self.binding()
+                    self.execute()
                 default:
                     return
                 }
@@ -45,7 +46,7 @@ final class ModuleCakePresenter: BasePresenter {
             .disposed(by: disposeBag)
     }
 
-    private func bindViewWillAppear() {
+    private func execute() {
         commander.viewAction.onNext(.onGetCakeList)
     }
 }
