@@ -1,8 +1,8 @@
 //
-//  ModuleCakeCoordinator.swift
+//  CakeListCoordinator.swift
 //  PORTFOLIO
 //
-//  Created by Andres Felipe Alzate Restrepo on 11/12/21.
+//  Created by Andres Felipe Alzate Restrepo on 12/12/21.
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import UIKit
 import Architecture
 import Domain
 
-protocol ModuleCakeCoordinator {
-    func navigateToCakeList()
+protocol CakeListCoordinator {
+    func navigateToCakeDetail()
 }
 
-public final class ModuleCakeCoordinatorImpl: BaseCoordinator, ModuleCakeCoordinator {
+final class CakeListCoordinatorImpl: BaseCoordinator, CakeListCoordinator {
     private weak var viewController: UIViewController?
     private let cakeListUseCase: CakeListUseCase
 
@@ -27,20 +27,20 @@ public final class ModuleCakeCoordinatorImpl: BaseCoordinator, ModuleCakeCoordin
     }
 
     public func present() {
-        let interactor = ModuleCakeInteractorImpl(
+        let interactor = CakeListInteractorImpl(
             cakeListUseCase: cakeListUseCase
         )
 
-        let commander = ModuleCakeCommanderImpl(
+        let commander = CakeListCommanderImpl(
             coordinator: self,
             interactor: interactor
         )
 
-        let presenter = ModuleCakePresenter(
+        let presenter = CakeListPresenter(
             commander: commander
         )
 
-        let viewController = ModuleCakeViewControllerImpl()
+        let viewController = CakeListViewControllerImpl()
 
         viewController.presenter = presenter
         presenter.view = viewController
@@ -50,10 +50,7 @@ public final class ModuleCakeCoordinatorImpl: BaseCoordinator, ModuleCakeCoordin
         router.push(vc: viewController)
     }
 
-    func navigateToCakeList() {
-        CakeListCoordinatorImpl(
-            router: router,
-            cakeListUseCase: cakeListUseCase
-        ).present()
+    func navigateToCakeDetail() {
+        print("limit::", #function)
     }
 }

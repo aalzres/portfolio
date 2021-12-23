@@ -1,22 +1,22 @@
 //
-//  ModuleCakePresenter.swift
+//  CakeListPresenter.swift
 //  PORTFOLIO
 //
-//  Created by Andres Felipe Alzate Restrepo on 11/12/21.
+//  Created by Andres Felipe Alzate Restrepo on 12/12/21.
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
 import Architecture
 
-final class ModuleCakePresenter: BasePresenter {
+final class CakeListPresenter: BasePresenter {
     // swiftlint:disable:next implicitly_unwrapped_optional
-    weak var view: ModuleCakeViewController! {
+    weak var view: CakeListViewController! {
         didSet { bindLifeCycle() }
     }
 
-    private let commander: ModuleCakeCommander
+    private let commander: CakeListCommander
 
-    init(commander: ModuleCakeCommander) {
+    init(commander: CakeListCommander) {
         self.commander = commander
     }
 
@@ -25,9 +25,8 @@ final class ModuleCakePresenter: BasePresenter {
             .subscribe(onNext: { [weak self] value in
                 guard let self = self else { return }
                 switch value {
-                case .viewDidLoad:
-                    self.binding()
-                    self.execute()
+                case .viewDidLoad: self.binding()
+                case .viewWillAppear: self.bindViewWillAppear()
                 default:
                     return
                 }
@@ -46,7 +45,7 @@ final class ModuleCakePresenter: BasePresenter {
             .disposed(by: disposeBag)
     }
 
-    private func execute() {
+    private func bindViewWillAppear() {
         commander.viewAction.onNext(.onGetCakeList)
     }
 }

@@ -54,3 +54,4 @@
 /* Cake List */
 "module_cake_list_is_empty_alert_title" = "Lo sentimos";
 "module_cake_list_is_empty_alert_message" = "No hay tartas disponibles";
+"cake_list_title_view" = "Lista de tartas";

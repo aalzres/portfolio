@@ -28,14 +28,12 @@ class MainScreenRouter {
     }
 
     func goCakeList() {
-//        let useCase = CakeListUseCaseMock(.success)
-        let useCase = CakeListUseCaseMock(.failure)
-//        let useCase = CakeListUseCaseMock(.isEmpty)
+        let useCaseMock: [CakeListUseCaseMock] = [.init(.success), .init(.failure), .init(.isEmpty)]
 
         ModuleCakeCoordinatorImpl(
             router: UIApplication.serviceLocator.mainRouter,
-            cakeListUseCase: useCase
-        ).present(animated: true)
+            cakeListUseCase: useCaseMock[0]
+        ).present()
     }
 
     class func create() -> MainScreenVC {
