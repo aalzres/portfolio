@@ -34,6 +34,10 @@ final class CakeListCommanderImpl: BaseCommander, CakeListCommander {
         
         commands.append(
             contentsOf: [
+                CakeListTapCakeCommand(
+                    viewAction: viewAction,
+                    coordinator: coordinator
+                ),
                 CakeListGetCommand(
                     viewAction: viewAction,
                     interator: interactor
