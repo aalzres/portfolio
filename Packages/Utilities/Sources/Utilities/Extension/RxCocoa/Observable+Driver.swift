@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 extension Observable {
-     public func asDriverIgnoringErrors() -> Driver<Element> {
+    public func asDriverIgnoringErrors() -> Driver<Element> {
         map { $0 as Element? }
         .asDriver(onErrorJustReturn: nil)
         .unwrap()

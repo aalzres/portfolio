@@ -18,6 +18,7 @@ protocol CakeDetailViewController: BaseViewController {
 }
 
 final class CakeDetailViewControllerImpl: BaseViewControllerImpl, CakeDetailViewController {
+    override var backgroundColor: UIColor? { .light }
     // MARK: - UIElements
     lazy var cakeImageView = UIImageView()
         .set(\.contentMode, .top)
@@ -36,18 +37,9 @@ final class CakeDetailViewControllerImpl: BaseViewControllerImpl, CakeDetailView
         actionSubject.asDriverIgnoringErrors()
     }
 
-    // MARK: - Setup
-    override func setupView() {
-        super.setupView()
-        view.backgroundColor = .light
-        addAllSubviews()
-        addAllConstraints()
-        bindState()
-        bindActions()
-    }
-
     // MARK: - Binding
-    private func bindState() {
+    override func bindState() {
+        super.bindState()
         bindCake()
         bindToast()
         bindLoading()
@@ -79,7 +71,8 @@ final class CakeDetailViewControllerImpl: BaseViewControllerImpl, CakeDetailView
             .disposed(by: rx.disposeBag)
     }
 
-    private func bindActions() {
+    override func bindActions() {
+        super.bindActions()
         bindTimeView()
         bindBack()
     }
