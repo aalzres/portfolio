@@ -6,12 +6,13 @@
 //
 
 import Domain
+import UserInterface
 
 struct CakeRepresentable {
     let item: CakeItem
     let title: String
     let description: String
-    let imageUrl: String
+    let image: ImageRepresentable
 }
 
 extension CakeRepresentable: Hashable {
@@ -23,7 +24,7 @@ extension CakeRepresentable: Hashable {
 
     static func == (lhs: CakeRepresentable, rhs: CakeRepresentable) -> Bool {
         lhs.title == rhs.title &&
-        lhs.imageUrl == rhs.imageUrl &&
+        lhs.image == rhs.image &&
         lhs.description == rhs.description
     }
 }

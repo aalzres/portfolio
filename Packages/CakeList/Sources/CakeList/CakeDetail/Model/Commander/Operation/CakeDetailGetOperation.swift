@@ -40,7 +40,7 @@ private extension CakeRepresentable {
             item: cakeItem,
             title: cakeItem.title,
             description: cakeItem.description,
-            imageUrl: cakeItem.image
+            image: .external(cakeItem.image)
         )
     }
 }

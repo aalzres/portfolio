@@ -62,14 +62,7 @@ final class CakeCollectionViewCell: UICollectionViewCell {
     
     private func set(_ representable: CakeRepresentable) {
         titleLabel.text = representable.title
-
-        guard let urlRequest: URLRequest = URLRequest(urlString: representable.imageUrl) else { return }
-        URLSession.shared.rx
-            .response(request: urlRequest)
-            .subscribe(on: ConcurrentMainScheduler.instance)
-            .map { UIImage(data: $0.data) }
-            .bind(to: cakeImageView.rx.image)
-            .disposed(by: rx.disposeBag)
+        cakeImageView.imageRepresentable = representable.image
     }
 }
 
