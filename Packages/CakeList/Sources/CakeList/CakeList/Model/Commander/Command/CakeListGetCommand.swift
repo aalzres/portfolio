@@ -26,7 +26,7 @@ final class CakeListGetCommand: BaseCommand {
             .compactMap(\.getCakeList)
             .withUnretained(self)
             .subscribe(onNext: { $0.0.execute() })
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
     private func execute() {

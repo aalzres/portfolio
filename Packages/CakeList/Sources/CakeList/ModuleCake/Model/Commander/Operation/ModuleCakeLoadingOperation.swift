@@ -32,6 +32,6 @@ final class ModuleCakeLoadingOperation: BaseOperation {
         executing
             .withLatestFrom(stateSubject) { $1.changing(isLoading: $0) }
             .bind(to: stateSubject)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 }

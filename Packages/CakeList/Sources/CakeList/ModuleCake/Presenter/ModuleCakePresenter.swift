@@ -27,26 +27,26 @@ final class ModuleCakePresenter: BasePresenter {
                 switch value {
                 case .viewDidLoad:
                     self.binding()
-                    self.execute()
+                    self.executeViewDidLoad()
                 default:
                     return
                 }
             })
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
     private func binding() {
         commander.model
             .drive(view.data)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
 
         view.action
             .asObservable()
             .bind(to: commander.viewAction)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
-    private func execute() {
+    private func executeViewDidLoad() {
         commander.viewAction.onNext(.onGetCakeList)
     }
 }

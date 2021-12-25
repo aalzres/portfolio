@@ -36,13 +36,13 @@ final class ModuleCakeGetOperation: BaseOperation {
             .skip(while: { $0.isEmpty })
             .withUnretained(self)
             .subscribe(onNext: { $0.0.execute() })
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
 
         cakeListElements
             .filter(\.isEmpty)
             .withLatestFrom(stateSubject) { $1.changing(alert: .withoutCake) }
             .bind(to: stateSubject)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
     private func execute() {

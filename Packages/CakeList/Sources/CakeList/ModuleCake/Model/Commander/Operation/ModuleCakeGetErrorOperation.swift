@@ -35,6 +35,6 @@ final class ModuleCakeGetErrorOperation: BaseOperation {
         interactor.getCakeListItem.underlyingError
             .withLatestFrom(stateSubject) { $1.changing(alert: $0.alert(completion)) }
             .bind(to: stateSubject)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 }
