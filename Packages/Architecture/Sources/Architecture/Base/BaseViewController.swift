@@ -28,7 +28,7 @@ public protocol BaseViewController: AnyObject {
     var closeNavigation: Driver<Void> { get }
 }
 
-open class BaseViewControllerImpl: UIKeyboardController, BaseViewController {
+open class BaseViewControllerImpl: UIViewController, BaseViewController {
     open var backgroundColor: UIColor? { .background }
     open var titleView: String { "" }
     open var isNavigationBarHidden: Bool { false }

@@ -14,8 +14,10 @@ class TextFieldRouter {
         let router = TextFieldRouter()
         let interactor = TextFieldImpl(repository: repository)
         let presenter = TextFieldPresenterImpl(router: router, interactor: interactor)
+        let vc = TextFieldVC()
+
         interactor.output = presenter
-        let vc = TextFieldVC(presenter: presenter)
+        vc.presenter = presenter
         presenter.output = vc
         
         return vc

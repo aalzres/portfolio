@@ -8,8 +8,9 @@
 
 import UIKit
 
-open class UIKeyboardController: UIViewController  {
+open class BaseViewKeyboardController: BaseViewControllerImpl {
     public lazy var scrollView = UIScrollView()
+    public lazy var contentView = UIView()
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -30,7 +31,22 @@ open class UIKeyboardController: UIViewController  {
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
-    
+
+    open override func addAllSubviews() {
+        super.addAllSubviews()
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+    }
+
+    open override func addAllConstraints() {
+        super.addAllConstraints()
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(safeArea)
+        }
+        contentView.snp.makeConstraints {
+            $0.edges.width.equalToSuperview()
+        }
+    }
     @objc
     func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }

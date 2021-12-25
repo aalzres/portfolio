@@ -8,12 +8,11 @@
 
 import UIKit
 import UserInterface
+import Architecture
 
-class TextFieldVC: UIKeyboardController {
-    private let presenter: TextFieldPresenter
-    
-    private lazy var contentView = UIView()
-    
+class TextFieldVC: BaseViewKeyboardController {
+    override var titleView: String { "main_screen_text_field".localized() }
+
     private lazy var headerView = UILabel()
         .set(\.font, .title)
         .set(\.textColor, .black)
@@ -50,7 +49,6 @@ class TextFieldVC: UIKeyboardController {
         .set(\.text, "text_field_date_of_birth".localized())
 
     private lazy var dateOfBirthInput = UIDatePicker()
-        .set(\.backgroundColor, .white)
         .set(\.datePickerMode, .date)
 
     private lazy var mailLabel = UILabel()
@@ -106,34 +104,8 @@ class TextFieldVC: UIKeyboardController {
         .set(\.textColor, .black)
         .addLine(position: .bottom)
 
-    init(presenter: TextFieldPresenter) {
-        self.presenter = presenter
-        
-        super.init(nibName: nil, bundle: nil)
-        setupTitleView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        
-        setupView()
-    }
-    //MARK: - Setups
-    private func setupTitleView() { title = "main_screen_text_field".localized() }
-
-    private func setupView() {
-        addAllSubviews()
-        addAllConstraints()
-    }
-
-    func addAllSubviews() {
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
+    override func addAllSubviews() {
+        super.addAllSubviews()
         contentView.addSubviews([
             headerView,
             nameLabel,
@@ -155,13 +127,8 @@ class TextFieldVC: UIKeyboardController {
         ])
     }
 
-    func addAllConstraints() {
-        scrollView.snp.makeConstraints {
-            $0.edges.equalTo(safeArea)
-        }
-        contentView.snp.makeConstraints {
-            $0.edges.width.equalToSuperview()
-        }
+    override func addAllConstraints() {
+        super.addAllConstraints()
         headerView.snp.makeConstraints {
             $0.top.horizontal.equalToSuperview().inset(.paddingS)
         }
