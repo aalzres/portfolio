@@ -1,23 +1,24 @@
 //
-//  ModuleCakeScreenTimeCommand.swift
+//  CakeDetailScreenTimeCommand.swift
 //  PORTFOLIO
 //
-//  Created by Andres Felipe Alzate Restrepo on 11/12/21.
+//  Created by Andres Felipe Alzate Restrepo on 24/12/21.
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
 import RxSwift
+
 import Architecture
 
-final class ModuleCakeScreenTimeCommand: BaseCommand {
+final class CakeDetailScreenTimeCommand: BaseCommand {
     init(
-        viewAction: Observable<ModuleCakeViewAction>
+        viewAction: Observable<CakeDetailViewAction>
     ) {
         super.init()
         bind(viewAction: viewAction)
     }
 
-    private func bind(viewAction: Observable<ModuleCakeViewAction>) {
+    private func bind(viewAction: Observable<CakeDetailViewAction>) {
         viewAction
             .compactMap(\.screenTime)
             .withUnretained(self)

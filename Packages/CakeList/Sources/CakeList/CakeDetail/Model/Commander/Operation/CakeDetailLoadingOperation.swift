@@ -1,8 +1,8 @@
 //
-//  CakeListLoadingOperation.swift
+//  CakeDetailLoadingOperation.swift
 //  PORTFOLIO
 //
-//  Created by Andres Felipe Alzate Restrepo on 12/12/21.
+//  Created by Andres Felipe Alzate Restrepo on 24/12/21.
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
@@ -10,13 +10,13 @@ import RxSwift
 
 import Architecture
 
-final class CakeListLoadingOperation: BaseOperation {
-    private let interactor: CakeListInteractor
-    private let stateSubject: BehaviorSubject<CakeListViewState>
+final class CakeDetailLoadingOperation: BaseOperation {
+    private let interactor: CakeDetailInteractor
+    private let stateSubject: BehaviorSubject<CakeDetailViewState>
 
     init(
-        interactor: CakeListInteractor,
-        stateSubject: BehaviorSubject<CakeListViewState>
+        interactor: CakeDetailInteractor,
+        stateSubject: BehaviorSubject<CakeDetailViewState>
     ) {
         self.interactor = interactor
         self.stateSubject = stateSubject
@@ -27,12 +27,12 @@ final class CakeListLoadingOperation: BaseOperation {
 
     private func bind() {
         let executing = Observable.merge(
-            interactor.getCakeListItem.executing
+            interactor.getCakeItem.executing
         )
 
         executing
             .withLatestFrom(stateSubject) { $1.changing(isLoading: $0) }
             .bind(to: stateSubject)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 }

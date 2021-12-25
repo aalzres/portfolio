@@ -1,17 +1,16 @@
 //
-//  CakeListErrorOperation.swift
+//  CakeListLoadingOperation.swift
 //  PORTFOLIO
 //
 //  Created by Andres Felipe Alzate Restrepo on 12/12/21.
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
-import UIKit
 import RxSwift
 
 import Architecture
 
-final class CakeListErrorOperation: BaseOperation {
+final class CakeListLoadingOperation: BaseOperation {
     private let interactor: CakeListInteractor
     private let stateSubject: BehaviorSubject<CakeListViewState>
 
@@ -27,13 +26,13 @@ final class CakeListErrorOperation: BaseOperation {
     }
 
     private func bind() {
-        let completion: ((UIAlertAction) -> Void)? = { [weak self] _ in
-            self?.interactor.getCakeListItem.execute()
-        }
+        let executing = Observable.merge(
+            interactor.getCakeListItem.executing
+        )
 
-        interactor.getCakeListItem.underlyingError
-            .withLatestFrom(stateSubject) { $1.changing(alert: $0.alert(completion)) }
+        executing
+            .withLatestFrom(stateSubject) { $1.changing(isLoading: $0) }
             .bind(to: stateSubject)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 }

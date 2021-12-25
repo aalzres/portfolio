@@ -82,8 +82,16 @@ final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewCont
     }
 
     private func bindActions() {
+        bindTapCakeDetail()
         bindTimeView()
         bindBack()
+    }
+
+    private func bindTapCakeDetail() {
+        cakeCollectionView.rx.modelSelected(CakeRepresentable.self)
+            .map { .onTapCakeDetail($0) }
+            .bind(to: actionSubject)
+            .disposed(by: rx.disposeBag)
     }
 
     private func bindTimeView() {

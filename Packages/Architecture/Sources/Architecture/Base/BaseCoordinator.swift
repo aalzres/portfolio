@@ -7,9 +7,8 @@
 
 import RxSwift
 
-open class BaseCoordinator {
+open class BaseCoordinator: ReactiveCompatible {
     public let router: Router
-    public lazy var disposeBag = DisposeBag()
 
     public init(router: Router) {
         self.router = router

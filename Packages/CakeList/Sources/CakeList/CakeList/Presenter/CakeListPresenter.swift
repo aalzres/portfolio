@@ -26,26 +26,26 @@ final class CakeListPresenter: BasePresenter {
                 guard let self = self else { return }
                 switch value {
                 case .viewDidLoad: self.binding()
-                case .viewWillAppear: self.bindViewWillAppear()
+                case .viewWillAppear: self.executeViewWillAppear()
                 default:
                     return
                 }
             })
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
     private func binding() {
         commander.model
             .drive(view.data)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
 
         view.action
             .asObservable()
             .bind(to: commander.viewAction)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
-    private func bindViewWillAppear() {
+    private func executeViewWillAppear() {
         commander.viewAction.onNext(.onGetCakeList)
     }
 }

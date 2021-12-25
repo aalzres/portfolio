@@ -1,24 +1,23 @@
 //
-//  ModuleCakeGetErrorOperation.swift
+//  CakeListErrorOperation.swift
 //  PORTFOLIO
 //
-//  Created by Andres Felipe Alzate Restrepo on 11/12/21.
+//  Created by Andres Felipe Alzate Restrepo on 12/12/21.
 //  Copyright © 2021 aalzres. All rights reserved.
 //
 
-import RxSwift
 import UIKit
+import RxSwift
 
 import Architecture
-import UserInterface
 
-final class ModuleCakeGetErrorOperation: BaseOperation {
-    private let interactor: ModuleCakeInteractor
-    private let stateSubject: BehaviorSubject<ModuleCakeViewState>
+final class CakeListErrorOperation: BaseOperation {
+    private let interactor: CakeListInteractor
+    private let stateSubject: BehaviorSubject<CakeListViewState>
 
     init(
-        interactor: ModuleCakeInteractor,
-        stateSubject: BehaviorSubject<ModuleCakeViewState>
+        interactor: CakeListInteractor,
+        stateSubject: BehaviorSubject<CakeListViewState>
     ) {
         self.interactor = interactor
         self.stateSubject = stateSubject

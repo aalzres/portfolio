@@ -33,17 +33,18 @@ final class CakeListGetOperation: BaseOperation {
             .map(\.cakeViewState)
             .withLatestFrom(stateSubject) { $1.changing(cakeViewState: $0) }
             .bind(to: stateSubject)
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 }
 
-extension Array where Element == CakeItem {
+private extension Array where Element == CakeItem {
     var cakeViewState: [CakeRepresentable] {
         var cakeList: [CakeRepresentable] = []
 
         forEach { cake in
             cakeList.append(
                 .init(
+                    item: cake,
                     title: cake.title,
                     description: cake.description,
                     imageUrl: cake.image

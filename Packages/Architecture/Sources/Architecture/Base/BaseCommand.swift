@@ -7,8 +7,7 @@
 
 import RxSwift
 
-open class BaseCommand {
-    public var disposeBag = DisposeBag()
+open class BaseCommand: ReactiveCompatible {
     public init() {}
     deinit {
         BaseDeinit.shared.printDeinit(self)

@@ -22,7 +22,7 @@ final class CakeListScreenTimeCommand: BaseCommand {
             .compactMap(\.screenTime)
             .withUnretained(self)
             .subscribe(onNext: { $0.execute($1) })
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
     private func execute(_ time: Int) {

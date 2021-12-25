@@ -7,11 +7,12 @@
 //
 
 import UIKit
-import Architecture
+
 import Domain
+import Architecture
 
 protocol CakeListCoordinator {
-    func navigateToCakeDetail()
+    func navigateToCakeDetail(cakeItem: CakeItem)
 }
 
 final class CakeListCoordinatorImpl: BaseCoordinator, CakeListCoordinator {
@@ -50,7 +51,10 @@ final class CakeListCoordinatorImpl: BaseCoordinator, CakeListCoordinator {
         router.push(vc: viewController)
     }
 
-    func navigateToCakeDetail() {
-        print("limit::", #function)
+    func navigateToCakeDetail(cakeItem: CakeItem) {
+        CakeDetailCoordinatorImpl(
+            router: router,
+            cakeItem: cakeItem
+        ).present(animated: true)
     }
 }
