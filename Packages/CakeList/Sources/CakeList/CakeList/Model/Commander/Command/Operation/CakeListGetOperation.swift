@@ -47,7 +47,7 @@ private extension Array where Element == CakeItem {
                     item: cake,
                     title: cake.title,
                     description: cake.description,
-                    imageUrl: cake.image
+                    image: .external(cake.image)
                 )
             )
         }
