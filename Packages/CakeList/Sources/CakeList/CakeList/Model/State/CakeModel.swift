@@ -5,10 +5,13 @@
 //  Created by Andres Felipe Alzate Restrepo on 12/12/21.
 //
 
+import Domain
+
 struct CakeRepresentable {
-    var title: String
-    var description: String
-    var imageUrl: String
+    let item: CakeItem
+    let title: String
+    let description: String
+    let imageUrl: String
 }
 
 extension CakeRepresentable: Hashable {
