@@ -14,102 +14,71 @@ class TextFieldVC: UIKeyboardController {
     
     private lazy var contentView = UIView()
     
-    private lazy var headerView: UILabel = {
-        let headerView = UILabel()
-        headerView.font = .title
-        headerView.textColor = .black
-        headerView.text = "text_field_header_view".localized()
-        return headerView
-    }()
-    
-    private lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel()
-        nameLabel.font = .inputPrimary
-        nameLabel.textColor = .black
-        nameLabel.text = "text_field_name_label".localized()
-        return nameLabel
-    }()
-    private lazy var nameInput: UITextField = {
-        let nameInput = UITextField()
-        nameInput.font = .inputSecondary
-        nameInput.textColor = .black
-        nameInput.addLine(position: .bottom)
-        return nameInput
-    }()
-    
-    private lazy var documentNumberLabel: UILabel = {
-        let documentNumberLabel = UILabel()
-        documentNumberLabel.font = .inputPrimary
-        documentNumberLabel.textColor = .black
-        documentNumberLabel.text = "text_field_document_number_label".localized()
-        return documentNumberLabel
-    }()
-    private lazy var documentNumberInput: UITextField = {
-        let documentNumberInput = UITextField()
-        documentNumberInput.font = .inputSecondary
-        documentNumberInput.textColor = .black
-        documentNumberInput.addLine(position: .bottom)
-        documentNumberInput.autocorrectionType = .no
-        documentNumberInput.keyboardType = .namePhonePad
-        documentNumberInput.returnKeyType = .next
-        documentNumberInput.clearButtonMode = .whileEditing
-        documentNumberInput.delegate = self
-        return documentNumberInput
-    }()
-    
-    private lazy var dateOfBirthLabel: UILabel = {
-        let dateOfBirthLabel = UILabel()
-        dateOfBirthLabel.font = .inputPrimary
-        dateOfBirthLabel.textColor = .black
-        dateOfBirthLabel.text = "text_field_date_of_birth".localized()
-        return dateOfBirthLabel
-    }()
-    private lazy var dateOfBirthInput: UIDatePicker = {
-        let dateOfBirthInput = UIDatePicker()
-        dateOfBirthInput.backgroundColor = .white
-        dateOfBirthInput.setValue(UIColor.black, forKey: "textColor")
-        dateOfBirthInput.datePickerMode = .date
-        return dateOfBirthInput
-    }()
-    
-    private lazy var mailLabel: UILabel = {
-        let mailLabel = UILabel()
-        mailLabel.font = .inputPrimary
-        mailLabel.textColor = .black
-        mailLabel.text = "text_field_mail".localized()
-        return mailLabel
-    }()
-    private lazy var mailInput: UITextField = {
-        let mailInput = UITextField()
-        mailInput.font = .inputSecondary
-        mailInput.textColor = .black
-        mailInput.addLine(position: .bottom)
-        return mailInput
-    }()
-    
-    private lazy var addressLabel: UILabel = {
-        let addressLabel = UILabel()
-        addressLabel.font = .inputPrimary
-        addressLabel.textColor = .black
-        addressLabel.text = "text_field_address".localized()
-        return addressLabel
-    }()
-    private lazy var addressInput: UITextField = {
-        let addressInput = UITextField()
-        addressInput.font = .inputSecondary
-        addressInput.textColor = .black
-        addressInput.addLine(position: .bottom)
-        return addressInput
-    }()
-    
-    private lazy var sexLabel: UILabel = {
-        let sexLabel = UILabel()
-        sexLabel.font = .inputPrimary
-        sexLabel.textColor = .black
-        sexLabel.text = "text_field_sex".localized()
-        return sexLabel
-    }()
-    private lazy var sexInput: UISegmentedControl = {
+    private lazy var headerView = UILabel()
+        .set(\.font, .title)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_header_view".localized())
+
+    private lazy var nameLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_name_label".localized())
+
+    private lazy var nameInput = UITextField()
+        .set(\.font, .inputSecondary)
+        .set(\.textColor, .black)
+        .addLine(position: .bottom)
+
+    private lazy var documentNumberLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_document_number_label".localized())
+
+    private lazy var documentNumberInput  = UITextField()
+        .addLine(position: .bottom)
+        .set(\.font, .inputSecondary)
+        .set(\.textColor, .black)
+        .set(\.autocorrectionType, .no)
+        .set(\.keyboardType, .namePhonePad)
+        .set(\.returnKeyType, .next)
+        .set(\.clearButtonMode, .whileEditing)
+        .set(\.delegate, self)
+
+    private lazy var dateOfBirthLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_date_of_birth".localized())
+
+    private lazy var dateOfBirthInput = UIDatePicker()
+        .set(\.backgroundColor, .white)
+        .set(\.datePickerMode, .date)
+
+    private lazy var mailLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_mail".localized())
+
+    private lazy var mailInput = UITextField()
+        .set(\.font, .inputSecondary)
+        .set(\.textColor, .black)
+        .addLine(position: .bottom)
+
+    private lazy var addressLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_address".localized())
+
+    private lazy var addressInput = UITextField()
+        .set(\.font, .inputSecondary)
+        .set(\.textColor, .black)
+        .addLine(position: .bottom)
+
+    private lazy var sexLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_sex".localized())
+
+     private lazy var sexInput: UISegmentedControl = {
         let items = [
             "text_field_sex_male".localized(),
             "text_field_sex_female".localized()
@@ -120,36 +89,23 @@ class TextFieldVC: UIKeyboardController {
         return sexInput
     }()
     
-    private lazy var telLabel: UILabel = {
-        let telLabel = UILabel()
-        telLabel.font = .inputPrimary
-        telLabel.textColor = .black
-        telLabel.text = "text_field_tel".localized()
-        return telLabel
-    }()
-    private lazy var telInput: UITextField = {
-        let telInput = UITextField()
-        telInput.font = .inputSecondary
-        telInput.textColor = .black
-        telInput.addLine(position: .bottom)
-        return telInput
-    }()
-    
-    private lazy var nationalityLabel: UILabel = {
-        let nationalityLabel = UILabel()
-        nationalityLabel.font = .inputPrimary
-        nationalityLabel.textColor = .black
-        nationalityLabel.text = "text_field_nationality".localized()
-        return nationalityLabel
-    }()
-    private lazy var nationalityInput: UITextField = {
-        let nationalityInput = UITextField()
-        nationalityInput.font = .inputSecondary
-        nationalityInput.textColor = .black
-        nationalityInput.addLine(position: .bottom)
-        return nationalityInput
-    }()
-    
+    private lazy var telLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_tel".localized())
+     private lazy var telInput = UITextField()
+        .set(\.font, .inputSecondary)
+        .set(\.textColor, .black)
+        .addLine(position: .bottom)
+     private lazy var nationalityLabel = UILabel()
+        .set(\.font, .inputPrimary)
+        .set(\.textColor, .black)
+        .set(\.text, "text_field_nationality".localized())
+     private lazy var nationalityInput = UITextField()
+        .set(\.font, .inputSecondary)
+        .set(\.textColor, .black)
+        .addLine(position: .bottom)
+
     init(presenter: TextFieldPresenter) {
         self.presenter = presenter
         
@@ -200,9 +156,9 @@ class TextFieldVC: UIKeyboardController {
     
     private func setupHeaderView() {
         headerView.anchor(contentView,
-                         top: contentView.topAnchor, paddingTop: .paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
+                          top: contentView.topAnchor, paddingTop: .paddingS,
+                          leading: contentView.leadingAnchor, paddingLeading: .paddingS,
+                          trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
         
     }
     
