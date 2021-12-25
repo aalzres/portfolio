@@ -48,7 +48,8 @@ open class UIKeyboardController: UIViewController  {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
-    @objc func dismissKeyboard() {
+    @objc
+    func dismissKeyboard() {
         view.endEditing(true)
     }
 }
