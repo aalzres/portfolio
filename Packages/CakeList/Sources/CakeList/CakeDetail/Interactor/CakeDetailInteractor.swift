@@ -7,6 +7,7 @@
 //
 
 import Action
+
 import Domain
 import Architecture
 
@@ -15,7 +16,7 @@ protocol CakeDetailInteractor {
 }
 
 final class CakeDetailInteractorImpl: BaseInteractor, CakeDetailInteractor {
-	private let cakeItem: CakeItem
+    private let cakeItem: CakeItem
 
     init(
         cakeItem: CakeItem

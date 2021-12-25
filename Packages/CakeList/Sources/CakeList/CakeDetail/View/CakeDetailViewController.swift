@@ -9,8 +9,8 @@
 import RxSwift
 import RxCocoa
 
-import Architecture
 import UIKit
+import Architecture
 
 protocol CakeDetailViewController: BaseViewController {
     var data: AnyObserver<CakeDetailViewState> { get }

@@ -7,7 +7,9 @@
 //
 
 import RxSwift
+
 import Architecture
+
 final class CakeDetailErrorOperation: BaseOperation {
     private let interactor: CakeDetailInteractor
     private let stateSubject: BehaviorSubject<CakeDetailViewState>
@@ -24,9 +26,9 @@ final class CakeDetailErrorOperation: BaseOperation {
     }
 
     private func bind() {
-//        interactor.getCakeDetailItem.underlyingError
-//            .withLatestFrom(stateSubject) { $1.changing(toast: $0.toastError) }
-//            .bind(to: stateSubject)
-//            .disposed(by: rx.disposeBag)
+        interactor.getCakeItem.underlyingError
+            .withLatestFrom(stateSubject) { $1.changing(alert: $0.alert()) }
+            .bind(to: stateSubject)
+            .disposed(by: rx.disposeBag)
     }
 }
