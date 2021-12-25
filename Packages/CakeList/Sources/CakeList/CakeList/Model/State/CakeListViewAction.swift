@@ -10,6 +10,7 @@ enum CakeListViewAction {
     case onBack
     case onScreenTime(Int)
     case onGetCakeList
+    case onTapCakeDetail(CakeRepresentable)
 }
 
 extension CakeListViewAction {
@@ -24,5 +25,9 @@ extension CakeListViewAction {
     var getCakeList: Void? {
         guard case .onGetCakeList = self else { return nil }
         return ()
+    }
+    var tapCakeDetail: CakeRepresentable? {
+        guard case let .onTapCakeDetail(representable) = self else { return nil }
+        return representable
     }
 }
