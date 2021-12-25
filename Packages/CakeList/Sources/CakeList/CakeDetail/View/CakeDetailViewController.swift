@@ -55,15 +55,8 @@ final class CakeDetailViewControllerImpl: BaseViewControllerImpl, CakeDetailView
 
     private func bindCake() {
         dataSubject
-            .compactMap(\.cakeRepresentable?.imageUrl)
-            .compactMap { URLRequest(urlString: $0) }
-            .flatMap {
-                URLSession.shared.rx
-                    .response(request: $0)
-                    .subscribe(on: ConcurrentMainScheduler.instance)
-                    .map { UIImage(data: $0.data) }
-            }
-            .bind(to: cakeImageView.rx.image)
+            .compactMap(\.cakeRepresentable?.image)
+            .bind(to: cakeImageView.rx.imageRepresentable)
             .disposed(by: rx.disposeBag)
 
         dataSubject
