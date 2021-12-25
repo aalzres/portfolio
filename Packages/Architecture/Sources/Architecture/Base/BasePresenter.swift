@@ -7,9 +7,7 @@
 
 import RxSwift
 
-open class BasePresenter {
-    public var disposeBag = DisposeBag()
-
+open class BasePresenter: ReactiveCompatible {
     public init() {}
 
     deinit {

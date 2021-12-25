@@ -7,9 +7,7 @@
 
 import RxSwift
 
-open class BaseInteractor {
-    lazy var disposeBag = DisposeBag()
-
+open class BaseInteractor: ReactiveCompatible {
     public init() {}
 
     deinit {
