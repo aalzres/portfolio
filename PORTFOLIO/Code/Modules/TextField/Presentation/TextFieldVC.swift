@@ -125,138 +125,110 @@ class TextFieldVC: UIKeyboardController {
     }
     //MARK: - Setups
     private func setupTitleView() { title = "main_screen_text_field".localized() }
-    
+
     private func setupView() {
-        setupContentView()
-        setupHeaderView()
-        setupName()
-        setupDocumentNumber()
-        setupDateOfBirth()
-        setupMail()
-        setupAddress()
-        setupSex()
-        setupTel()
-        setupNationality()
+        addAllSubviews()
+        addAllConstraints()
     }
-    
-    private func setupContentView() {
-        scrollView.anchor(view,
-                          top: view.safeAreaLayoutGuide.topAnchor,
-                          bottom: view.safeAreaLayoutGuide.bottomAnchor,
-                          leading: view.leadingAnchor,
-                          trailing: view.trailingAnchor)
-        
-        contentView.anchor(scrollView,
-                           top: scrollView.topAnchor,
-                           bottom: scrollView.bottomAnchor,
-                           leading: scrollView.leadingAnchor,
-                           trailing: scrollView.trailingAnchor,
-                           width: scrollView.widthAnchor)
+
+    func addAllSubviews() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubviews([
+            headerView,
+            nameLabel,
+            nameInput,
+            documentNumberLabel,
+            documentNumberInput,
+            dateOfBirthLabel,
+            dateOfBirthInput,
+            mailLabel,
+            mailInput,
+            addressLabel,
+            addressInput,
+            sexLabel,
+            sexInput,
+            telLabel,
+            telInput,
+            nationalityLabel,
+            nationalityInput
+        ])
     }
-    
-    private func setupHeaderView() {
-        headerView.anchor(contentView,
-                          top: contentView.topAnchor, paddingTop: .paddingS,
-                          leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                          trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-    }
-    
-    private func setupName() {
-        nameLabel.anchor(contentView,
-                         top: headerView.bottomAnchor, paddingTop: .paddingM,
-                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        nameInput.anchor(contentView,
-                         top: nameLabel.bottomAnchor, paddingTop: .paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-    }
-    
-    private func setupDocumentNumber() {
-        documentNumberLabel.anchor(contentView,
-                                   top: nameInput.bottomAnchor, paddingTop: .paddingM,
-                                   leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                                   trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        documentNumberInput.anchor(contentView,
-                                   top: documentNumberLabel.bottomAnchor, paddingTop: .paddingS,
-                                   leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                                   trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-    }
-    
-    private func setupDateOfBirth() {
-        dateOfBirthLabel.anchor(contentView,
-                                top: documentNumberInput.bottomAnchor, paddingTop: .paddingM,
-                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        dateOfBirthInput.anchor(contentView,
-                                top: dateOfBirthLabel.bottomAnchor, paddingTop: .paddingS,
-                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-    }
-    
-    private func setupMail() {
-        mailLabel.anchor(contentView,
-                         top: dateOfBirthInput.bottomAnchor, paddingTop: .paddingM,
-                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        mailInput.anchor(contentView,
-                         top: mailLabel.bottomAnchor, paddingTop: .paddingS,
-                         leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                         trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-    }
-    
-    private func setupAddress() {
-        addressLabel.anchor(contentView,
-                            top: mailInput.bottomAnchor, paddingTop: .paddingM,
-                            leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                            trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        addressInput.anchor(contentView,
-                            top: addressLabel.bottomAnchor, paddingTop: .paddingS,
-                            leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                            trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-    }
-    
-    private func setupSex() {
-        sexLabel.anchor(contentView,
-                        top: addressInput.bottomAnchor, paddingTop: .paddingM,
-                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        sexInput.anchor(contentView,
-                        top: sexLabel.bottomAnchor, paddingTop: .paddingS,
-                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-    }
-    
-    private func setupTel() {
-        telLabel.anchor(contentView,
-                        top: sexInput.bottomAnchor, paddingTop: .paddingM,
-                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        telInput.anchor(contentView,
-                        top: telLabel.bottomAnchor, paddingTop: .paddingS,
-                        leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                        trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-    }
-    
-    private func setupNationality() {
-        nationalityLabel.anchor(contentView,
-                                top: telInput.bottomAnchor, paddingTop: .paddingM,
-                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
-        
-        nationalityInput.anchor(contentView,
-                                top: nationalityLabel.bottomAnchor, paddingTop: .paddingS,
-                                bottom: contentView.bottomAnchor, paddingBottom: -.paddingS,
-                                leading: contentView.leadingAnchor, paddingLeading: .paddingS,
-                                trailing: contentView.trailingAnchor, paddingTrailing: -.paddingS)
+
+    func addAllConstraints() {
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(safeArea)
+        }
+        contentView.snp.makeConstraints {
+            $0.edges.width.equalToSuperview()
+        }
+        headerView.snp.makeConstraints {
+            $0.top.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        nameLabel.snp.makeConstraints {
+            $0.top.equalTo(headerView.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        nameInput.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        documentNumberLabel.snp.makeConstraints {
+            $0.top.equalTo(nameInput.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        documentNumberInput.snp.makeConstraints {
+            $0.top.equalTo(documentNumberLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        dateOfBirthLabel.snp.makeConstraints {
+            $0.top.equalTo(documentNumberInput.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        dateOfBirthInput.snp.makeConstraints {
+            $0.top.equalTo(dateOfBirthLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        mailLabel.snp.makeConstraints {
+            $0.top.equalTo(dateOfBirthInput.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        mailInput.snp.makeConstraints {
+            $0.top.equalTo(mailLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        addressLabel.snp.makeConstraints {
+            $0.top.equalTo(mailInput.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        addressInput.snp.makeConstraints {
+            $0.top.equalTo(addressLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        sexLabel.snp.makeConstraints {
+            $0.top.equalTo(addressInput.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        sexInput.snp.makeConstraints {
+            $0.top.equalTo(sexLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        telLabel.snp.makeConstraints {
+            $0.top.equalTo(sexInput.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        telInput.snp.makeConstraints {
+            $0.top.equalTo(telLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        nationalityLabel.snp.makeConstraints {
+            $0.top.equalTo(telInput.snp.bottom).offset(.paddingM)
+            $0.horizontal.equalToSuperview().inset(.paddingS)
+        }
+        nationalityInput.snp.makeConstraints {
+            $0.top.equalTo(nationalityLabel.snp.bottom).offset(.paddingS)
+            $0.horizontal.bottom.equalToSuperview().inset(.paddingS)
+        }
     }
 }
 // MARK: - Output
