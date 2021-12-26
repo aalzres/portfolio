@@ -8,9 +8,6 @@
 
 import UIKit
 
-import Architecture
-import UserInterface
-
 public class RouterImpl: Router {
     let window: UIWindow?
     private var backMarks: [AnyObject.Type] = []

@@ -137,12 +137,10 @@ class TextFieldVC: BaseViewKeyboardController {
         scrollView.snp.remakeConstraints {
             $0.top.horizontal.equalTo(safeArea)
         }
-
         saveButton.snp.makeConstraints {
             $0.top.equalTo(scrollView.snp.bottom)
             $0.horizontal.bottom.equalToSuperview()
         }
-
         headerView.snp.makeConstraints {
             $0.top.horizontal.equalToSuperview().inset(.paddingS)
         }

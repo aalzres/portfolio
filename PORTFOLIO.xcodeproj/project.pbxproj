@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 5508D7C92766216D002AD2E7 /* DomainMock */; };
 		5521738A2765330300F0132C /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 552173892765330300F0132C /* Data */; };
-		557EB1C62777D36C00328CA5 /* RouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EB1C52777D36C00328CA5 /* RouterImpl.swift */; };
 		5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5597ED942765F9FD00A0B3AE /* Assets.xcassets */; };
 		55E768F62762C0C4007CDBFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E768F52762C0C4007CDBFE /* Colors.xcassets */; };
 		55EC6B06276534550002C7DB /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B05276534550002C7DB /* Architecture */; };
@@ -74,7 +73,6 @@
 		5521738D2765337200F0132C /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
 		5521738E2765337E00F0132C /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
 		5521738F2765338700F0132C /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
-		557EB1C52777D36C00328CA5 /* RouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImpl.swift; sourceTree = "<group>"; };
 		5597ED942765F9FD00A0B3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E768F52762C0C4007CDBFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55F7709227655E3C003681A9 /* Action */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Action; path = Packages/Action; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 		6700D1E52497B4EA00ED44AB /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				557EB1C52777D36C00328CA5 /* RouterImpl.swift */,
 				6700D1E62497B50000ED44AB /* ServicesLocator.swift */,
 			);
 			path = Base;
@@ -582,7 +579,6 @@
 				6715CCB824C2ECB9009F1C26 /* MeepVC+ResourceDetail.swift in Sources */,
 				67D44CBA24B901A200452BB8 /* Marvel.swift in Sources */,
 				6700D1F92497BC6500ED44AB /* Splash.swift in Sources */,
-				557EB1C62777D36C00328CA5 /* RouterImpl.swift in Sources */,
 				6795C11D249D07A600A8589B /* TextFieldPresenter.swift in Sources */,
 				6795C11C249D07A600A8589B /* TextFieldVC.swift in Sources */,
 				674E32FE2498BC5F00428BD0 /* MainScreenRepository.swift in Sources */,
