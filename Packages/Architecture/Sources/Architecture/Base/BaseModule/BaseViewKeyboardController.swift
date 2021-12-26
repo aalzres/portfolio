@@ -9,6 +9,7 @@
 import UIKit
 
 open class BaseViewKeyboardController: BaseViewControllerImpl {
+    open var contentHeightExtra: CGFloat { 0 }
     public lazy var scrollView = UIScrollView()
     public lazy var contentView = UIView()
     
@@ -50,8 +51,9 @@ open class BaseViewKeyboardController: BaseViewControllerImpl {
     @objc
     func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+
+        let bottom = keyboardSize.height - contentHeightExtra
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: bottom, right: 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }
@@ -59,7 +61,6 @@ open class BaseViewKeyboardController: BaseViewControllerImpl {
     @objc
     func keyboardWillHide(notification: NSNotification) {
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }
