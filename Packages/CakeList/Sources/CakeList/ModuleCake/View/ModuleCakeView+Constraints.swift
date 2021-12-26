@@ -9,10 +9,12 @@
 import CoreGraphics
 
 extension ModuleCakeViewControllerImpl {
-    func addAllSubviews() {
+    override func addAllSubviews() {
+        super.addAllSubviews()
         view.addSubview(logoImageView)
     }
-    func addAllConstraints() {
+    override func addAllConstraints() {
+        super.addAllConstraints()
         logoImageView.snp.makeConstraints {
             $0.size.equalTo(CGSize.logoImageSize)
             $0.center.equalToSuperview()

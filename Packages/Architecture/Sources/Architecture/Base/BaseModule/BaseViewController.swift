@@ -10,8 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-import UserInterface
-
 public enum UIViewControllerLyfeCycle {
     case notLoaded
     case viewWillAppear
@@ -29,17 +27,20 @@ public protocol BaseViewController: AnyObject {
 }
 
 open class BaseViewControllerImpl: UIViewController, BaseViewController {
+    open var backgroundColor: UIColor? { .background }
+    open var titleView: String { "" }
     open var isNavigationBarHidden: Bool { false }
+    private var internalDidAppearDate: Date?
+
     private var screenTimeSubject = PublishSubject<Int>()
     public var screenTime: Driver<Int> { screenTimeSubject.asDriverIgnoringErrors() }
-    private var internalDidAppearDate: Date?
+
     private var internalLyfeCycle: BehaviorRelay<UIViewControllerLyfeCycle> = BehaviorRelay<UIViewControllerLyfeCycle>(value: .notLoaded)
     public lazy var lifeCycleObservable: Observable<UIViewControllerLyfeCycle> = {
         internalLyfeCycle.asObservable()
     }()
 
     private var backPublishSubject = PublishSubject<Void>()
-    private var backActivePublishSubject = BehaviorSubject<Bool>(value: true)
     public var onBack: Driver<Void> {
         backPublishSubject.asDriverIgnoringErrors()
     }
@@ -92,18 +93,29 @@ open class BaseViewControllerImpl: UIViewController, BaseViewController {
         BaseDeinit.shared.printDeinit(self)
     }
 
-    open func setupView() {
-        view.backgroundColor = .background
-        setupActivityIndicator()
-        bindActivityIndicator()
-        bindPopViewController()
+    @objc dynamic open func setupView() {
+        view.backgroundColor = backgroundColor
+        title = titleView
+        addAllSubviews()
+        addAllConstraints()
+        bind()
     }
 
-    private func setupActivityIndicator() {
+    @objc open dynamic func addAllSubviews() {
         view.addSubview(activityIndicator)
+    }
+
+    @objc open dynamic func addAllConstraints() {
         activityIndicator.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+
+    open func bind() {
+        bindActivityIndicator()
+        bindBackButton()
+        bindState()
+        bindActions()
     }
 
     private func bindActivityIndicator() {
@@ -113,23 +125,18 @@ open class BaseViewControllerImpl: UIViewController, BaseViewController {
             .disposed(by: rx.disposeBag)
 
         loadingStatusSubject
-            .map { !$0 }
+            .not()
             .distinctUntilChanged()
             .bind(to: view.rx.isUserInteractionEnabled)
             .disposed(by: rx.disposeBag)
     }
 
-    private func bindPopViewController() {
+    private func bindBackButton() {
         navigationItem.leftBarButtonItem?.rx.tap
             .bind(to: backPublishSubject)
             .disposed(by: rx.disposeBag)
-
-        Observable.combineLatest(backPublishSubject, backActivePublishSubject)
-            .withUnretained(self)
-            .subscribe(onNext: { owner, back in
-                let (_, backActive) = back
-                if backActive { owner.navigationController?.popViewController(animated: true) }
-            })
-            .disposed(by: rx.disposeBag)
     }
+
+    open func bindState() { }
+    open func bindActions() { }
 }

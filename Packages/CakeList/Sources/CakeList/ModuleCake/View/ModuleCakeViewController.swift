@@ -18,6 +18,7 @@ protocol ModuleCakeViewController: BaseViewController {
 }
 
 final class ModuleCakeViewControllerImpl: BaseViewControllerImpl, ModuleCakeViewController {
+    override var backgroundColor: UIColor? { .first }
     // MARK: - UIElements
     lazy var logoImageView = UIImageView()
         .set(\.image, UIImage(cakeListNamed: "module_cake_logo"))
@@ -33,18 +34,9 @@ final class ModuleCakeViewControllerImpl: BaseViewControllerImpl, ModuleCakeView
         actionSubject.asDriverIgnoringErrors()
     }
 
-    // MARK: - Setup
-    override func setupView() {
-        super.setupView()
-        view.backgroundColor = .first
-        addAllSubviews()
-        addAllConstraints()
-        bindState()
-        bindActions()
-    }
-
     // MARK: - Binding
-    private func bindState() {
+    override func bindState() {
+        super.bindState()
         bindAlert()
         bindLoading()
     }
@@ -63,7 +55,8 @@ final class ModuleCakeViewControllerImpl: BaseViewControllerImpl, ModuleCakeView
             .disposed(by: rx.disposeBag)
     }
 
-    private func bindActions() {
+    override func bindActions() {
+        super.bindActions()
         bindTimeView()
         bindBack()
     }

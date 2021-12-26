@@ -25,6 +25,7 @@ public class ActivityIndicatorView: UIActivityIndicatorView {
 
     public func setupView() {
         layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
+        addBlurEffect()
     }
 
     private func addBlurEffect() {

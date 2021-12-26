@@ -18,6 +18,7 @@ protocol CakeListViewController: BaseViewController {
 }
 
 final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewController, UIScrollViewDelegate {
+    override var titleView: String { "cake_list_title_view".localized() }
     // MARK: - UIElements
     lazy var cakeItemSize = CGSize(width: (view.width - .paddingXS * 4) / 2, height: view.height/4)
     lazy var collectionViewLayout = UICollectionViewFlowLayout()
@@ -39,19 +40,9 @@ final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewCont
         actionSubject.asDriverIgnoringErrors()
     }
 
-    // MARK: - Setup
-    override func setupView() {
-        super.setupView()
-        title = "cake_list_title_view".localized()
-        view.backgroundColor = .background
-        addAllSubviews()
-        addAllConstraints()
-        bindState()
-        bindActions()
-    }
-
     // MARK: - Binding
-    private func bindState() {
+    override func bindState() {
+        super.bindState()
         bindCakeCollectionView()
         bindAlert()
         bindLoading()
@@ -81,7 +72,8 @@ final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewCont
             .disposed(by: rx.disposeBag)
     }
 
-    private func bindActions() {
+    override func bindActions() {
+        super.bindActions()
         bindTapCakeDetail()
         bindTimeView()
         bindBack()

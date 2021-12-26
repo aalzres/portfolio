@@ -9,6 +9,7 @@ import RxSwift
 
 open class BaseCommand: ReactiveCompatible {
     public init() {}
+    
     deinit {
         BaseDeinit.shared.printDeinit(self)
     }

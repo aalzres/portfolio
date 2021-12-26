@@ -14,9 +14,9 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.2.0")),
-        .package(name: "Architecture", path: "../Architecture"),
         .package(name: "Action", path: "../Action"),
+        .package(name: "Architecture", path: "../Architecture"),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.2.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -24,10 +24,10 @@ let package = Package(
         .target(
             name: "CakeList",
             dependencies: [
+                "Action",
+                "Architecture",
                 "RxSwift",
                 .product(name: "RxCocoa", package: "RxSwift"),
-                "Architecture",
-                "Action"
             ]
         ),
         .testTarget(

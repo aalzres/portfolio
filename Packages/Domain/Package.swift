@@ -15,8 +15,8 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(name: "Utilities", path: "../Utilities"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.4.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.2.0")),
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.4.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,9 +25,9 @@ let package = Package(
             name: "Domain",
             dependencies: [
                 "Utilities",
+                "Alamofire",
                 "RxSwift",
                 .product(name: "RxCocoa", package: "RxSwift"),
-                "Alamofire"
             ]
         ),
         .testTarget(

@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Architecture
+
 class AlertController {
     var alertViewController: UIAlertController
     private var alertView: UIView? {
@@ -29,14 +31,14 @@ class AlertController {
 
         setupFont(
             string: alertViewController.title,
-            color: .dark.unwrap(),
+            color: .dark,
             style: .title,
             forKey: "attributedTitle"
         )
 
         setupFont(
             string: alertViewController.message,
-            color: .text.unwrap(),
+            color: .text,
             style: .subtitle,
             forKey: "attributedMessage"
         )

@@ -13,7 +13,8 @@ public enum LinePosition {
 }
 
 extension UIView {
-    public func addLine(position : LinePosition, color: UIColor = .darkGray, width: CGFloat = 1) {
+    @discardableResult
+    public func addLine(position : LinePosition, color: UIColor = .darkGray, width: CGFloat = 1) -> Self {
         let lineView = UIView()
         lineView.translatesAutoresizingMaskIntoConstraints = false
         lineView.backgroundColor = color
@@ -32,5 +33,7 @@ extension UIView {
             addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[lineView(width)]|", options: [], metrics: metrics, views: views))
             break
         }
+
+        return self
     }
 }
