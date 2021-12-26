@@ -7,8 +7,7 @@
 
 import RxSwift
 
-open class BaseCommander {
-    public let disposeBag = DisposeBag()
+open class BaseCommander: ReactiveCompatible {
     public var commands: [BaseCommand] = []
     public var operations: [BaseOperation] = []
 

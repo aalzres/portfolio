@@ -10,8 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-import UserInterface
-
 public enum UIViewControllerLyfeCycle {
     case notLoaded
     case viewWillAppear
@@ -95,7 +93,7 @@ open class BaseViewControllerImpl: UIViewController, BaseViewController {
         BaseDeinit.shared.printDeinit(self)
     }
 
-    @objc open dynamic func setupView() {
+    @objc dynamic open func setupView() {
         view.backgroundColor = backgroundColor
         title = titleView
         addAllSubviews()

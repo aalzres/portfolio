@@ -14,6 +14,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
+        .package(name: "Architecture", path: "../Architecture"),
         .package(name: "Utilities", path: "../Utilities"),
         .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1"))
     ],
@@ -22,7 +23,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "UserInterface",
-            dependencies: ["Utilities", "SnapKit"]),
+            dependencies: [
+                "Architecture",
+                "Utilities",
+                "SnapKit"
+            ]),
         .testTarget(
             name: "UserInterfaceTests",
             dependencies: ["UserInterface"]),

@@ -7,6 +7,7 @@
 
 public class BaseDeinit {
     public static let shared = BaseDeinit()
+    
     private init() {}
 
     public func printDeinit(_ object: AnyObject) {

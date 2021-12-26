@@ -15,7 +15,6 @@ let package =  Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(name: "Utilities", path: "../Utilities"),
-        .package(name: "UserInterface", path: "../UserInterface"),
          .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.2.0")),
     ],
     targets: [
@@ -25,7 +24,6 @@ let package =  Package(
             name: "Architecture",
             dependencies: [
                 "Utilities",
-                "UserInterface",
                 "RxSwift",
                 .product(name: "RxCocoa", package: "RxSwift")
             ]
