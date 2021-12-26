@@ -10,7 +10,7 @@ import UIKit
 public class CButton: BaseUIView {
     lazy var customButtom = UIButton()
         .set(\.backgroundColor, .first)
-        .set(\.cornerRadius, 6)
+        .set(\.cornerRadius, .buttonCornerRadius)
         .set(\.titleColorForNormal, .second)
 
     public override func addAllSubviews() {
@@ -20,7 +20,7 @@ public class CButton: BaseUIView {
     public override func addAllConstraints() {
         super.addAllConstraints()
         customButtom.snp.makeConstraints {
-            $0.height.equalTo(48)
+            $0.height.equalTo(.buttonHeight)
             $0.edges.equalToSuperview().inset(.paddingS)
         }
     }
