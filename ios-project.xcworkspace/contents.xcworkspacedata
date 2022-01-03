@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FinderLost.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:PORTFOLIO.xcodeproj">
    </FileRef>
 </Workspace>
