@@ -10,25 +10,25 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var tabBar: MainTabBar?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         createWindow()
-        installInitialViewController()
+        installInitialTabBar()
         return true
     }
 }
 
 private extension AppDelegate {
     func createWindow() {
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.makeKeyAndVisible()
-        self.window = window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
     }
 
-    func installInitialViewController() {
-        let vc = UIViewController()
-        UIApplication.serviceLocator.mainRouter.set(vc: vc)
+    func installInitialTabBar() {
+        tabBar = MainTabBar(tabBarController: UITabBarController()).execute()
+        window?.rootViewController = tabBar?.tabBarController
     }
 }
 extension UIApplication {

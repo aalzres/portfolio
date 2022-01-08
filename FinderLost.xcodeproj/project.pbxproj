@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55726F01278A4B3100A1B83B /* FinderLostTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F00278A4B3000A1B83B /* FinderLostTabs.swift */; };
 		557EB1D5277903E200328CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EB1D4277903E200328CA5 /* AppDelegate.swift */; };
 		557EB1DE277903E400328CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DD277903E400328CA5 /* Assets.xcassets */; };
 		557EB1E1277903E400328CA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DF277903E400328CA5 /* LaunchScreen.storyboard */; };
@@ -31,9 +32,11 @@
 		55CA2D90278391E2008989D0 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D83278391E2008989D0 /* Roboto-Thin.ttf */; };
 		55CA2D91278391E2008989D0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D84278391E2008989D0 /* Roboto-Black.ttf */; };
 		55CA2D92278391E2008989D0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D85278391E2008989D0 /* Colors.xcassets */; };
+		55CA2D9627839547008989D0 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CA2D9527839547008989D0 /* MainTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55726F00278A4B3000A1B83B /* FinderLostTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostTabs.swift; sourceTree = "<group>"; };
 		557EB1D1277903E200328CA5 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557EB1D4277903E200328CA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		557EB1DD277903E400328CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		55CA2D83278391E2008989D0 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		55CA2D84278391E2008989D0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		55CA2D85278391E2008989D0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		55CA2D9527839547008989D0 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 		55CA2D7327839117008989D0 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				55CA2D9727839D5D008989D0 /* Modules */,
+				55CA2D9327839516008989D0 /* MainTabBar */,
 				55CA2D7427839117008989D0 /* Base */,
 			);
 			name = Code;
@@ -168,6 +174,22 @@
 				55CA2D84278391E2008989D0 /* Roboto-Black.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		55CA2D9327839516008989D0 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				55CA2D9527839547008989D0 /* MainTabBar.swift */,
+				55726F00278A4B3000A1B83B /* FinderLostTabs.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		55CA2D9727839D5D008989D0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55CA2D9627839547008989D0 /* MainTabBar.swift in Sources */,
 				55CA2D7627839118008989D0 /* ServicesLocator.swift in Sources */,
 				557EB1D5277903E200328CA5 /* AppDelegate.swift in Sources */,
+				55726F01278A4B3100A1B83B /* FinderLostTabs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
