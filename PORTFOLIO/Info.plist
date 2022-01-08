@@ -27,23 +27,6 @@
 	<true/>
 	<key>NSMainStoryboardFile</key>
 	<string></string>
-	<key>PORTFOLIOConfiguration</key>
-	<dict>
-		<key>GMapsApiKey</key>
-		<string>$(GMAPS_API_KEY)</string>
-		<key>PrivateKeyMarvel</key>
-		<string>$(PRIVATE_KEY_MARVEL)</string>
-		<key>PublicKeyMarvel</key>
-		<string>$(PUBLIC_KEY_MARVEL)</string>
-		<key>ServerApiVersionMarvel</key>
-		<string>$(SERVER_API_VERSION_MARVEL)</string>
-		<key>ServerApiVersionMeep</key>
-		<string>$(SERVER_API_VERSION_MEEP)</string>
-		<key>ServerHostMarvel</key>
-		<string>$(SERVER_HOST_MARVEL)</string>
-		<key>ServerHostMeep</key>
-		<string>$(SERVER_HOST_MEEP)</string>
-	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>
@@ -78,5 +61,22 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>PORTFOLIOConfiguration</key>
+	<dict>
+		<key>GMapsApiKey</key>
+		<string>$(GMAPS_API_KEY)</string>
+		<key>PrivateKeyMarvel</key>
+		<string>$(PRIVATE_KEY_MARVEL)</string>
+		<key>PublicKeyMarvel</key>
+		<string>$(PUBLIC_KEY_MARVEL)</string>
+		<key>ServerApiVersionMarvel</key>
+		<string>$(SERVER_API_VERSION_MARVEL)</string>
+		<key>ServerApiVersionMeep</key>
+		<string>$(SERVER_API_VERSION_MEEP)</string>
+		<key>ServerHostMarvel</key>
+		<string>$(SERVER_HOST_MARVEL)</string>
+		<key>ServerHostMeep</key>
+		<string>$(SERVER_HOST_MEEP)</string>
+	</dict>
 </dict>
 </plist>
