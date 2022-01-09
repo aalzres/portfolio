@@ -30,12 +30,13 @@ final class MainTabBar {
     }
 
     private func createViews() {
-        tabBarController.viewControllers = TabView.allCases.map(\.viewController)
+        tabBarController.viewControllers = TabView.allCases.compactMap(\.viewController)
     }
 }
 
 extension TabView {
-    var viewController: UIViewController {
+    var viewController: UIViewController? {
+        guard let rootViewController = rootViewController else { return nil }
         rootViewController.navigationItem.title = title
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.navigationBar.prefersLargeTitles = true

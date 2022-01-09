@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		55726F01278A4B3100A1B83B /* FinderLostTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F00278A4B3000A1B83B /* FinderLostTabs.swift */; };
+		55726F1A278A538300A1B83B /* MoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F06278A538300A1B83B /* MoreCoordinator.swift */; };
+		55726F1B278A538300A1B83B /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F08278A538300A1B83B /* MorePresenter.swift */; };
+		55726F1C278A538300A1B83B /* MoreLoadingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F0C278A538300A1B83B /* MoreLoadingOperation.swift */; };
+		55726F1D278A538300A1B83B /* MoreErrorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F0D278A538300A1B83B /* MoreErrorOperation.swift */; };
+		55726F1E278A538300A1B83B /* MoreBackCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F0F278A538300A1B83B /* MoreBackCommand.swift */; };
+		55726F1F278A538300A1B83B /* MoreScreenTimeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F10278A538300A1B83B /* MoreScreenTimeCommand.swift */; };
+		55726F20278A538300A1B83B /* MoreCommander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F11278A538300A1B83B /* MoreCommander.swift */; };
+		55726F21278A538300A1B83B /* MoreViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F13278A538300A1B83B /* MoreViewState.swift */; };
+		55726F22278A538300A1B83B /* MoreViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F14278A538300A1B83B /* MoreViewAction.swift */; };
+		55726F23278A538300A1B83B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F16278A538300A1B83B /* MoreViewController.swift */; };
+		55726F24278A538300A1B83B /* MoreView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F17278A538300A1B83B /* MoreView+Constraints.swift */; };
+		55726F25278A538300A1B83B /* MoreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55726F19278A538300A1B83B /* MoreInteractor.swift */; };
 		557EB1D5277903E200328CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EB1D4277903E200328CA5 /* AppDelegate.swift */; };
 		557EB1DE277903E400328CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DD277903E400328CA5 /* Assets.xcassets */; };
 		557EB1E1277903E400328CA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DF277903E400328CA5 /* LaunchScreen.storyboard */; };
@@ -37,6 +49,18 @@
 
 /* Begin PBXFileReference section */
 		55726F00278A4B3000A1B83B /* FinderLostTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostTabs.swift; sourceTree = "<group>"; };
+		55726F06278A538300A1B83B /* MoreCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
+		55726F08278A538300A1B83B /* MorePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
+		55726F0C278A538300A1B83B /* MoreLoadingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLoadingOperation.swift; sourceTree = "<group>"; };
+		55726F0D278A538300A1B83B /* MoreErrorOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreErrorOperation.swift; sourceTree = "<group>"; };
+		55726F0F278A538300A1B83B /* MoreBackCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreBackCommand.swift; sourceTree = "<group>"; };
+		55726F10278A538300A1B83B /* MoreScreenTimeCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreScreenTimeCommand.swift; sourceTree = "<group>"; };
+		55726F11278A538300A1B83B /* MoreCommander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCommander.swift; sourceTree = "<group>"; };
+		55726F13278A538300A1B83B /* MoreViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewState.swift; sourceTree = "<group>"; };
+		55726F14278A538300A1B83B /* MoreViewAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewAction.swift; sourceTree = "<group>"; };
+		55726F16278A538300A1B83B /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		55726F17278A538300A1B83B /* MoreView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoreView+Constraints.swift"; sourceTree = "<group>"; };
+		55726F19278A538300A1B83B /* MoreInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInteractor.swift; sourceTree = "<group>"; };
 		557EB1D1277903E200328CA5 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557EB1D4277903E200328CA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		557EB1DD277903E400328CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +101,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55726F04278A538300A1B83B /* More */ = {
+			isa = PBXGroup;
+			children = (
+				55726F05278A538300A1B83B /* Coordinator */,
+				55726F18278A538300A1B83B /* Interactor */,
+				55726F09278A538300A1B83B /* Model */,
+				55726F07278A538300A1B83B /* Presenter */,
+				55726F15278A538300A1B83B /* View */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		55726F05278A538300A1B83B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				55726F06278A538300A1B83B /* MoreCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		55726F07278A538300A1B83B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				55726F08278A538300A1B83B /* MorePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		55726F09278A538300A1B83B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55726F0A278A538300A1B83B /* Commander */,
+				55726F12278A538300A1B83B /* State */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55726F0A278A538300A1B83B /* Commander */ = {
+			isa = PBXGroup;
+			children = (
+				55726F0B278A538300A1B83B /* Operation */,
+				55726F0E278A538300A1B83B /* Command */,
+				55726F11278A538300A1B83B /* MoreCommander.swift */,
+			);
+			path = Commander;
+			sourceTree = "<group>";
+		};
+		55726F0B278A538300A1B83B /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				55726F0C278A538300A1B83B /* MoreLoadingOperation.swift */,
+				55726F0D278A538300A1B83B /* MoreErrorOperation.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		55726F0E278A538300A1B83B /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				55726F0F278A538300A1B83B /* MoreBackCommand.swift */,
+				55726F10278A538300A1B83B /* MoreScreenTimeCommand.swift */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		55726F12278A538300A1B83B /* State */ = {
+			isa = PBXGroup;
+			children = (
+				55726F13278A538300A1B83B /* MoreViewState.swift */,
+				55726F14278A538300A1B83B /* MoreViewAction.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		55726F15278A538300A1B83B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55726F16278A538300A1B83B /* MoreViewController.swift */,
+				55726F17278A538300A1B83B /* MoreView+Constraints.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55726F18278A538300A1B83B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				55726F19278A538300A1B83B /* MoreInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		557EB1C8277903E200328CA5 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +303,7 @@
 		55CA2D9727839D5D008989D0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55726F04278A538300A1B83B /* More */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -284,10 +400,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55726F20278A538300A1B83B /* MoreCommander.swift in Sources */,
+				55726F1E278A538300A1B83B /* MoreBackCommand.swift in Sources */,
+				55726F1A278A538300A1B83B /* MoreCoordinator.swift in Sources */,
+				55726F1D278A538300A1B83B /* MoreErrorOperation.swift in Sources */,
 				55CA2D9627839547008989D0 /* MainTabBar.swift in Sources */,
 				55CA2D7627839118008989D0 /* ServicesLocator.swift in Sources */,
+				55726F1C278A538300A1B83B /* MoreLoadingOperation.swift in Sources */,
+				55726F23278A538300A1B83B /* MoreViewController.swift in Sources */,
 				557EB1D5277903E200328CA5 /* AppDelegate.swift in Sources */,
+				55726F22278A538300A1B83B /* MoreViewAction.swift in Sources */,
+				55726F1F278A538300A1B83B /* MoreScreenTimeCommand.swift in Sources */,
+				55726F21278A538300A1B83B /* MoreViewState.swift in Sources */,
+				55726F24278A538300A1B83B /* MoreView+Constraints.swift in Sources */,
+				55726F25278A538300A1B83B /* MoreInteractor.swift in Sources */,
 				55726F01278A4B3100A1B83B /* FinderLostTabs.swift in Sources */,
+				55726F1B278A538300A1B83B /* MorePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

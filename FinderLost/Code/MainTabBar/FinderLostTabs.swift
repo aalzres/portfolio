@@ -12,11 +12,15 @@ enum TabView: Int, CaseIterable {
 }
 
 extension TabView {
-    var rootViewController: UIViewController {
+    var rootViewController: UIViewController? {
+        let router = UIApplication.serviceLocator.mainRouter
         switch self {
         case .finder: return UIViewController()
         case .lost: return UIViewController()
-        case .more: return UIViewController()
+        case .more:
+            let coordinator = MoreCoordinatorImpl(router: router)
+            coordinator.present()
+            return coordinator.viewController
         }
     }
     var title: String {
