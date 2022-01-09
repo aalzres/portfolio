@@ -212,8 +212,8 @@
 		557EB1D3277903E200328CA5 /* FinderLost */ = {
 			isa = PBXGroup;
 			children = (
-				55CA2D72278390E0008989D0 /* Code */,
 				557EB1D4277903E200328CA5 /* AppDelegate.swift */,
+				55CA2D72278390E0008989D0 /* Code */,
 				557EB1E2277903E400328CA5 /* Info.plist */,
 				55CA2D7127838E4A008989D0 /* Resources */,
 			);
