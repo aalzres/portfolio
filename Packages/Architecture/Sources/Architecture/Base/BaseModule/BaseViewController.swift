@@ -89,13 +89,26 @@ open class BaseViewControllerImpl: UIViewController, BaseViewController {
         }
     }
 
+    public override init(nibName: String?, bundle: Bundle?) {
+        super.init(nibName: nibName, bundle: bundle)
+        setupInit()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupInit()
+    }
+
     deinit {
         BaseDeinit.shared.printDeinit(self)
     }
 
-    @objc dynamic open func setupView() {
+    open func setupInit() {
         view.backgroundColor = backgroundColor
         title = titleView
+    }
+
+    @objc dynamic open func setupView() {
         addAllSubviews()
         addAllConstraints()
         bind()

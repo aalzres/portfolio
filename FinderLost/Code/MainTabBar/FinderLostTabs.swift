@@ -23,18 +23,11 @@ extension TabView {
             return coordinator.viewController
         }
     }
-    var title: String {
-        switch self {
-        case .finder: return "Finder"
-        case .lost: return "Lost"
-        case .more: return "More"
-        }
-    }
     var image: UIImage? {
         switch self {
-        case .finder: return UIImage(named: "Finder")
-        case .lost: return UIImage(named: "Lost")
-        case .more: return UIImage(named: "More")
+        case .finder: return UIImage(named: "")
+        case .lost: return UIImage(named: "")
+        case .more: return UIImage(named: "main_tab_bar_more")
         }
     }
 }

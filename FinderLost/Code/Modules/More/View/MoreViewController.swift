@@ -17,6 +17,7 @@ protocol MoreViewController: BaseViewController {
 }
 
 final class MoreViewControllerImpl: BaseViewControllerImpl, MoreViewController {
+    override var titleView: String { "More" }
     // MARK: - UIElements
 
     // MARK: - Reactive State and Actions

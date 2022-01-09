@@ -12,7 +12,16 @@ final class MainTabBar {
 
     init(tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
+    }
 
+    @discardableResult
+    func execute() -> Self {
+        setupAppearance()
+        createViews()
+        return self
+    }
+
+    private func setupAppearance() {
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
@@ -23,12 +32,6 @@ final class MainTabBar {
         }
     }
 
-    @discardableResult
-    func execute() -> Self {
-        createViews()
-        return self
-    }
-
     private func createViews() {
         tabBarController.viewControllers = TabView.allCases.compactMap(\.viewController)
     }
@@ -37,11 +40,9 @@ final class MainTabBar {
 extension TabView {
     var viewController: UIViewController? {
         guard let rootViewController = rootViewController else { return nil }
-        rootViewController.navigationItem.title = title
         let navController = UINavigationController(rootViewController: rootViewController)
-        navController.navigationBar.prefersLargeTitles = true
         navController.tabBarItem.image = image
-        navController.tabBarItem.title = title
+        navController.tabBarItem.title = rootViewController.title
         return navController
     }
 }
