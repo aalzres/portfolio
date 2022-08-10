@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 5508D7C92766216D002AD2E7 /* DomainMock */; };
 		5521738A2765330300F0132C /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 552173892765330300F0132C /* Data */; };
+		556832F528A43740004D8FE5 /* Statistic in Frameworks */ = {isa = PBXBuildFile; productRef = 556832F428A43740004D8FE5 /* Statistic */; };
 		5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5597ED942765F9FD00A0B3AE /* Assets.xcassets */; };
 		55E768F62762C0C4007CDBFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E768F52762C0C4007CDBFE /* Colors.xcassets */; };
 		55EC6B06276534550002C7DB /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B05276534550002C7DB /* Architecture */; };
@@ -73,6 +74,7 @@
 		5521738D2765337200F0132C /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
 		5521738E2765337E00F0132C /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
 		5521738F2765338700F0132C /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
+		556832F328A435BC004D8FE5 /* Statistic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Statistic; path = Packages/Statistic; sourceTree = "<group>"; };
 		5597ED942765F9FD00A0B3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E768F52762C0C4007CDBFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55F7709227655E3C003681A9 /* Action */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Action; path = Packages/Action; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				55EC6B06276534550002C7DB /* Architecture in Frameworks */,
 				55EC6B0A2765345D0002C7DB /* Domain in Frameworks */,
 				55EC6B08276534590002C7DB /* CakeList in Frameworks */,
+				556832F528A43740004D8FE5 /* Statistic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +172,7 @@
 				5508D7C82766215D002AD2E7 /* DomainMock */,
 				5521738F2765338700F0132C /* UserInterface */,
 				5521738E2765337E00F0132C /* Utilities */,
+				556832F328A435BC004D8FE5 /* Statistic */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -484,6 +488,7 @@
 				55EC6B0D276534650002C7DB /* Utilities */,
 				55F7709327655FC1003681A9 /* Action */,
 				5508D7C92766216D002AD2E7 /* DomainMock */,
+				556832F428A43740004D8FE5 /* Statistic */,
 			);
 			productName = PORTFOLIO;
 			productReference = 6700D1CC24979D1F00ED44AB /* portfolio.app */;
@@ -803,6 +808,10 @@
 		552173892765330300F0132C /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
+		};
+		556832F428A43740004D8FE5 /* Statistic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Statistic;
 		};
 		55EC6B05276534550002C7DB /* Architecture */ = {
 			isa = XCSwiftPackageProductDependency;
