@@ -13,7 +13,7 @@ import RxBlocking
 
 import SwifterSwift
 
-@testable import Statistic
+import Statistic
 
 class StatisticUseCaseTest: QuickSpec {
     override func spec() {

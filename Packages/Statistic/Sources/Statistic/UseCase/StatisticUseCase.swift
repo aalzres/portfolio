@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol StatisticUseCase {
+public protocol StatisticUseCase {
     func getMean(values: Double...) -> Single<Result<Double, StatisticError>>
     func getMean(values: [Double]) -> Single<Result<Double, StatisticError>>
 }
