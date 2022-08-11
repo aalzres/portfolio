@@ -24,6 +24,9 @@ class StatisticUseCaseTest: QuickSpec {
         var numberOfElements: Int {
             Int.random(in: 2...5)
         }
+        var setNumbers: [Double] {
+            (1...numberOfElements).map { _ in randomValue }
+        }
 
         describe("StatisticUseCaseImpl") {
             beforeEach {
@@ -32,12 +35,11 @@ class StatisticUseCaseTest: QuickSpec {
 
             context("Mean test") {
                 it("Success") {
-                    let numberOfElements = numberOfElements
-                    let setNumbers: [Double] = (1...numberOfElements).map { _ in randomValue }
+                    let setNumbers = setNumbers
 
                     let single = sut.getMean(values: setNumbers)
                     let value = try? single.toBlocking().single().success
-                    let expectedValue = setNumbers.reduce(0, +) / numberOfElements.double
+                    let expectedValue = setNumbers.reduce(0, +) / setNumbers.count.double
 
                     expect(value).to(equal(expectedValue))
                 }
@@ -47,6 +49,25 @@ class StatisticUseCaseTest: QuickSpec {
                     let single = sut.getMean(values: setNumbers)
                     let value = try? single.toBlocking().single().failure
                     let expectedValue = StatisticError.divisionByZero
+
+                    expect(value).to(equal(expectedValue))
+                }
+            }
+
+            context("Median test") {
+                it("Success") {
+                    let setNumbers = setNumbers.sorted()
+
+                    let single = sut.getMedian(values: setNumbers)
+                    let value = try? single.toBlocking().single().success
+                    var expectedValue: Double {
+                        let isPair = setNumbers.count % 2 == 0 ? 1 : 0
+                        let numbersToRemove = (setNumbers.count / 2) - isPair
+                        return setNumbers
+                            .dropFirst(numbersToRemove)
+                            .dropLast(numbersToRemove)
+                            .average()
+                    }
 
                     expect(value).to(equal(expectedValue))
                 }
