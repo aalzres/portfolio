@@ -11,6 +11,8 @@ import RxSwift
 public protocol StatisticUseCase {
     func getMean(values: Double...) -> Single<Result<Double, StatisticError>>
     func getMean(values: [Double]) -> Single<Result<Double, StatisticError>>
+    func getMedian(values: Double...) -> Single<Result<Double, StatisticError>>
+    func getMedian(values: [Double]) -> Single<Result<Double, StatisticError>>
 }
 
 public class StatisticUseCaseImpl: StatisticUseCase {
@@ -20,6 +22,12 @@ public class StatisticUseCaseImpl: StatisticUseCase {
         getMean(values: values)
     }
     public func getMean(values: [Double]) -> Single<Result<Double, StatisticError>> {
+        .just(.success(0))
+    }
+    public func getMedian(values: Double...) -> Single<Result<Double, StatisticError>> {
+        getMedian(values: values)
+    }
+    public func getMedian(values: [Double]) -> Single<Result<Double, StatisticError>> {
         .just(.success(0))
     }
 }
