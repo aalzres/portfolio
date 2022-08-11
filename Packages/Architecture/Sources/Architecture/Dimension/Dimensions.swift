@@ -37,6 +37,16 @@ public extension CGFloat {
     static let cornerRadius: CGFloat = 2
 }
 
+// MARK: - Type of line
+extension Int {
+    /// Value: 0
+    public static let unlimitedLines = 0
+    /// Value: 1
+    public static let oneLine = 1
+    /// Value: 2
+    public static let twoLine = 2
+}
+
 public extension TimeInterval {
     /// Animation duration by default
     static let animationDuration: TimeInterval = 2
