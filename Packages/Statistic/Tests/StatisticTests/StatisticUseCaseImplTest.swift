@@ -1,5 +1,5 @@
 //
-//  StatisticUseCaseTest.swift
+//  StatisticUseCaseImplTest.swift
 //  PORTFOLIO
 //
 //  Created by Andres Felipe Alzate Restrepo on 10/8/22.
@@ -15,7 +15,7 @@ import SwifterSwift
 
 import Statistic
 
-class StatisticUseCaseTest: QuickSpec {
+class StatisticUseCaseImplTest: QuickSpec {
     override func spec() {
         var sut: StatisticUseCase!
         var randomValue: Double {
@@ -52,6 +52,15 @@ class StatisticUseCaseTest: QuickSpec {
 
                     expect(value).to(equal(expectedValue))
                 }
+                it("failure - isEmpty") {
+                    let setNumbers: [Double] = []
+
+                    let single = sut.getMean(values: setNumbers)
+                    let value = try? single.toBlocking().single().failure
+                    let expectedValue = StatisticError.isEmpty
+
+                    expect(value).to(equal(expectedValue))
+                }
             }
 
             context("Median test") {
@@ -68,6 +77,15 @@ class StatisticUseCaseTest: QuickSpec {
                             .dropLast(numbersToRemove)
                             .average()
                     }
+
+                    expect(value).to(equal(expectedValue))
+                }
+                it("failure - isEmpty") {
+                    let setNumbers: [Double] = []
+
+                    let single = sut.getMedian(values: setNumbers)
+                    let value = try? single.toBlocking().single().failure
+                    let expectedValue = StatisticError.isEmpty
 
                     expect(value).to(equal(expectedValue))
                 }
