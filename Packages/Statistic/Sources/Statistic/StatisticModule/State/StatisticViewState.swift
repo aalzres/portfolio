@@ -8,25 +8,26 @@
 import Architecture
 import UserInterface
 
+import SwifterSwift
+
 struct StatisticViewState: BaseViewState {
     var isLoading: Bool = false
     var alert: AlertRepresentable?
 
-    private(set) var customButtonList: [StatisticButtonViewState] = [
-        StatisticButtonViewState(title: "1"),
-        StatisticButtonViewState(title: "2"),
-        StatisticButtonViewState(title: "3"),
-        StatisticButtonViewState(title: "4"),
-        StatisticButtonViewState(title: "5"),
-        StatisticButtonViewState(title: "6"),
-        StatisticButtonViewState(title: "7"),
-        StatisticButtonViewState(title: "8"),
-        StatisticButtonViewState(title: "9"),
-        StatisticButtonViewState(title: "0"),
-        StatisticButtonViewState(title: "."),
-        StatisticButtonViewState(title: ","),
-        StatisticButtonViewState(title: "C"),
-        StatisticButtonViewState(title: "<-"),
-        StatisticButtonViewState(title: "="),
-    ]
+    private(set) var setOfNumbers: String = ""
+    private(set) var meanResult: String = ""
+    private(set) var medianResult: String = ""
+    private(set) var customButtonList: [StatisticButtonViewState] = []
+}
+
+extension StatisticViewState {
+    var meanResultText: String {
+        "statistic_mean_description".localizedWith(args: meanResult)
+    }
+    var medianResultText: String {
+        "statistic_median_description".localizedWith(args: medianResult)
+    }
+    var setOfNumbersToDouble: [Double] {
+        setOfNumbers.split(separator: ",").compactMap(Double.init)
+    }
 }

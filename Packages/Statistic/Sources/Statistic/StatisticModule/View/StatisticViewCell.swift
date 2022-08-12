@@ -8,8 +8,11 @@
 import Architecture
 import UserInterface
 
-final class StatisticViewCell: BaseUICollectionViewCell<StatisticButtonViewState> {
+import UIKit
+
+final class StatisticViewCell: BaseUICollectionViewCell<StatisticButtonViewStateImpl> {
     private lazy var customButton = CButton()
+        .set(\.isUserInteractionEnabled, false)
 
     override func addAllSubviews() {
         super.addAllSubviews()
@@ -24,8 +27,7 @@ final class StatisticViewCell: BaseUICollectionViewCell<StatisticButtonViewState
         }
     }
 
-    override func set(viewState: StatisticButtonViewState) {
-        super.set(viewState: viewState)
+    func set(viewState: StatisticButtonViewState) {
         customButton.text = viewState.title
     }
 }
