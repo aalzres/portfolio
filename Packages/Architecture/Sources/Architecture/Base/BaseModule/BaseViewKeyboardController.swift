@@ -8,65 +8,29 @@
 
 import UIKit
 
-open class BaseViewKeyboardController: BaseViewControllerImpl {
-    open var contentHeightExtra: CGFloat { 0 }
-    public lazy var scrollView = UIScrollView()
-    public lazy var contentView = UIView()
-    
-    open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
+import RxGesture
+
+open class BaseKeyboardViewController: BaseUIScrollViewController {
+    open var contentSticky: CGFloat { 0 }
+
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        bindKeyboard()
     }
 
-    open override func addAllSubviews() {
-        super.addAllSubviews()
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-    }
+    private func bindKeyboard() {
+        view.rx.tapGesture()
+            .when(.recognized)
+            .do(onNext: { $0.cancelsTouchesInView = false })
+            .bind(to: rx.dismissKeyboard)
+            .disposed(by: rx.disposeBag)
 
-    open override func addAllConstraints() {
-        super.addAllConstraints()
-        scrollView.snp.makeConstraints {
-            $0.edges.equalTo(safeArea)
-        }
-        contentView.snp.makeConstraints {
-            $0.edges.width.equalToSuperview()
-        }
-    }
-    @objc
-    func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+            .bind(to: rx.keyboardWillShow)
+            .disposed(by: rx.disposeBag)
 
-        let bottom = keyboardSize.height - contentHeightExtra
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: bottom, right: 0.0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc
-    func keyboardWillHide(notification: NSNotification) {
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc
-    func dismissKeyboard() {
-        view.endEditing(true)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+            .bind(to: rx.keyboardWillHide)
+            .disposed(by: rx.disposeBag)
     }
 }

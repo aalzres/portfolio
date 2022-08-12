@@ -10,8 +10,8 @@ import UIKit
 import UserInterface
 import Architecture
 
-class TextFieldVC: BaseViewKeyboardController {
-    override var contentHeightExtra: CGFloat { saveButton.height }
+class TextFieldVC: BaseKeyboardViewController {
+    override var contentSticky: CGFloat { saveButton.height }
     override var titleView: String { "main_screen_text_field".localized() }
 
     private lazy var headerView = UILabel()
