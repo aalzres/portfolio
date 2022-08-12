@@ -7,4 +7,5 @@
 
 public enum StatisticError: Error {
     case divisionByZero
+    case isEmpty
 }

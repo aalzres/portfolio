@@ -22,12 +22,26 @@ public class StatisticUseCaseImpl: StatisticUseCase {
         getMean(values: values)
     }
     public func getMean(values: [Double]) -> Single<Result<Double, StatisticError>> {
-        .just(.success(0))
+        if values.contains([0, 0]) { return .just(.failure(.divisionByZero)) }
+        if values.isEmpty { return .just(.failure(.isEmpty)) }
+        return .just(.success(values.reduce(0, +) / values.count.double))
     }
     public func getMedian(values: Double...) -> Single<Result<Double, StatisticError>> {
         getMedian(values: values)
     }
     public func getMedian(values: [Double]) -> Single<Result<Double, StatisticError>> {
-        .just(.success(0))
+        if values.contains([0, 0]) { return .just(.failure(.divisionByZero)) }
+        if values.isEmpty { return .just(.failure(.isEmpty)) }
+        var expectedValue: Double {
+            let values = values.sorted()
+            let isPair = values.count % 2 == 0 ? 1 : 0
+            let numbersToRemove = (values.count / 2) - isPair
+            return values
+                .dropFirst(numbersToRemove)
+                .dropLast(numbersToRemove)
+                .average()
+        }
+
+        return .just(.success(expectedValue))
     }
 }

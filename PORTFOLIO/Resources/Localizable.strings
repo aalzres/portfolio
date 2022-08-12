@@ -45,7 +45,8 @@
 /* Error */
 "error_generic" = "Hubo un error, inténtalo de nuevo más tarde.";
 "error_wrong_data" = "Parece que tenemos un problema, vuelve a intentarlo más tarde.";
-"error_parameters" = "Lo parámetros no son válidos.";
+"error_parameters" = "invalid parameters";
+"error_division_by_zero" = "division by zero not available";
 
 /* User interface */
 "alert_view_action_title_by_default" = "Continuar";

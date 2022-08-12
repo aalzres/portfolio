@@ -40,8 +40,12 @@ class MainScreenRouter {
     }
 
     func goStatistic() {
-        let vc = StatisticViewControllerImpl()
-        UIApplication.serviceLocator.mainRouter.push(vc: vc)
+        let statisticUseCase = StatisticUseCaseImpl()
+
+        StatisticCoordinatorImpl(
+            router: UIApplication.serviceLocator.mainRouter,
+            statisticUseCase: statisticUseCase
+        ).present()
     }
 
     class func create() -> MainScreenVC {
