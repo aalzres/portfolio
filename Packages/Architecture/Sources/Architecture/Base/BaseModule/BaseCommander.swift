@@ -10,6 +10,7 @@ import RxSwift
 open class BaseCommander: ReactiveCompatible {
     public var commands: [BaseCommand] = []
     public var operations: [BaseOperation] = []
+    public var reducer: [BaseReducer] = []
 
     public init() { }
 
