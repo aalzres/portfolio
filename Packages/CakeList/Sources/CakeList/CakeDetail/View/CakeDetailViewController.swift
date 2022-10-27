@@ -36,7 +36,17 @@ final class CakeDetailViewControllerImpl: BaseViewControllerImpl, CakeDetailView
     var action: RxCocoa.Driver<CakeDetailViewAction> {
         actionSubject.asDriverIgnoringErrors()
     }
- 
+
+    override func addAllSubviews() {
+        super.addAllSubviews()
+        underlyingAddAllSubviews()
+    }
+
+    override func addAllConstraints() {
+        super.addAllConstraints()
+        underlyinAddAllConstraints()
+    }
+
     // MARK: - Binding
     override func bindState() {
         super.bindState()
