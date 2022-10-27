@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class CButton: BaseUIView {
+public final class CButton: BaseUIView {
     lazy var customButtom = UIButton()
         .set(\.backgroundColor, .first)
         .set(\.cornerRadius, .buttonCornerRadius)
@@ -21,7 +21,7 @@ public class CButton: BaseUIView {
         super.addAllConstraints()
         customButtom.snp.makeConstraints {
             $0.height.equalTo(.buttonHeight)
-            $0.edges.equalToSuperview().inset(.paddingS)
+            $0.edges.equalToSuperview()
         }
     }
 }

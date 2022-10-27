@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 5508D7C92766216D002AD2E7 /* DomainMock */; };
-		5521738A2765330300F0132C /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 552173892765330300F0132C /* Data */; };
 		5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5597ED942765F9FD00A0B3AE /* Assets.xcassets */; };
+		55E4C94628A6638F002FA45A /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94528A6638F002FA45A /* Action */; };
+		55E4C94828A66392002FA45A /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94728A66392002FA45A /* Architecture */; };
+		55E4C94A28A66395002FA45A /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94928A66395002FA45A /* CakeList */; };
+		55E4C94C28A66398002FA45A /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94B28A66398002FA45A /* Data */; };
+		55E4C94E28A6639C002FA45A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94D28A6639C002FA45A /* Domain */; };
+		55E4C95028A663A0002FA45A /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94F28A663A0002FA45A /* DomainMock */; };
+		55E4C95228A663A4002FA45A /* Statistic in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95128A663A4002FA45A /* Statistic */; };
+		55E4C95428A663A8002FA45A /* UserInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95328A663A8002FA45A /* UserInterface */; };
+		55E4C95628A663AF002FA45A /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95528A663AF002FA45A /* Utilities */; };
 		55E768F62762C0C4007CDBFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E768F52762C0C4007CDBFE /* Colors.xcassets */; };
-		55EC6B06276534550002C7DB /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B05276534550002C7DB /* Architecture */; };
-		55EC6B08276534590002C7DB /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B07276534590002C7DB /* CakeList */; };
-		55EC6B0A2765345D0002C7DB /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B092765345D0002C7DB /* Domain */; };
-		55EC6B0C276534610002C7DB /* UserInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B0B276534610002C7DB /* UserInterface */; };
-		55EC6B0E276534650002C7DB /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC6B0D276534650002C7DB /* Utilities */; };
-		55F7709427655FC1003681A9 /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 55F7709327655FC1003681A9 /* Action */; };
 		6700D1D024979D1F00ED44AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1CF24979D1F00ED44AB /* AppDelegate.swift */; };
 		6700D1DC24979D2500ED44AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6700D1DA24979D2500ED44AB /* LaunchScreen.storyboard */; };
 		6700D1E72497B50000ED44AB /* ServicesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700D1E62497B50000ED44AB /* ServicesLocator.swift */; };
@@ -66,16 +67,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5508D7C82766215D002AD2E7 /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
-		55217387276532F600F0132C /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
-		5521738B2765330C00F0132C /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
-		5521738C2765334C00F0132C /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
-		5521738D2765337200F0132C /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
-		5521738E2765337E00F0132C /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
-		5521738F2765338700F0132C /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
 		5597ED942765F9FD00A0B3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55BD497428A65F87002A365E /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Action; path = Packages/Action; sourceTree = "<group>"; };
+		55BD497528A65F87002A365E /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
+		55BD497628A65F87002A365E /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
+		55BD497728A65F87002A365E /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
+		55BD497828A65F87002A365E /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
+		55BD497928A65F88002A365E /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = Packages/Data; sourceTree = "<group>"; };
+		55BD497A28A65F88002A365E /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
+		55BD497B28A65F88002A365E /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
+		55BD497C28A65F88002A365E /* Statistic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Statistic; path = Packages/Statistic; sourceTree = "<group>"; };
+		55E4C92128A660D6002FA45A /* PORTFOLIO.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PORTFOLIO.xcodeproj; sourceTree = "<group>"; };
+		55E4C92428A660E9002FA45A /* ios-project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = "ios-project.xcworkspace"; sourceTree = "<group>"; };
+		55E4C92828A661F1002FA45A /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DomainMock; sourceTree = "<group>"; };
+		55E4C92928A661F1002FA45A /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
+		55E4C92A28A661F1002FA45A /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Action; sourceTree = "<group>"; };
+		55E4C92B28A661F1002FA45A /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Architecture; sourceTree = "<group>"; };
+		55E4C92C28A661F1002FA45A /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UserInterface; sourceTree = "<group>"; };
+		55E4C92D28A661F1002FA45A /* Statistic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Statistic; sourceTree = "<group>"; };
+		55E4C92E28A661F1002FA45A /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		55E4C92F28A661F1002FA45A /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		55E4C93028A661F1002FA45A /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CakeList; sourceTree = "<group>"; };
+		55E4C93128A66207002FA45A /* Statistic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Statistic; path = Packages/Statistic; sourceTree = "<group>"; };
+		55E4C93228A66211002FA45A /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
+		55E4C93328A6621B002FA45A /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Action; path = Packages/Action; sourceTree = "<group>"; };
+		55E4C93428A66223002FA45A /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = Packages/Data; sourceTree = "<group>"; };
+		55E4C93528A6622C002FA45A /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
+		55E4C93628A66232002FA45A /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
+		55E4C93728A6623B002FA45A /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
+		55E4C93828A66243002FA45A /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
+		55E4C93928A6624B002FA45A /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
 		55E768F52762C0C4007CDBFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		55F7709227655E3C003681A9 /* Action */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Action; path = Packages/Action; sourceTree = "<group>"; };
 		6700D1CC24979D1F00ED44AB /* portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6700D1CF24979D1F00ED44AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6700D1DB24979D2500ED44AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,14 +154,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5521738A2765330300F0132C /* Data in Frameworks */,
-				55EC6B0E276534650002C7DB /* Utilities in Frameworks */,
-				55EC6B0C276534610002C7DB /* UserInterface in Frameworks */,
-				55F7709427655FC1003681A9 /* Action in Frameworks */,
-				5508D7CA2766216D002AD2E7 /* DomainMock in Frameworks */,
-				55EC6B06276534550002C7DB /* Architecture in Frameworks */,
-				55EC6B0A2765345D0002C7DB /* Domain in Frameworks */,
-				55EC6B08276534590002C7DB /* CakeList in Frameworks */,
+				55E4C94E28A6639C002FA45A /* Domain in Frameworks */,
+				55E4C94628A6638F002FA45A /* Action in Frameworks */,
+				55E4C95028A663A0002FA45A /* DomainMock in Frameworks */,
+				55E4C94828A66392002FA45A /* Architecture in Frameworks */,
+				55E4C95628A663AF002FA45A /* Utilities in Frameworks */,
+				55E4C94C28A66398002FA45A /* Data in Frameworks */,
+				55E4C95428A663A8002FA45A /* UserInterface in Frameworks */,
+				55E4C94A28A66395002FA45A /* CakeList in Frameworks */,
+				55E4C95228A663A4002FA45A /* Statistic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,14 +184,15 @@
 		55217386276532F600F0132C /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				55F7709227655E3C003681A9 /* Action */,
-				5521738D2765337200F0132C /* Architecture */,
-				5521738C2765334C00F0132C /* CakeList */,
-				55217387276532F600F0132C /* Data */,
-				5521738B2765330C00F0132C /* Domain */,
-				5508D7C82766215D002AD2E7 /* DomainMock */,
-				5521738F2765338700F0132C /* UserInterface */,
-				5521738E2765337E00F0132C /* Utilities */,
+				55E4C93128A66207002FA45A /* Statistic */,
+				55E4C93228A66211002FA45A /* DomainMock */,
+				55E4C93328A6621B002FA45A /* Action */,
+				55E4C93428A66223002FA45A /* Data */,
+				55E4C93528A6622C002FA45A /* Domain */,
+				55E4C93628A66232002FA45A /* CakeList */,
+				55E4C93728A6623B002FA45A /* Architecture */,
+				55E4C93828A66243002FA45A /* Utilities */,
+				55E4C93928A6624B002FA45A /* UserInterface */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -176,8 +200,41 @@
 		552173882765330300F0132C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55E4C92728A661F1002FA45A /* Packages */,
+				55E4C92428A660E9002FA45A /* ios-project.xcworkspace */,
+				55E4C92128A660D6002FA45A /* PORTFOLIO.xcodeproj */,
+				55BD497428A65F87002A365E /* Action */,
+				55BD497728A65F87002A365E /* Architecture */,
+				55BD497628A65F87002A365E /* CakeList */,
+				55BD497928A65F88002A365E /* Data */,
+				55BD497528A65F87002A365E /* Domain */,
+				55BD497B28A65F88002A365E /* DomainMock */,
+				55BD497C28A65F88002A365E /* Statistic */,
+				55BD497A28A65F88002A365E /* UserInterface */,
+				55BD497828A65F87002A365E /* Utilities */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55E4C92228A660D6002FA45A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55E4C92728A661F1002FA45A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				55E4C92828A661F1002FA45A /* DomainMock */,
+				55E4C92928A661F1002FA45A /* Utilities */,
+				55E4C92A28A661F1002FA45A /* Action */,
+				55E4C92B28A661F1002FA45A /* Architecture */,
+				55E4C92C28A661F1002FA45A /* UserInterface */,
+				55E4C92D28A661F1002FA45A /* Statistic */,
+				55E4C92E28A661F1002FA45A /* Data */,
+				55E4C92F28A661F1002FA45A /* Domain */,
+				55E4C93028A661F1002FA45A /* CakeList */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 		6700D1C324979D1F00ED44AB = {
@@ -476,14 +533,15 @@
 			);
 			name = PORTFOLIO;
 			packageProductDependencies = (
-				552173892765330300F0132C /* Data */,
-				55EC6B05276534550002C7DB /* Architecture */,
-				55EC6B07276534590002C7DB /* CakeList */,
-				55EC6B092765345D0002C7DB /* Domain */,
-				55EC6B0B276534610002C7DB /* UserInterface */,
-				55EC6B0D276534650002C7DB /* Utilities */,
-				55F7709327655FC1003681A9 /* Action */,
-				5508D7C92766216D002AD2E7 /* DomainMock */,
+				55E4C94528A6638F002FA45A /* Action */,
+				55E4C94728A66392002FA45A /* Architecture */,
+				55E4C94928A66395002FA45A /* CakeList */,
+				55E4C94B28A66398002FA45A /* Data */,
+				55E4C94D28A6639C002FA45A /* Domain */,
+				55E4C94F28A663A0002FA45A /* DomainMock */,
+				55E4C95128A663A4002FA45A /* Statistic */,
+				55E4C95328A663A8002FA45A /* UserInterface */,
+				55E4C95528A663AF002FA45A /* Utilities */,
 			);
 			productName = PORTFOLIO;
 			productReference = 6700D1CC24979D1F00ED44AB /* portfolio.app */;
@@ -515,6 +573,12 @@
 			mainGroup = 6700D1C324979D1F00ED44AB;
 			productRefGroup = 6700D1CD24979D1F00ED44AB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 55E4C92228A660D6002FA45A /* Products */;
+					ProjectRef = 55E4C92128A660D6002FA45A /* PORTFOLIO.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6700D1CB24979D1F00ED44AB /* PORTFOLIO */,
@@ -796,37 +860,41 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5508D7C92766216D002AD2E7 /* DomainMock */ = {
+		55E4C94528A6638F002FA45A /* Action */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DomainMock;
+			productName = Action;
 		};
-		552173892765330300F0132C /* Data */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Data;
-		};
-		55EC6B05276534550002C7DB /* Architecture */ = {
+		55E4C94728A66392002FA45A /* Architecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Architecture;
 		};
-		55EC6B07276534590002C7DB /* CakeList */ = {
+		55E4C94928A66395002FA45A /* CakeList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CakeList;
 		};
-		55EC6B092765345D0002C7DB /* Domain */ = {
+		55E4C94B28A66398002FA45A /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		55E4C94D28A6639C002FA45A /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
 		};
-		55EC6B0B276534610002C7DB /* UserInterface */ = {
+		55E4C94F28A663A0002FA45A /* DomainMock */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DomainMock;
+		};
+		55E4C95128A663A4002FA45A /* Statistic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Statistic;
+		};
+		55E4C95328A663A8002FA45A /* UserInterface */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserInterface;
 		};
-		55EC6B0D276534650002C7DB /* Utilities */ = {
+		55E4C95528A663AF002FA45A /* Utilities */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Utilities;
-		};
-		55F7709327655FC1003681A9 /* Action */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Action;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

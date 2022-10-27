@@ -10,8 +10,8 @@ import UIKit
 import UserInterface
 import Architecture
 
-class TextFieldVC: BaseViewKeyboardController {
-    override var contentHeightExtra: CGFloat { saveButton.height }
+class TextFieldVC: BaseKeyboardViewController {
+    override var contentSticky: CGFloat { saveButton.height }
     override var titleView: String { "main_screen_text_field".localized() }
 
     private lazy var headerView = UILabel()
@@ -105,12 +105,15 @@ class TextFieldVC: BaseViewKeyboardController {
         .set(\.textColor, .black)
         .addLine(position: .bottom)
 
+    private lazy var saveContentButton = UIView()
+
     private lazy var saveButton = CButton()
         .set(\.text, "Save")
 
     override func addAllSubviews() {
         super.addAllSubviews()
-        view.addSubview(saveButton)
+        view.addSubview(saveContentButton)
+        saveContentButton.addSubview(saveButton)
         contentView.addSubviews([
             headerView,
             nameLabel,
@@ -137,9 +140,12 @@ class TextFieldVC: BaseViewKeyboardController {
         scrollView.snp.remakeConstraints {
             $0.top.horizontal.equalTo(safeArea)
         }
-        saveButton.snp.makeConstraints {
+        saveContentButton.snp.makeConstraints {
             $0.top.equalTo(scrollView.snp.bottom)
             $0.horizontal.bottom.equalToSuperview()
+        }
+        saveButton.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(.paddingS)
         }
         headerView.snp.makeConstraints {
             $0.top.horizontal.equalToSuperview().inset(.paddingS)

@@ -17,6 +17,7 @@
 "main_screen_marvel" = "Marvel";
 "main_screen_map_kit" = "Map kit";
 "main_screen_cake_list" = "Cake list";
+"main_screen_statistic" = "Statistic";
 
 /* Text Field */
 "text_field_header_view" = "Datos del usuario";
@@ -44,7 +45,8 @@
 /* Error */
 "error_generic" = "Hubo un error, inténtalo de nuevo más tarde.";
 "error_wrong_data" = "Parece que tenemos un problema, vuelve a intentarlo más tarde.";
-"error_parameters" = "Lo parámetros no son válidos.";
+"error_parameters" = "invalid parameters";
+"error_division_by_zero" = "division by zero not available";
 
 /* User interface */
 "alert_view_action_title_by_default" = "Continuar";
@@ -55,3 +57,9 @@
 "module_cake_list_is_empty_alert_title" = "Lo sentimos";
 "module_cake_list_is_empty_alert_message" = "No hay tartas disponibles";
 "cake_list_title_view" = "Lista de tartas";
+
+/* Statistic */
+"statistic_title_view" = "Statistic";
+"statistic_description" = "Calculate mean and median the next numbers separated with comma";
+"statistic_mean_description" = "Mean: %@";
+"statistic_median_description" = "Median: %@";

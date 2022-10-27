@@ -23,13 +23,7 @@
 		557EB1D5277903E200328CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EB1D4277903E200328CA5 /* AppDelegate.swift */; };
 		557EB1DE277903E400328CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DD277903E400328CA5 /* Assets.xcassets */; };
 		557EB1E1277903E400328CA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DF277903E400328CA5 /* LaunchScreen.storyboard */; };
-		557EB2062779046B00328CA5 /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 557EB2052779046B00328CA5 /* Action */; };
-		557EB2082779046F00328CA5 /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 557EB2072779046F00328CA5 /* Architecture */; };
-		557EB20A2779047400328CA5 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 557EB2092779047400328CA5 /* Data */; };
-		557EB20C2779047800328CA5 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 557EB20B2779047800328CA5 /* Domain */; };
-		557EB20E2779047D00328CA5 /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 557EB20D2779047D00328CA5 /* DomainMock */; };
-		557EB2102779048100328CA5 /* UserInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 557EB20F2779048100328CA5 /* UserInterface */; };
-		557EB2122779048600328CA5 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 557EB2112779048600328CA5 /* Utilities */; };
+		55BD498128A65FE2002A365E /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 55BD498028A65FE2002A365E /* Action */; };
 		55CA2D7627839118008989D0 /* ServicesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CA2D7527839117008989D0 /* ServicesLocator.swift */; };
 		55CA2D86278391E2008989D0 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D79278391E2008989D0 /* Roboto-Medium.ttf */; };
 		55CA2D87278391E2008989D0 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D7A278391E2008989D0 /* Roboto-Light.ttf */; };
@@ -45,6 +39,13 @@
 		55CA2D91278391E2008989D0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D84278391E2008989D0 /* Roboto-Black.ttf */; };
 		55CA2D92278391E2008989D0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D85278391E2008989D0 /* Colors.xcassets */; };
 		55CA2D9627839547008989D0 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CA2D9527839547008989D0 /* MainTabBar.swift */; };
+		55E4C95828A663DD002FA45A /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95728A663DD002FA45A /* Architecture */; };
+		55E4C95A28A663E0002FA45A /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95928A663E0002FA45A /* CakeList */; };
+		55E4C95C28A663E4002FA45A /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95B28A663E4002FA45A /* Data */; };
+		55E4C95E28A663E8002FA45A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95D28A663E8002FA45A /* Domain */; };
+		55E4C96028A663EB002FA45A /* DomainMock in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95F28A663EB002FA45A /* DomainMock */; };
+		55E4C96228A663F1002FA45A /* UserInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C96128A663F1002FA45A /* UserInterface */; };
+		55E4C96428A663F4002FA45A /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C96328A663F4002FA45A /* Utilities */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,16 @@
 		55CA2D84278391E2008989D0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		55CA2D85278391E2008989D0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55CA2D9527839547008989D0 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		55E4C93B28A6629E002FA45A /* Statistic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Statistic; path = Packages/Statistic; sourceTree = "<group>"; };
+		55E4C93C28A662BD002FA45A /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
+		55E4C93D28A662C6002FA45A /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Action; path = Packages/Action; sourceTree = "<group>"; };
+		55E4C93E28A662D9002FA45A /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = Packages/Data; sourceTree = "<group>"; };
+		55E4C93F28A662E3002FA45A /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
+		55E4C94028A662EF002FA45A /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
+		55E4C94128A662F8002FA45A /* Architecture */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Architecture; path = Packages/Architecture; sourceTree = "<group>"; };
+		55E4C94228A66301002FA45A /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
+		55E4C94328A6630C002FA45A /* UserInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UserInterface; path = Packages/UserInterface; sourceTree = "<group>"; };
+		55E4C94428A66329002FA45A /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Action; path = Packages/Action; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +99,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				557EB2062779046B00328CA5 /* Action in Frameworks */,
-				557EB2082779046F00328CA5 /* Architecture in Frameworks */,
-				557EB20C2779047800328CA5 /* Domain in Frameworks */,
-				557EB20E2779047D00328CA5 /* DomainMock in Frameworks */,
-				557EB2122779048600328CA5 /* Utilities in Frameworks */,
-				557EB20A2779047400328CA5 /* Data in Frameworks */,
-				557EB2102779048100328CA5 /* UserInterface in Frameworks */,
+				55E4C95E28A663E8002FA45A /* Domain in Frameworks */,
+				55E4C96228A663F1002FA45A /* UserInterface in Frameworks */,
+				55BD498128A65FE2002A365E /* Action in Frameworks */,
+				55E4C96028A663EB002FA45A /* DomainMock in Frameworks */,
+				55E4C95828A663DD002FA45A /* Architecture in Frameworks */,
+				55E4C96428A663F4002FA45A /* Utilities in Frameworks */,
+				55E4C95C28A663E4002FA45A /* Data in Frameworks */,
+				55E4C95A28A663E0002FA45A /* CakeList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +207,7 @@
 		557EB1C8277903E200328CA5 = {
 			isa = PBXGroup;
 			children = (
+				55E4C93A28A6629E002FA45A /* Packages */,
 				557EB1D3277903E200328CA5 /* FinderLost */,
 				557EB1D2277903E200328CA5 /* Products */,
 				557EB2042779046B00328CA5 /* Frameworks */,
@@ -308,6 +321,23 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		55E4C93A28A6629E002FA45A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				55E4C93B28A6629E002FA45A /* Statistic */,
+				55E4C93C28A662BD002FA45A /* DomainMock */,
+				55E4C93D28A662C6002FA45A /* Action */,
+				55E4C93E28A662D9002FA45A /* Data */,
+				55E4C93F28A662E3002FA45A /* Domain */,
+				55E4C94028A662EF002FA45A /* CakeList */,
+				55E4C94128A662F8002FA45A /* Architecture */,
+				55E4C94228A66301002FA45A /* Utilities */,
+				55E4C94328A6630C002FA45A /* UserInterface */,
+				55E4C94428A66329002FA45A /* Action */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,13 +355,14 @@
 			);
 			name = FinderLost;
 			packageProductDependencies = (
-				557EB2052779046B00328CA5 /* Action */,
-				557EB2072779046F00328CA5 /* Architecture */,
-				557EB2092779047400328CA5 /* Data */,
-				557EB20B2779047800328CA5 /* Domain */,
-				557EB20D2779047D00328CA5 /* DomainMock */,
-				557EB20F2779048100328CA5 /* UserInterface */,
-				557EB2112779048600328CA5 /* Utilities */,
+				55BD498028A65FE2002A365E /* Action */,
+				55E4C95728A663DD002FA45A /* Architecture */,
+				55E4C95928A663E0002FA45A /* CakeList */,
+				55E4C95B28A663E4002FA45A /* Data */,
+				55E4C95D28A663E8002FA45A /* Domain */,
+				55E4C95F28A663EB002FA45A /* DomainMock */,
+				55E4C96128A663F1002FA45A /* UserInterface */,
+				55E4C96328A663F4002FA45A /* Utilities */,
 			);
 			productName = FinderLost;
 			productReference = 557EB1D1277903E200328CA5 /* FinderLost.app */;
@@ -631,31 +662,35 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		557EB2052779046B00328CA5 /* Action */ = {
+		55BD498028A65FE2002A365E /* Action */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Action;
 		};
-		557EB2072779046F00328CA5 /* Architecture */ = {
+		55E4C95728A663DD002FA45A /* Architecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Architecture;
 		};
-		557EB2092779047400328CA5 /* Data */ = {
+		55E4C95928A663E0002FA45A /* CakeList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CakeList;
+		};
+		55E4C95B28A663E4002FA45A /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
 		};
-		557EB20B2779047800328CA5 /* Domain */ = {
+		55E4C95D28A663E8002FA45A /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
 		};
-		557EB20D2779047D00328CA5 /* DomainMock */ = {
+		55E4C95F28A663EB002FA45A /* DomainMock */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DomainMock;
 		};
-		557EB20F2779048100328CA5 /* UserInterface */ = {
+		55E4C96128A663F1002FA45A /* UserInterface */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserInterface;
 		};
-		557EB2112779048600328CA5 /* Utilities */ = {
+		55E4C96328A663F4002FA45A /* Utilities */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Utilities;
 		};

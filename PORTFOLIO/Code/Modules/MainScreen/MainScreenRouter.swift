@@ -7,7 +7,10 @@
 //
 
 import UIKit
+
 import CakeList
+import Statistic
+
 import Domain
 import DomainMock
 
@@ -33,6 +36,15 @@ class MainScreenRouter {
         ModuleCakeCoordinatorImpl(
             router: UIApplication.serviceLocator.mainRouter,
             cakeListUseCase: useCaseMock[0]
+        ).present()
+    }
+
+    func goStatistic() {
+        let statisticUseCase = StatisticUseCaseImpl()
+
+        StatisticCoordinatorImpl(
+            router: UIApplication.serviceLocator.mainRouter,
+            statisticUseCase: statisticUseCase
         ).present()
     }
 
