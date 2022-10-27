@@ -15,7 +15,8 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "git@github.com:aalzres/SwifterSwift.git", from: "5.2.0"),
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.5.0"),
+        .package(url: "https://github.com/RxSwiftCommunity/RxGesture.git", from: "4.0.4"),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.5.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,6 +26,7 @@ let package = Package(
             dependencies: [
                 "SwifterSwift",
                 "RxSwift",
+                "RxGesture",
                 .product(name: "RxCocoa", package: "RxSwift"),
             ]
         ),

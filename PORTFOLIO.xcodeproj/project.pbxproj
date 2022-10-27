@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5597ED942765F9FD00A0B3AE /* Assets.xcassets */; };
-		55BD497328A65F24002A365E /* FinderLost.app in Resources */ = {isa = PBXBuildFile; fileRef = 55BD497228A65F24002A365E /* FinderLost.app */; };
 		55E4C94628A6638F002FA45A /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94528A6638F002FA45A /* Action */; };
 		55E4C94828A66392002FA45A /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94728A66392002FA45A /* Architecture */; };
 		55E4C94A28A66395002FA45A /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94928A66395002FA45A /* CakeList */; };
@@ -69,7 +68,6 @@
 
 /* Begin PBXFileReference section */
 		5597ED942765F9FD00A0B3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		55BD497228A65F24002A365E /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BD497428A65F87002A365E /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Action; path = Packages/Action; sourceTree = "<group>"; };
 		55BD497528A65F87002A365E /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
 		55BD497628A65F87002A365E /* CakeList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CakeList; path = Packages/CakeList; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				55BD497C28A65F88002A365E /* Statistic */,
 				55BD497A28A65F88002A365E /* UserInterface */,
 				55BD497828A65F87002A365E /* Utilities */,
-				55BD497228A65F24002A365E /* FinderLost.app */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -597,7 +594,6 @@
 				675FDB8C24A39CBF00126476 /* Roboto-Thin.ttf in Resources */,
 				675FDB8724A39CBF00126476 /* Roboto-BoldItalic.ttf in Resources */,
 				675FDB8D24A39CBF00126476 /* Roboto-Black.ttf in Resources */,
-				55BD497328A65F24002A365E /* FinderLost.app in Resources */,
 				675FDB8B24A39CBF00126476 /* Roboto-Bold.ttf in Resources */,
 				675FDB8424A39CBF00126476 /* Roboto-Regular.ttf in Resources */,
 				675FDB8824A39CBF00126476 /* Roboto-LightItalic.ttf in Resources */,
