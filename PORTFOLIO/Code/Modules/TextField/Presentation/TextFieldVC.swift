@@ -11,9 +11,12 @@ import UserInterface
 import Architecture
 
 class TextFieldVC: BaseKeyboardViewController {
-    override var contentSticky: CGFloat { saveButton.height }
+    override var contentSticky: CGFloat { saveContentButton.height }
     override var titleView: String { "main_screen_text_field".localized() }
 
+    private lazy var contentStackView = UIStackView()
+        .set(\.axis, .vertical)
+        .set(\.spacing, .paddingS)
     private lazy var headerView = UILabel()
         .set(\.font, .title)
         .set(\.textColor, .black)
@@ -114,7 +117,8 @@ class TextFieldVC: BaseKeyboardViewController {
         super.addAllSubviews()
         view.addSubview(saveContentButton)
         saveContentButton.addSubview(saveButton)
-        contentView.addSubviews([
+        contentView.addSubview(contentStackView)
+        contentStackView.addArrangedSubviews([
             headerView,
             nameLabel,
             nameInput,
@@ -140,79 +144,16 @@ class TextFieldVC: BaseKeyboardViewController {
         scrollView.snp.remakeConstraints {
             $0.top.horizontal.equalTo(safeArea)
         }
+        contentStackView.snp.makeConstraints {
+            $0.edges.width.equalToSuperview().inset(.paddingS)
+        }
         saveContentButton.snp.makeConstraints {
             $0.top.equalTo(scrollView.snp.bottom)
-            $0.horizontal.bottom.equalToSuperview()
+            $0.horizontal.equalToSuperview()
+            $0.bottom.equalTo(safeArea)
         }
         saveButton.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(.paddingS)
-        }
-        headerView.snp.makeConstraints {
-            $0.top.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        nameLabel.snp.makeConstraints {
-            $0.top.equalTo(headerView.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        nameInput.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        documentNumberLabel.snp.makeConstraints {
-            $0.top.equalTo(nameInput.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        documentNumberInput.snp.makeConstraints {
-            $0.top.equalTo(documentNumberLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        dateOfBirthLabel.snp.makeConstraints {
-            $0.top.equalTo(documentNumberInput.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        dateOfBirthInput.snp.makeConstraints {
-            $0.top.equalTo(dateOfBirthLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        mailLabel.snp.makeConstraints {
-            $0.top.equalTo(dateOfBirthInput.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        mailInput.snp.makeConstraints {
-            $0.top.equalTo(mailLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        addressLabel.snp.makeConstraints {
-            $0.top.equalTo(mailInput.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        addressInput.snp.makeConstraints {
-            $0.top.equalTo(addressLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        sexLabel.snp.makeConstraints {
-            $0.top.equalTo(addressInput.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        sexInput.snp.makeConstraints {
-            $0.top.equalTo(sexLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        telLabel.snp.makeConstraints {
-            $0.top.equalTo(sexInput.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        telInput.snp.makeConstraints {
-            $0.top.equalTo(telLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        nationalityLabel.snp.makeConstraints {
-            $0.top.equalTo(telInput.snp.bottom).offset(.paddingM)
-            $0.horizontal.equalToSuperview().inset(.paddingS)
-        }
-        nationalityInput.snp.makeConstraints {
-            $0.top.equalTo(nationalityLabel.snp.bottom).offset(.paddingS)
-            $0.horizontal.bottom.equalToSuperview().inset(.paddingS)
         }
     }
 }
