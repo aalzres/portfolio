@@ -19,21 +19,17 @@ import UIKit
       */
      public lazy var contentView = UIView()
 
-     open override func setupView() {
-         super.setupView()
-         setupScrollView()
-         setupContentView()
+     open override func addAllSubviews() {
+         super.addAllSubviews()
+         view.addSubview(scrollView)
+         scrollView.addSubview(contentView)
      }
 
-     private func setupScrollView() {
-         view.addSubview(scrollView)
+     open override func addAllConstraints() {
+         super.addAllConstraints()
          scrollView.snp.makeConstraints {
              $0.edges.equalTo(safeArea)
          }
-     }
-
-     private func setupContentView() {
-         scrollView.addSubview(contentView)
          contentView.snp.makeConstraints {
              $0.edges.width.equalToSuperview()
          }

@@ -106,19 +106,19 @@ open class BaseViewControllerImpl: UIViewController, BaseViewController {
     open func setupInit() {
         view.backgroundColor = backgroundColor
         title = titleView
-    }
-
-    @objc dynamic open func setupView() {
-        addAllSubviews()
-        addAllConstraints()
         bind()
     }
 
-    @objc open dynamic func addAllSubviews() {
+    open func setupView() {
+        addAllSubviews()
+        addAllConstraints()
+    }
+
+    open func addAllSubviews() {
         view.addSubview(activityIndicator)
     }
 
-    @objc open dynamic func addAllConstraints() {
+    open func addAllConstraints() {
         activityIndicator.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
