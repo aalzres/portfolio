@@ -18,6 +18,7 @@
 "main_screen_map_kit" = "Map kit";
 "main_screen_cake_list" = "Cake list";
 "main_screen_statistic" = "Statistic";
+"main_screen_google_maps" = "GoogleMaps";
 
 /* Text Field */
 "text_field_header_view" = "Datos del usuario";
