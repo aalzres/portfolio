@@ -49,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		553815C2290C614E00EC9BD0 /* CGoogleMaps */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CGoogleMaps; path = Packages/CGoogleMaps; sourceTree = "<group>"; };
 		55726F00278A4B3000A1B83B /* FinderLostTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostTabs.swift; sourceTree = "<group>"; };
 		55726F06278A538300A1B83B /* MoreCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
 		55726F08278A538300A1B83B /* MorePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
@@ -334,6 +335,7 @@
 				55E4C94228A66301002FA45A /* Utilities */,
 				55E4C94328A6630C002FA45A /* UserInterface */,
 				55E4C94428A66329002FA45A /* Action */,
+				553815C2290C614E00EC9BD0 /* CGoogleMaps */,
 			);
 			name = Packages;
 			sourceTree = "<group>";

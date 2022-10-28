@@ -67,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		553815C3290C619500EC9BD0 /* CGoogleMaps */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CGoogleMaps; path = Packages/CGoogleMaps; sourceTree = "<group>"; };
 		5597ED942765F9FD00A0B3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55BD497428A65F87002A365E /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Action; path = Packages/Action; sourceTree = "<group>"; };
 		55BD497528A65F87002A365E /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
@@ -184,15 +185,16 @@
 		55217386276532F600F0132C /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				55E4C93128A66207002FA45A /* Statistic */,
-				55E4C93228A66211002FA45A /* DomainMock */,
 				55E4C93328A6621B002FA45A /* Action */,
+				55E4C93728A6623B002FA45A /* Architecture */,
+				55E4C93628A66232002FA45A /* CakeList */,
+				553815C3290C619500EC9BD0 /* CGoogleMaps */,
 				55E4C93428A66223002FA45A /* Data */,
 				55E4C93528A6622C002FA45A /* Domain */,
-				55E4C93628A66232002FA45A /* CakeList */,
-				55E4C93728A6623B002FA45A /* Architecture */,
-				55E4C93828A66243002FA45A /* Utilities */,
+				55E4C93228A66211002FA45A /* DomainMock */,
+				55E4C93128A66207002FA45A /* Statistic */,
 				55E4C93928A6624B002FA45A /* UserInterface */,
+				55E4C93828A66243002FA45A /* Utilities */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -792,6 +794,7 @@
 				DEVELOPMENT_TEAM = 8V6VHUXWV2;
 				GMAPS_API_KEY = AIzaSyAh7bC8pluisOpHtaboJSoixuh3mwWCrDE;
 				INFOPLIST_FILE = PORTFOLIO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -818,6 +821,7 @@
 				DEVELOPMENT_TEAM = 8V6VHUXWV2;
 				GMAPS_API_KEY = AIzaSyAh7bC8pluisOpHtaboJSoixuh3mwWCrDE;
 				INFOPLIST_FILE = PORTFOLIO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
