@@ -7,6 +7,7 @@
 //
 
 import Domain
+import Architecture
 
 protocol MarvelPresenterOutput: AnyObject {
     func getCharactersSuccess(responseData: CharacterDataContainerEntity)
@@ -17,7 +18,7 @@ protocol MarvelPresenter {
     func getCharacters(characterParams: CharacterParamsEntity?)
 }
 
-class MarvelPresenterImpl: MarvelPresenter {
+class MarvelPresenterImpl: BasePresenter, MarvelPresenter {
     private let router: MarvelRouter
     private let interactor: Marvel
     

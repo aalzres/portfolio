@@ -6,13 +6,13 @@
 //  Copyright © 2020 aalzres. All rights reserved.
 //
 
-import Foundation
+import Architecture
 
 protocol TextFieldPresenterOutput: AnyObject {}
 
 protocol TextFieldPresenter {}
 
-class TextFieldPresenterImpl: TextFieldPresenter {
+class TextFieldPresenterImpl: BasePresenter, TextFieldPresenter {
     private let router: TextFieldRouter
     private let interactor: TextField
     

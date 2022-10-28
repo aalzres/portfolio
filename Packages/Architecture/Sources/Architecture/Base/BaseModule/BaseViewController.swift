@@ -53,7 +53,7 @@ open class BaseViewControllerImpl: UIViewController, BaseViewController {
     private lazy var activityIndicator = ActivityIndicatorView()
     public lazy var loadingStatusSubject = PublishSubject<Bool>()
 
-    public var presenter: AnyObject?
+    public var presenter: BasePresenter?
 
     open override func viewDidLoad() {
         super.viewDidLoad()
