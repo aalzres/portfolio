@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553815C5290C6E2B00EC9BD0 /* CGoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 553815C4290C6E2B00EC9BD0 /* CGoogleMaps */; };
 		5597ED952765F9FD00A0B3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5597ED942765F9FD00A0B3AE /* Assets.xcassets */; };
 		55E4C94628A6638F002FA45A /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94528A6638F002FA45A /* Action */; };
 		55E4C94828A66392002FA45A /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C94728A66392002FA45A /* Architecture */; };
@@ -161,6 +162,7 @@
 				55E4C94828A66392002FA45A /* Architecture in Frameworks */,
 				55E4C95628A663AF002FA45A /* Utilities in Frameworks */,
 				55E4C94C28A66398002FA45A /* Data in Frameworks */,
+				553815C5290C6E2B00EC9BD0 /* CGoogleMaps in Frameworks */,
 				55E4C95428A663A8002FA45A /* UserInterface in Frameworks */,
 				55E4C94A28A66395002FA45A /* CakeList in Frameworks */,
 				55E4C95228A663A4002FA45A /* Statistic in Frameworks */,
@@ -544,6 +546,7 @@
 				55E4C95128A663A4002FA45A /* Statistic */,
 				55E4C95328A663A8002FA45A /* UserInterface */,
 				55E4C95528A663AF002FA45A /* Utilities */,
+				553815C4290C6E2B00EC9BD0 /* CGoogleMaps */,
 			);
 			productName = PORTFOLIO;
 			productReference = 6700D1CC24979D1F00ED44AB /* portfolio.app */;
@@ -864,6 +867,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		553815C4290C6E2B00EC9BD0 /* CGoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CGoogleMaps;
+		};
 		55E4C94528A6638F002FA45A /* Action */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Action;

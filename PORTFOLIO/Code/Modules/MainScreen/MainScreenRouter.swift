@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SwiftUI
 
 import CakeList
 import Statistic
+import CGoogleMaps
 
 import Domain
 import DomainMock
@@ -49,7 +51,8 @@ class MainScreenRouter {
     }
 
     func goGoogleMaps() {
-        
+        let googleMapsView = UIHostingController(rootView: CGoogleMapsView())
+        UIApplication.serviceLocator.mainRouter.push(vc: googleMapsView)
     }
 
     class func create() -> MainScreenVC {
