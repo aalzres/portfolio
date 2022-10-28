@@ -19,7 +19,9 @@ class MarvelRouter {
         let presenter = MarvelPresenterImpl(router: router, interactor: interactor)
         repository.output = interactor
         interactor.output = presenter
-        let vc = MarvelVC(presenter: presenter)
+
+        let vc = MarvelVC() 
+        vc.oldPresenter = presenter
         presenter.output = vc
         
         return vc

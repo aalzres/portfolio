@@ -8,94 +8,70 @@
 
 import UIKit
 import Domain
+import Architecture
+import Utilities
 
 struct CharacterItem {
     var name: String
 }
 
-class MarvelVC: UIViewController {
-    private let presenter: MarvelPresenter
-    
-    private lazy var itemsTable: UITableView = {
-        let itemsTable = UITableView()
-        itemsTable.dataSource = self
-        itemsTable.prefetchDataSource = self
-        itemsTable.backgroundColor = .white
-        itemsTable.register(MarvelTableCell.self, forCellReuseIdentifier: Constants.cellId)
-        return itemsTable
-    }()
+final class MarvelVC: BaseViewControllerImpl {
+    var oldPresenter: MarvelPresenter?
+    override var titleView: String { "marvel_title_view".localized() }
+    private lazy var itemsTable = UITableView()
+        .set(\.dataSource, self)
+        .set(\.prefetchDataSource, self)
+        .set(\.backgroundColor, .background)
+        .set(\.register, MarvelTableCell.self)
+        .set(\.separatorInset, .init())
     
     private var isRunningRequest = false
     private var responseData: CharacterDataContainerEntity? = nil
     private lazy var characterItems: [CharacterItem] = []
     private lazy var characterParams = CharacterParamsEntity()
-    private lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.sizeToFit()
-        searchBar.delegate = self
-        return searchBar
-    }()
-    
-    init(presenter: MarvelPresenter) {
-        self.presenter = presenter
-        
-        super.init(nibName: nil, bundle: nil)
-        setupTitleView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    private lazy var searchBar = UISearchBar()
+        .set(\.delegate, self)
+        .sizeSelfToFit()
+
+    override func setupView() {
+        super.setupView()
+        view.backgroundColor = .white
         configNavBar()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupView()
-    }
-    //MARK: - Setups
-    private func setupTitleView() {
-        title = "marvel_title_view".localized()
-    }
-    
+
     private func configNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode =  .always
         showSearchBarButton(shouldShow: true)
     }
-    
-    private func setupView() {
-        view.backgroundColor = .white
-        
-        setupTable()
+
+    override func addAllSubviews() {
+        super.addAllSubviews()
+        view.addSubview(itemsTable)
     }
-    
-    private func setupTable() {
-        itemsTable.separatorInset.right = itemsTable.separatorInset.left
-        itemsTable.anchor(view,
-                          top: view.safeAreaLayoutGuide.topAnchor,
-                          bottom: view.safeAreaLayoutGuide.bottomAnchor,
-                          leading: view.leadingAnchor,
-                          trailing: view.trailingAnchor)
+
+    override func addAllConstraints() {
+        super.addAllConstraints()
+        itemsTable.snp.makeConstraints {
+            $0.vertical.equalTo(safeArea)
+            $0.horizontal.equalToSuperview()
+        }
     }
 }
 // MARK: - Functions
 extension MarvelVC {
     private func showSearchBarButton(shouldShow: Bool) {
         if shouldShow {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
-                                                                     target: self,
-                                                                     action: #selector(self.handleShowSearchBar))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .search,
+                target: self,
+                action: #selector(self.handleShowSearchBar)
+            )
         } else {
             navigationItem.rightBarButtonItem = nil
-            UIView.animate(withDuration: 0.2,
-                           animations: {
-                            self.searchBar.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)})
+            UIView.animate(withDuration: 0.2) { [weak self] in
+                self?.searchBar.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
         }
     }
     
@@ -108,7 +84,7 @@ extension MarvelVC {
     private func getCharacters() {
         if !isRunningRequest  {
             isRunningRequest.toggle()
-            presenter.getCharacters(characterParams: self.characterParams)
+            oldPresenter?.getCharacters(characterParams: characterParams)
         }
     }
     
@@ -144,7 +120,12 @@ extension MarvelVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellId, for: indexPath) as? MarvelTableCell else { return UITableViewCell() }
+        guard
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: MarvelTableCell.reuseIdentifier,
+                for: indexPath
+            ) as? MarvelTableCell
+        else { return .init() }
         
         guard let character = characterItems[indexPath.row] as CharacterItem? else { return UITableViewCell() }
         cell.characterName.text = character.name
@@ -197,8 +178,4 @@ extension MarvelVC {
         searchBar.becomeFirstResponder()
         search(shouldShow: true)
     }
-}
-// MARK: - Constants
-private struct Constants {
-    static let cellId = "cellId"
 }

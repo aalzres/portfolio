@@ -7,12 +7,10 @@
 //
 
 extension CakeDetailViewControllerImpl {
-    override func addAllSubviews() {
-        super.addAllSubviews()
+    func underlyingAddAllSubviews() {
         view.addSubviews([cakeImageView, cakeLabel])
     }
-    override func addAllConstraints() {
-        super.addAllConstraints()
+    func underlyinAddAllConstraints() {
         cakeImageView.snp.makeConstraints {
             $0.top.horizontal.equalToSuperview()
         }

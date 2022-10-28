@@ -10,12 +10,10 @@ import CoreGraphics
 import Utilities
 
 extension CakeListViewControllerImpl {
-    override func addAllSubviews() {
-        super.addAllSubviews()
+    func underlyingAddAllSubviews() {
         view.addSubview(cakeCollectionView)
     }
-    override func addAllConstraints() {
-        super.addAllConstraints()
+    func underlyinAddAllConstraints() {
         cakeCollectionView.snp.makeConstraints {
             $0.edges.equalTo(safeArea)
         }

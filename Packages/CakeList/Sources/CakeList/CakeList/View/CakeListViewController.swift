@@ -40,6 +40,16 @@ final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewCont
         actionSubject.asDriverIgnoringErrors()
     }
 
+    override func addAllSubviews() {
+        super.addAllSubviews()
+        underlyingAddAllSubviews()
+    }
+
+    override func addAllConstraints() {
+        super.addAllConstraints()
+        underlyinAddAllConstraints()
+    }
+
     // MARK: - Binding
     override func bindState() {
         super.bindState()
@@ -49,10 +59,10 @@ final class CakeListViewControllerImpl: BaseViewControllerImpl, CakeListViewCont
     }
 
     private func bindCakeCollectionView() {
-        let items = (CakeCollectionViewCell.reuseIdentifier, CakeCollectionViewCell.self)
+        let items = CakeCollectionViewCell.self
         dataSubject
             .map(\.cakeViewState)
-            .bind(to: cakeCollectionView.rx.items(cellIdentifier: items.0, cellType: items.1))  { _, viewState, cell in
+            .bind(to: cakeCollectionView.rx.items(cellIdentifier: items.reuseIdentifier, cellType: items))  { _, viewState, cell in
                 cell.representable = viewState
             }
             .disposed(by: rx.disposeBag)
