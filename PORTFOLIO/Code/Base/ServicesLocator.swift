@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import Architecture
-import Data
 
-final class ServiceLocator {
+import Data
+import Architecture
+
+final class ServiceLocator: BaseDeinit {
     lazy var mainRouter: Router = {
         let window = UIApplication.shared.keyWindow
         return RouterImpl(window: window)
@@ -21,4 +22,6 @@ final class ServiceLocator {
     }()
 
     lazy var appConfiguration: AppConfiguration = AppConfiguration()
+
+    lazy var containerDI: ContainerDI = ContainerDIImpl()
 }
