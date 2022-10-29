@@ -9,7 +9,7 @@ import Architecture
 
 import RxSwift
 
-final class StatisticMeanReducer: BaseReducer {
+final class StatisticMeanReducer: BaseReducer, ReactiveCompatible {
     private let statisticUseCase: StatisticUseCase
     private let viewAction: Observable<StatisticViewAction>
     private let stateSubject: BehaviorSubject<StatisticViewState>

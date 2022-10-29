@@ -9,7 +9,7 @@ import Architecture
 
 import RxSwift
 
-final class StatisticRemoveInputReducer: BaseReducer {
+final class StatisticRemoveInputReducer: BaseReducer, ReactiveCompatible {
     private let viewAction: Observable<StatisticViewAction>
     private let stateSubject: BehaviorSubject<StatisticViewState>
 

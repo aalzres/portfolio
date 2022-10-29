@@ -6,8 +6,9 @@
 //
 
 import Combine
+import Architecture
 
-final class CustomMapStore: ObservableObject {
+final class CustomMapStore: BaseStore, ObservableObject {
     @Published private(set) var state: CustomMapState
     private let reducer: CustomMapReducer
 

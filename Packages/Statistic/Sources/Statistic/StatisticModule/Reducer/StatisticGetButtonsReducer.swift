@@ -9,7 +9,7 @@ import Architecture
 
 import RxSwift
 
-final class StatisticGetButtonsReducer: BaseReducer {
+final class StatisticGetButtonsReducer: BaseReducer, ReactiveCompatible {
     private let viewAction: Observable<StatisticViewAction>
     private let stateSubject: BehaviorSubject<StatisticViewState>
 

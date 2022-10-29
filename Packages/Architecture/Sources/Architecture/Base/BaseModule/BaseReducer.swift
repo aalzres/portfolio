@@ -5,9 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 12/8/22.
 //
 
-import RxSwift
-
-open class BaseReducer: ReactiveCompatible {
+open class BaseReducer {
     public init() {}
 
     deinit {
