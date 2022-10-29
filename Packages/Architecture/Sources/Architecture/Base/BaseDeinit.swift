@@ -5,7 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 5/12/21.
 //
 
-public class BaseDeinit {
+open class BaseDeinit {
     public static let shared = BaseDeinit()
     
     private init() {}
