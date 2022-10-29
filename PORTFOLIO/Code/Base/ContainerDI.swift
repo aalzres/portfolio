@@ -6,10 +6,14 @@
 //  Copyright © 2022 aalzres. All rights reserved.
 //
 
-protocol ContainerDI {
-    var domainContainerDI: DomainContainerDI { get }
-}
+import CustomMap
+
+protocol ContainerDI: CustomMapContainerDI {}
 
 final class ContainerDIImpl: ContainerDI {
-    lazy var domainContainerDI: DomainContainerDI = DomainContainerDIImpl()
+    private init() {}
+    static let shared = ContainerDIImpl()
+
+    private lazy var domainContainerDI = DomainContainerDIImpl.shared
+    var customMapDomainContainerDI: CustomMapDomainContainerDI { domainContainerDI }
 }

@@ -8,4 +8,5 @@
 enum CustomMapAction {
     case onMapMoved
     case onTapMap
+    case onAppear
 }

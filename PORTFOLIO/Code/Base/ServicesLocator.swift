@@ -11,7 +11,14 @@ import UIKit
 import Data
 import Architecture
 
+extension UIApplication {
+    static var serviceLocator: ServiceLocator { ServiceLocator.shared }
+}
+
 final class ServiceLocator {
+    private init() {}
+    static let shared = ServiceLocator()
+
     lazy var mainRouter: Router = {
         let window = UIApplication.shared.keyWindow
         return RouterImpl(window: window)
@@ -23,5 +30,5 @@ final class ServiceLocator {
 
     lazy var appConfiguration: AppConfiguration = AppConfiguration()
 
-    lazy var containerDI: ContainerDI = ContainerDIImpl()
+    lazy var containerDI: ContainerDI = ContainerDIImpl.shared
 }

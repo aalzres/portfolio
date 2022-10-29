@@ -10,15 +10,15 @@ import Utilities
 import CustomMap
 import CoreLocation
 
-protocol DomainContainerDI {
-    var locationUseCase: LocationUseCase { get }
-}
+protocol DomainContainerDI: CustomMapDomainContainerDI { }
 
 final class DomainContainerDIImpl: DomainContainerDI {
+    private init() {}
+    static let shared = DomainContainerDIImpl()
+
     private lazy var locationManager: LocationManager = LocationManagerImpl(
         coreLocationManager: CLLocationManager()
     )
-
     lazy var locationUseCase: LocationUseCase = LocationUseCaseImpl(
         locationManager: locationManager
     )

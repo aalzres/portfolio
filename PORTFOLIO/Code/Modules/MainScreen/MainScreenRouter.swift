@@ -52,7 +52,8 @@ class MainScreenRouter {
 
     func goCustomMap() {
         CustomMapCoordinatorImpl(
-            router: UIApplication.serviceLocator.mainRouter
+            router: UIApplication.serviceLocator.mainRouter,
+            containerDI: UIApplication.serviceLocator.containerDI
         ).present()
     }
 

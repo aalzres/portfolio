@@ -22,7 +22,7 @@ struct CustomMapView: View {
                 .fontWeight(.heavy)
                 .font(.largeTitle)
                 .onTapGesture { store.dispatch(action: .onMapMoved) }
-        }
+        }.onAppear(perform: { store.dispatch(action: .onAppear) })
     }
 }
 

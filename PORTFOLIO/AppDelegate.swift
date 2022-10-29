@@ -38,7 +38,3 @@ private extension AppDelegate {
         UIApplication.serviceLocator.mainRouter.set(vc: vc)
     }
 }
-
-extension UIApplication {
-    static var serviceLocator = ServiceLocator()
-}
