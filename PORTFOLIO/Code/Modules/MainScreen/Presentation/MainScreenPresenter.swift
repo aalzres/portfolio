@@ -16,7 +16,7 @@ protocol MainScreenPresenter {
     func goMapKit()
     func goCakeList()
     func goStatistic()
-    func goGoogleMaps()
+    func goCustomMap()
 }
 
 class MainScreenPresenterImpl: MainScreenPresenter {
@@ -50,8 +50,8 @@ class MainScreenPresenterImpl: MainScreenPresenter {
         router.goStatistic()
     }
 
-    func goGoogleMaps() {
-        router.goGoogleMaps()
+    func goCustomMap() {
+        router.goCustomMap()
     }
 }
 

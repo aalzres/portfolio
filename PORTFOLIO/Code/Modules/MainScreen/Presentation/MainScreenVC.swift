@@ -14,7 +14,7 @@ enum MainScreenTarget {
     case goMapKit
     case goCakeList
     case goStatistic
-    case goGoogleMaps
+    case goCustomMap
 }
 
 struct MainScreenItem {
@@ -40,7 +40,7 @@ class MainScreenVC: UIViewController {
         MainScreenItem(name: "main_screen_map_kit".localized(), target: .goMapKit),
         MainScreenItem(name: "main_screen_cake_list".localized(), target: .goCakeList),
         MainScreenItem(name: "main_screen_statistic".localized(), target: .goStatistic),
-        MainScreenItem(name: "main_screen_google_maps".localized(), target: .goGoogleMaps)
+        MainScreenItem(name: "main_screen_custom_map".localized(), target: .goCustomMap)
     ]
 
     init(presenter: MainScreenPresenter) {
@@ -124,8 +124,8 @@ extension MainScreenVC: UITableViewDelegate {
             presenter.goCakeList()
         case .goStatistic:
             presenter.goStatistic()
-        case .goGoogleMaps:
-            presenter.goGoogleMaps()
+        case .goCustomMap:
+            presenter.goCustomMap()
         }
     }
 }

@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1310"
-   version = "1.3">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp -r $PROJECT_DIR/Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework $TARGET_BUILD_DIR/GoogleMaps.framework&#10;cp -r $PROJECT_DIR/Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework $TARGET_BUILD_DIR/GoogleMapsBase.framework&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "6700D1CB24979D1F00ED44AB"
+                     BuildableName = "portfolio.app"
+                     BlueprintName = "PORTFOLIO"
+                     ReferencedContainer = "container:PORTFOLIO.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"

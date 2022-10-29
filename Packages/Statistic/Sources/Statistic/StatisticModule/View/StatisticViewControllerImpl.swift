@@ -68,7 +68,7 @@ public final class StatisticViewControllerImpl: BaseUIScrollViewController, Stat
         super.setupView()
         title = "statistic_title_view".localized()
     }
-    
+
     public override func addAllSubviews() {
         super.addAllSubviews()
         contentView.addSubview(contentStackView)
