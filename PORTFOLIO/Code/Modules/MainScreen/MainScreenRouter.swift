@@ -11,7 +11,7 @@ import SwiftUI
 
 import CakeList
 import Statistic
-import CGoogleMaps
+import CustomMap
 
 import Domain
 import DomainMock
@@ -48,11 +48,14 @@ class MainScreenRouter {
             router: UIApplication.serviceLocator.mainRouter,
             statisticUseCase: statisticUseCase
         ).present()
+
+        let locationUseCase = UIApplication.serviceLocator.containerDI.domainContainerDI.locationUseCase
+        locationUseCase.stopLocation()
     }
 
-    func goGoogleMaps() {
-        let googleMapsView = UIHostingController(rootView: CGoogleMapsView())
-        UIApplication.serviceLocator.mainRouter.push(vc: googleMapsView)
+    func goCustomMap() {
+        let customMapView = UIHostingController(rootView: CustomMapView())
+        UIApplication.serviceLocator.mainRouter.push(vc: customMapView)
     }
 
     class func create() -> MainScreenVC {

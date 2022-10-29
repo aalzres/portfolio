@@ -12,6 +12,8 @@ struct GoogleMapsView: UIViewRepresentable {
      func makeUIView(context: Context) -> GMSMapView {
          let camera = GMSCameraPosition.london
          let mapView = GMSMapView(frame: .zero, camera: camera)
+         mapView.isMyLocationEnabled = true
+         mapView.settings.myLocationButton = true
 
          return mapView
      }

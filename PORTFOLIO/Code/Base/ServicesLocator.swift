@@ -11,7 +11,7 @@ import UIKit
 import Data
 import Architecture
 
-final class ServiceLocator: BaseDeinit {
+final class ServiceLocator {
     lazy var mainRouter: Router = {
         let window = UIApplication.shared.keyWindow
         return RouterImpl(window: window)

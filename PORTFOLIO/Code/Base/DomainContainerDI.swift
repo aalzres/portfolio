@@ -7,14 +7,19 @@
 //
 
 import Utilities
+import CustomMap
 import CoreLocation
 
 protocol DomainContainerDI {
-    var locationManagerUseCase: LocationManagerUseCase { get }
+    var locationUseCase: LocationUseCase { get }
 }
 
 final class DomainContainerDIImpl: DomainContainerDI {
-    lazy var locationManagerUseCase: LocationManagerUseCase = LocationManagerUseCaseImpl(
+    private lazy var locationManager: LocationManager = LocationManagerImpl(
         coreLocationManager: CLLocationManager()
+    )
+
+    lazy var locationUseCase: LocationUseCase = LocationUseCaseImpl(
+        locationManager: locationManager
     )
 }
