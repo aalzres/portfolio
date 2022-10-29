@@ -51,8 +51,9 @@ class MainScreenRouter {
     }
 
     func goCustomMap() {
-        let customMapView = UIHostingController(rootView: CustomMapView())
-        UIApplication.serviceLocator.mainRouter.push(vc: customMapView)
+        CustomMapCoordinatorImpl(
+            router: UIApplication.serviceLocator.mainRouter
+        ).present()
     }
 
     class func create() -> MainScreenVC {

@@ -7,18 +7,25 @@
 //
 
 import SwiftUI
+import Combine
+
 import Utilities
 
-public struct CustomMapView: View {
-    public init() {
-    }
-    
-    public var body: some View {
+struct CustomMapView: View {
+    @EnvironmentObject var store: CustomMapStore
+
+    var body: some View {
         ZStack {
             GoogleMapsView().edgesIgnoringSafeArea(.all)
+            Text(store.state.coordinates)
+                .foregroundColor(.red)
+                .fontWeight(.heavy)
+                .font(.largeTitle)
+                .onTapGesture { store.dispatch(action: .onMapMoved) }
         }
     }
 }
+
 struct CustomMapViewViewPreview: PreviewProvider {
     static var previews: some View {
         CustomMapView()
