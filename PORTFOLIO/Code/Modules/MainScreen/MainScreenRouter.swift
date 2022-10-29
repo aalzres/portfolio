@@ -48,9 +48,6 @@ class MainScreenRouter {
             router: UIApplication.serviceLocator.mainRouter,
             statisticUseCase: statisticUseCase
         ).present()
-
-        let locationUseCase = UIApplication.serviceLocator.containerDI.domainContainerDI.locationUseCase
-        locationUseCase.stopLocation()
     }
 
     func goCustomMap() {
