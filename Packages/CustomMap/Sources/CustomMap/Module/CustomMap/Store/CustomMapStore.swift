@@ -11,13 +11,12 @@ import Architecture
 
 final class CustomMapStore: BaseStore, ObservableObject {
     private let containerDI: CustomMapContainerDI
-    /// Pending to review: Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates.
-    @Published var state: CustomMapState
     private let reducer: CustomMapReducer
     private let middlewares: [CustomMapMiddleware]
+    private var cancellables: Set<AnyCancellable> = .init()
     private let queue: DispatchQueue
 
-    private var cancellables: Set<AnyCancellable> = .init()
+    @Published var state: CustomMapState
 
     init(
         containerDI: CustomMapContainerDI,
@@ -25,13 +24,16 @@ final class CustomMapStore: BaseStore, ObservableObject {
     ) {
         self.containerDI = containerDI
         self.state = state
-        self.queue = DispatchQueue(label: "custom_map_store")
+        self.queue = DispatchQueue.main
         self.reducer = CustomMapReducer(
             locationUseCase: containerDI.customMapDomainContainerDI.locationUseCase
         )
         self.middlewares = [
             CustomMapUserLocationMiddleware(
                 locationUseCase: containerDI.customMapDomainContainerDI.locationUseCase
+            ),
+            CustomMapGetInfoMiddleware(
+                mapUseCase: containerDI.customMapDomainContainerDI.mapUseCase
             )
         ]
     }
