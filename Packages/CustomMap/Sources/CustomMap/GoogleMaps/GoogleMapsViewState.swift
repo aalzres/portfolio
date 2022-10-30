@@ -9,6 +9,8 @@ import Utilities
 
 struct GoogleMapsViewState: Modifiable {
     var userLocation: CustomMapCoordinates?
+    var mapCentre: CustomMapCoordinates?
     var zoom: Float?
     var userLocationEnable: Bool = false
+    var markers: [MarkerInfo] = []
 }
