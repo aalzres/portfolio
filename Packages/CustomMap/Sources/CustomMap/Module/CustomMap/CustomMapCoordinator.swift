@@ -5,7 +5,6 @@
 //  Created by Andres Felipe Alzate Restrepo on 29/10/22.
 //
 
-import Utilities
 import Architecture
 
 public protocol CustomMapCoordinator {
@@ -25,14 +24,13 @@ public final class CustomMapCoordinatorImpl: BaseCoordinator, CustomMapCoordinat
 
     public func present() {
         let state = CustomMapState()
-        let reducer = CustomMapReducer(
-            locationUseCase: containerDI.customMapDomainContainerDI.locationUseCase
-        )
         let store = CustomMapStore(
-            initialState: state,
-            reducer: reducer
+            containerDI: containerDI,
+            initialState: state
         )
-        let view = CustomMapView().environmentObject(store)
+        let view = CustomMapView(
+            store: store
+        )
         router.push(vc: view.asViewController)
     }
 }

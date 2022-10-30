@@ -22,14 +22,14 @@ final class CustomMapReducer: BaseReducer {
         action: CustomMapAction
     ) {
         switch action {
-        case .onAppear:
-            locationUseCase.startLocation()
+        case let .set(coordinates):
+            let userLocation = CustomMapCoordinates(
+                latitude: coordinates.latitude,
+                longitude: coordinates.longitude
+            )
+            state = state.set(\.userLocation, userLocation)
 
-        case .onMapMoved:
-            state = state.set(\.coordinates, String.random(ofLength: 10))
-
-        case .onTapMap:
-            break
+        default: break
         }
     }
 }

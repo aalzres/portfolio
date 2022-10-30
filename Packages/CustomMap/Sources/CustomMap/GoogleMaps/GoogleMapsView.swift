@@ -9,24 +9,27 @@ import SwiftUI
 import GoogleMaps
 
 struct GoogleMapsView: UIViewRepresentable {
-     func makeUIView(context: Context) -> GMSMapView {
-         let camera = GMSCameraPosition.london
-         let mapView = GMSMapView(frame: .zero, camera: camera)
-//         mapView.isMyLocationEnabled = true
-         mapView.settings.myLocationButton = true
+    @Binding var updateCamera: CustomMapCoordinates?
 
-         return mapView
-     }
+    func makeUIView(context: Context) -> GMSMapView {
+        GMSMapView(frame: .zero)
+    }
 
-     func updateUIView(_ uiView: GMSMapView, context: Context) { }
- }
-
-extension GMSCameraPosition  {
-     static var london = GMSCameraPosition.camera(withLatitude: 51.507, longitude: 0, zoom: 10)
+    func updateUIView(_ uiView: GMSMapView, context: Context) {
+        guard let updateCamera else { return }
+        let coordinates = CLLocationCoordinate2D(
+            latitude: updateCamera.latitude,
+            longitude: updateCamera.longitude
+        )
+        let newPosition = GMSCameraUpdate.setTarget(coordinates)
+        uiView.animate(with: newPosition)
+    }
  }
 
 struct GoogleMapsViewPreview: PreviewProvider {
+    static let updateCamera = CustomMapCoordinates(latitude: 0, longitude: 0)
+
     static var previews: some View {
-        GoogleMapsView()
+        GoogleMapsView(updateCamera: .constant(updateCamera))
     }
 }

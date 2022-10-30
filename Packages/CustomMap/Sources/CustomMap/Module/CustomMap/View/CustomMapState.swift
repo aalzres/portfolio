@@ -5,8 +5,9 @@
 //  Created by Andres Felipe Alzate Restrepo on 29/10/22.
 //
 
+import SwiftUI
 import Utilities
 
 struct CustomMapState: Modifiable {
-    private(set) var coordinates: String = "coordinates"
+    var userLocation: CustomMapCoordinates?
 }
