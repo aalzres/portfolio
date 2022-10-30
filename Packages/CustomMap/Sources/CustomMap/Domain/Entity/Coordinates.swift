@@ -8,20 +8,20 @@
 import CoreLocation
 
 public protocol Coordinates {
-    var latitude: Float { get }
-    var longitude: Float { get }
+    var latitude: Double { get }
+    var longitude: Double { get }
 }
 
 public struct CoordinatesImpl: Coordinates {
-    public let latitude: Float
-    public let longitude: Float
+    public let latitude: Double
+    public let longitude: Double
 }
 
 extension CoordinatesImpl {
     init(coordinates: CLLocationCoordinate2D) {
         self.init(
-            latitude: Float(coordinates.latitude),
-            longitude: Float(coordinates.longitude)
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude
         )
     }
 }
