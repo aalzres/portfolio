@@ -22,4 +22,11 @@ final class DomainContainerDIImpl: DomainContainerDI {
     lazy var locationUseCase: LocationUseCase = LocationUseCaseImpl(
         locationManager: locationManager
     )
+
+    private lazy var everythingMapRepository: EveryThingMapRepository = EveryThingMapRepositoryImpl(
+        everyThingMapApiService: DataContainerDIImpl.shared.everyThingMapApiService
+    )
+    lazy var mapUseCase: MapUseCase = MapUseCaseImpl(
+        everythingMapRepository: everythingMapRepository
+    )
 }

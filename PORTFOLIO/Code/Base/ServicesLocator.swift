@@ -28,7 +28,7 @@ final class ServiceLocator {
         return NetworkManagerImpl(appConfiguration: appConfiguration)
     }()
 
-    lazy var appConfiguration: AppConfiguration = AppConfiguration()
+    let appConfiguration = AppConfiguration()
 
     lazy var containerDI: ContainerDI = ContainerDIImpl.shared
 }

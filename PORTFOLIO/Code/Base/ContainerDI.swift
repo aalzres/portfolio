@@ -16,4 +16,7 @@ final class ContainerDIImpl: ContainerDI {
 
     private lazy var domainContainerDI = DomainContainerDIImpl.shared
     var customMapDomainContainerDI: CustomMapDomainContainerDI { domainContainerDI }
+
+    private lazy var dataContainerDI = DataContainerDIImpl.shared
+    var customMapDataContainerDI: CustomMapDataContainerDI { dataContainerDI }
 }
