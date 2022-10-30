@@ -7,4 +7,5 @@
 
 public protocol CustomMapDomainContainerDI {
     var locationUseCase: LocationUseCase { get }
+    var mapUseCase: MapUseCase { get }
 }

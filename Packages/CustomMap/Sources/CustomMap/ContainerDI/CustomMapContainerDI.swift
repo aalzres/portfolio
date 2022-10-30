@@ -7,4 +7,5 @@
 
 public protocol CustomMapContainerDI {
     var customMapDomainContainerDI: CustomMapDomainContainerDI { get }
+    var customMapDataContainerDI: CustomMapDataContainerDI { get }
 }
