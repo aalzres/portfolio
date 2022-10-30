@@ -22,14 +22,18 @@ final class CustomMapReducer: BaseReducer {
         action: CustomMapAction
     ) {
         switch action {
+        case .getUserLocation:
+            state = state
+                .set(\.mapState.userLocationEnable, true)
+
         case let .set(coordinates):
             let userLocation = CustomMapCoordinates(
                 latitude: coordinates.latitude,
                 longitude: coordinates.longitude
             )
-            state = state.set(\.userLocation, userLocation)
-
-        default: break
+            state = state
+                .set(\.mapState.userLocation, userLocation)
+                .set(\.mapState.zoom, 15)
         }
     }
 }
