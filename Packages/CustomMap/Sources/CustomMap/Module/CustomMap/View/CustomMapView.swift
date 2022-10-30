@@ -16,7 +16,7 @@ struct CustomMapView: View {
         ZStack {
             GoogleMapsView(mapState: $store.state.mapState)
                 .edgesIgnoringSafeArea(.all)
-        }.onAppear(perform: { store.dispatch(action: .getUserLocation) })
+        }.onAppear(perform: { store.dispatch(action: .onAppear) })
     }
 }
 

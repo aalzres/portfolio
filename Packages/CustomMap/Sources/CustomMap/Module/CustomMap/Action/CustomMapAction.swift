@@ -6,11 +6,12 @@
 //
 
 enum CustomMapAction {
-    /// onTap
-
+    /// on
+    case onAppear
+    
     /// get
-    case getUserLocation
 
     /// set
-    case set(coordinates: Coordinates)
+    case setCoordinates(_ coordinates: Coordinates)
+    case setMapInfo(_ mapInfo: [MapElement])
 }
