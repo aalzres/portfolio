@@ -19,6 +19,8 @@ struct GoogleMapsView: UIViewRepresentable {
         uiView
             .userLocation(enable: mapState.userLocationEnable)
             .userLocation(coordinates: mapState.userLocation, zoom: mapState.zoom)
+
+        mapState.markers.map(\.asGMSMarker).forEach { $0.map = uiView }
     }
  }
 

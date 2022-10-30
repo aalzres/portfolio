@@ -8,5 +8,5 @@
 public protocol MapElement {
     var coordinates: Coordinates { get }
     var name: String { get }
-    var indicator: String { get }
+    var indicator: String? { get }
 }

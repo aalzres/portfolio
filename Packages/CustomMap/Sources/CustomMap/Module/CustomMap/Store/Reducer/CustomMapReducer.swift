@@ -27,16 +27,13 @@ final class CustomMapReducer: BaseReducer {
                 .set(\.mapState.userLocationEnable, true)
 
         case let .setCoordinates(coordinates):
-            let userLocation = CustomMapCoordinates(
-                latitude: coordinates.latitude,
-                longitude: coordinates.longitude
-            )
             state = state
-                .set(\.mapState.userLocation, userLocation)
+                .set(\.mapState.userLocation, CustomMapCoordinates(coordinates))
                 .set(\.mapState.zoom, 15)
 
         case let .setMapInfo(mapInfo):
-            break
+            state = state
+                .set(\.mapState.markers, mapInfo.map(MarkerInfo.init))
         }
     }
 }

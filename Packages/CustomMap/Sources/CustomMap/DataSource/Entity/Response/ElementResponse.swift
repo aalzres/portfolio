@@ -34,15 +34,14 @@ public struct ElementResponse: Decodable {
 struct MapElementImpl: MapElement {
     let coordinates: Coordinates
     let name: String
-    let indicator: String
+    let indicator: String?
 }
 
 extension MapElementImpl {
     init?(response: ElementResponse) {
         guard
             let coordinates = CoordinatesImpl(response: response.coords),
-            let name = response.name,
-            let indicator = response.indicator
+            let name = response.name
         else {
             assertionFailure("Cannot be unwrapped")
             return nil
@@ -50,7 +49,7 @@ extension MapElementImpl {
         self.init(
             coordinates: coordinates,
             name: name,
-            indicator: indicator
+            indicator: response.indicator
         )
     }
 }
