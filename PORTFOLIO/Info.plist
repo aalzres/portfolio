@@ -75,14 +75,14 @@
 		<string>$(PRIVATE_KEY_MARVEL)</string>
 		<key>PublicKeyMarvel</key>
 		<string>$(PUBLIC_KEY_MARVEL)</string>
+		<key>ServerApiVersionCustomMap</key>
+		<string>$(SERVER_API_VERSION_CUSTOM_MAP)</string>
 		<key>ServerApiVersionMarvel</key>
 		<string>$(SERVER_API_VERSION_MARVEL)</string>
-		<key>ServerApiVersionMeep</key>
-		<string>$(SERVER_API_VERSION_MEEP)</string>
+		<key>ServerHostCustomMap</key>
+		<string>$(SERVER_HOST_CUSTOM_MAP)</string>
 		<key>ServerHostMarvel</key>
 		<string>$(SERVER_HOST_MARVEL)</string>
-		<key>ServerHostMeep</key>
-		<string>$(SERVER_HOST_MEEP)</string>
 	</dict>
 </dict>
 </plist>

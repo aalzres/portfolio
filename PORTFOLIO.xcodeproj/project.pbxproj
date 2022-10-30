@@ -886,7 +886,7 @@
 				PUBLIC_KEY_MARVEL = d5aa879179ab8874716c9db4f6ab8ded;
 				SERVER_API_VERSION_CUSTOM_MAP = 1;
 				SERVER_API_VERSION_MARVEL = v1;
-				SERVER_HOST_CUSTOM_MAP = "https://uk-london-api.citymapper.com";
+				SERVER_HOST_CUSTOM_MAP = "";
 				SERVER_HOST_MARVEL = "https://gateway.marvel.com";
 				SWIFT_OBJC_BRIDGING_HEADER = "PORTFOLIO/PORTFOLIO-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -918,7 +918,7 @@
 				PUBLIC_KEY_MARVEL = d5aa879179ab8874716c9db4f6ab8ded;
 				SERVER_API_VERSION_CUSTOM_MAP = 1;
 				SERVER_API_VERSION_MARVEL = v1;
-				SERVER_HOST_CUSTOM_MAP = "https://uk-london-api.citymapper.com";
+				SERVER_HOST_CUSTOM_MAP = "";
 				SERVER_HOST_MARVEL = "https://gateway.marvel.com";
 				SWIFT_OBJC_BRIDGING_HEADER = "PORTFOLIO/PORTFOLIO-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
