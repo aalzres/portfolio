@@ -12,7 +12,7 @@ import Alamofire
 struct AnyResponse: Codable {}
 
 // MARK: - Routing server host
-public enum ServerHost { case marvel, meep, unowned }
+public enum ServerHost { case marvel, unowned }
 
 public protocol NetworkManager {
     func request(_ operation: BasicOperation<Data?>)
@@ -91,8 +91,6 @@ public class NetworkManagerImpl: NetworkManager {
         case .marvel:
             url = "\(appConfiguration.serverHostMarvel)/\(appConfiguration.serverApiVersionMarvel)"
             parameters = addAuthorization(parameters: parameters)
-        case .meep:
-            url = "\(appConfiguration.serverHostMeep)/tripplan/api/\(appConfiguration.serverApiVersionMeep)"
         case .unowned:
             debugPrint("Server host undefined")
         }

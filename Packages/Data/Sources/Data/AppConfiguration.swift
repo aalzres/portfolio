@@ -9,13 +9,19 @@
 import Foundation
 
 public struct AppConfiguration {
-    public let serverHostMarvel: String = Bundle.portfolioConfigurationValue("ServerHostMarvel")!
-    public let publicKeyMarvel: String = Bundle.portfolioConfigurationValue("PublicKeyMarvel")!
-    public let privateKeyMarvel: String = Bundle.portfolioConfigurationValue("PrivateKeyMarvel")!
-    public let serverApiVersionMarvel: String = Bundle.portfolioConfigurationValue("ServerApiVersionMarvel")!
+    /// KEY
     public let gMapsApiKey: String = Bundle.portfolioConfigurationValue("GMapsApiKey")!
-    public let serverHostMeep: String = Bundle.portfolioConfigurationValue("ServerHostMeep")!
-    public let serverApiVersionMeep: String = Bundle.portfolioConfigurationValue("ServerApiVersionMeep")!
+    public let privateKeyMarvel: String = Bundle.portfolioConfigurationValue("PrivateKeyMarvel")!
+    public let publicKeyMarvel: String = Bundle.portfolioConfigurationValue("PublicKeyMarvel")!
+
+    /// SERVER_API_VERSION
+    public let serverApiVersionCustomMap: String = Bundle.portfolioConfigurationValue("ServerApiVersionCustomMap")!
+    public let serverApiVersionMarvel: String = Bundle.portfolioConfigurationValue("ServerApiVersionMarvel")!
+
+    /// SERVER_HOST
+    public let serverHostCustomMap: String = Bundle.portfolioConfigurationValue("ServerHostCustomMap")!
+    public let serverHostMarvel: String = Bundle.portfolioConfigurationValue("ServerHostMarvel")!
+
     public init() {}
 }
 

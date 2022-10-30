@@ -10,7 +10,7 @@ import Domain
 import Alamofire
 
 public final class ResourcesOperation: JSONOperation<[ResourceEntity]> {
-    public override var serverHost: ServerHost { return .meep }
+    public override var serverHost: ServerHost { return .unowned }
     public override var endpoint: String { return "/routers/lisboa/resources" }
     public override var method: HTTPMethod { return .get }
     public override var params: Parameters {
