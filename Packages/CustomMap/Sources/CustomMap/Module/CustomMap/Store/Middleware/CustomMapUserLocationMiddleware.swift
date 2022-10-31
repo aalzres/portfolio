@@ -24,11 +24,21 @@ final class CustomMapUserLocationMiddleware: BaseMiddleware, CustomMapMiddleware
         action: CustomMapAction,
         queue: DispatchQueue
     ) -> AnyPublisher<CustomMapAction, Error>? {
-        guard case .onAppear = action else { return nil }
-        locationUseCase.startLocation()
+        switch action {
+        case .onAppear:
+            locationUseCase.startLocation()
             return locationUseCase.didUpdateLastLocation
                 .receive(on: queue)
                 .map { .setCoordinates($0) }
+                .print("limit::didUpdateLastLocation")
                 .eraseToAnyPublisher()
+
+        case .onDisappear:
+            locationUseCase.stopLocation()
+            
+        default: break
+        }
+
+        return nil
     }
 }

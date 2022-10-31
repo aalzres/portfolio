@@ -8,7 +8,8 @@
 enum CustomMapAction {
     /// on
     case onAppear
-    
+    case onDisappear
+
     /// get
 
     /// set

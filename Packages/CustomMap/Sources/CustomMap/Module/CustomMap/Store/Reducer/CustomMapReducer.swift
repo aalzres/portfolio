@@ -34,6 +34,8 @@ final class CustomMapReducer: BaseReducer {
         case let .setMapInfo(mapInfo):
             state = state
                 .set(\.mapState.markers, mapInfo.map(MarkerInfo.init))
+
+        default: break
         }
     }
 }
