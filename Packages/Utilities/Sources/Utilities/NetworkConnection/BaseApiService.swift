@@ -23,7 +23,7 @@ open class BaseApiService {
     public func getDataTaskPublisher<T: Decodable>(
         params: AsQueryItems
     ) -> AnyPublisher<T, Error> {
-        guard var urlComponents else {
+        guard var urlComponents = urlComponents else {
             assertionFailure("Fail to read urlComponents")
             return Fail(error: NSError.errorToReadURLComponents).eraseToAnyPublisher()
         }
