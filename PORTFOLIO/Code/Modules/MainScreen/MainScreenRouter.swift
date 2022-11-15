@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SwiftUI
 
 import CakeList
 import Statistic
+import CustomMap
 
 import Domain
 import DomainMock
@@ -45,6 +47,13 @@ class MainScreenRouter {
         StatisticCoordinatorImpl(
             router: UIApplication.serviceLocator.mainRouter,
             statisticUseCase: statisticUseCase
+        ).present()
+    }
+
+    func goCustomMap() {
+        CustomMapCoordinatorImpl(
+            router: UIApplication.serviceLocator.mainRouter,
+            containerDI: UIApplication.serviceLocator.containerDI
         ).present()
     }
 

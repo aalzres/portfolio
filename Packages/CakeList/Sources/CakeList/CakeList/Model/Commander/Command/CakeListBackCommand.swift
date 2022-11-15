@@ -27,6 +27,6 @@ final class CakeListBackCommand: BaseCommand {
     }
 
     private func execute() {
-        print("limit::", #function, "send analytics")
+        print(#function, "send analytics")
     }
 }

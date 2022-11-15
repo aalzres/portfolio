@@ -27,6 +27,6 @@ final class CakeDetailScreenTimeCommand: BaseCommand {
     }
 
     private func execute(_ time: Int) {
-        print("limit::", #function, "send time analytics \(time)")
+        print(#function, "send time analytics \(time)")
     }
 }

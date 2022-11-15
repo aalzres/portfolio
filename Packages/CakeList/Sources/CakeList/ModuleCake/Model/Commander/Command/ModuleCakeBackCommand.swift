@@ -27,6 +27,6 @@ final class ModuleCakeBackCommand: BaseCommand {
     }
 
     private func execute() {
-        print("limit::", #function, "send analytics")
+        print(#function, "send analytics")
     }
 }
