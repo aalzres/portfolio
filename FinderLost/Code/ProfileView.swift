@@ -1,5 +1,5 @@
 //
-//  UserView.swift
+//  ProfileView.swift
 //  FinderLost
 //
 //  Created by Andres Felipe Alzate Restrepo on 16/11/22.
@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct UserView: View {
+struct ProfileView: View {
     var body: some View {
-        Text("UserView")
+        Text("ProfileView")
             .font(.title)
             .foregroundColor(.primary)
     }
 }
 
-struct UserView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView()
+        ProfileView()
     }
 }

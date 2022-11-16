@@ -25,7 +25,7 @@
 		55CA2D90278391E2008989D0 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D83278391E2008989D0 /* Roboto-Thin.ttf */; };
 		55CA2D91278391E2008989D0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D84278391E2008989D0 /* Roboto-Black.ttf */; };
 		55CA2D92278391E2008989D0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D85278391E2008989D0 /* Colors.xcassets */; };
-		55D6DD1129257C1400B12C47 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6DD1029257C1400B12C47 /* UserView.swift */; };
+		55D6DD1129257C1400B12C47 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6DD1029257C1400B12C47 /* ProfileView.swift */; };
 		55D6DD1329257C6700B12C47 /* FinderLostTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6DD1229257C6700B12C47 /* FinderLostTabBar.swift */; };
 		55E4C95828A663DD002FA45A /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95728A663DD002FA45A /* Architecture */; };
 		55E4C95A28A663E0002FA45A /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95928A663E0002FA45A /* CakeList */; };
@@ -57,7 +57,7 @@
 		55CA2D83278391E2008989D0 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		55CA2D84278391E2008989D0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		55CA2D85278391E2008989D0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		55D6DD1029257C1400B12C47 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		55D6DD1029257C1400B12C47 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		55D6DD1229257C6700B12C47 /* FinderLostTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostTabBar.swift; sourceTree = "<group>"; };
 		55E4C93B28A6629E002FA45A /* Statistic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Statistic; path = Packages/Statistic; sourceTree = "<group>"; };
 		55E4C93C28A662BD002FA45A /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				554CD3952924370B00B7FC30 /* MapView.swift */,
-				55D6DD1029257C1400B12C47 /* UserView.swift */,
+				55D6DD1029257C1400B12C47 /* ProfileView.swift */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -294,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				554CD3962924370B00B7FC30 /* MapView.swift in Sources */,
-				55D6DD1129257C1400B12C47 /* UserView.swift in Sources */,
+				55D6DD1129257C1400B12C47 /* ProfileView.swift in Sources */,
 				557EB1D5277903E200328CA5 /* FinderLostApp.swift in Sources */,
 				55D6DD1329257C6700B12C47 /* FinderLostTabBar.swift in Sources */,
 			);

@@ -12,12 +12,12 @@ struct FinderLostTabBar: View {
         TabView() {
             MapView()
                 .tabItem {
-                    Text("Map View")
+                    Text("tab_bar_map_title")
                     Image(systemName: "map")
                 }
-            UserView()
+            ProfileView()
                 .tabItem {
-                    Text("User View")
+                    Text("tab_bar_profile_title")
                     Image(systemName: "person")
                 }
         }
