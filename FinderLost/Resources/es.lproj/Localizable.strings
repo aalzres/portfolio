@@ -1,7 +1,2 @@
-/* 
-  Localizable.strings
-  FinderLost
-
-  Created by Andres Felipe Alzate Restrepo on 16/11/22.
-  
-*/
+"tab_bar_map_title" = "Mapa";
+"tab_bar_profile_title" = "Perfil";
