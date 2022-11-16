@@ -10,7 +10,6 @@
 		554CD3962924370B00B7FC30 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CD3952924370B00B7FC30 /* MapView.swift */; };
 		557EB1D5277903E200328CA5 /* FinderLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EB1D4277903E200328CA5 /* FinderLostApp.swift */; };
 		557EB1DE277903E400328CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DD277903E400328CA5 /* Assets.xcassets */; };
-		557EB1E1277903E400328CA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557EB1DF277903E400328CA5 /* LaunchScreen.storyboard */; };
 		55BD498128A65FE2002A365E /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 55BD498028A65FE2002A365E /* Action */; };
 		55CA2D86278391E2008989D0 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D79278391E2008989D0 /* Roboto-Medium.ttf */; };
 		55CA2D87278391E2008989D0 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D7A278391E2008989D0 /* Roboto-Light.ttf */; };
@@ -27,8 +26,7 @@
 		55CA2D92278391E2008989D0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CA2D85278391E2008989D0 /* Colors.xcassets */; };
 		55D6DD1129257C1400B12C47 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6DD1029257C1400B12C47 /* ProfileView.swift */; };
 		55D6DD1329257C6700B12C47 /* FinderLostTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6DD1229257C6700B12C47 /* FinderLostTabBar.swift */; };
-		55CA2D9627839547008989D0 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CA2D9527839547008989D0 /* MainTabBar.swift */; };
-		55D6DD172925929100B12C47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55D6DD192925929100B12C47 /* Localizable.strings */; };
+		55D6DD27292597B800B12C47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55D6DD26292597B800B12C47 /* Localizable.strings */; };
 		55E4C95828A663DD002FA45A /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95728A663DD002FA45A /* Architecture */; };
 		55E4C95A28A663E0002FA45A /* CakeList in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95928A663E0002FA45A /* CakeList */; };
 		55E4C95C28A663E4002FA45A /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 55E4C95B28A663E4002FA45A /* Data */; };
@@ -44,7 +42,6 @@
 		557EB1D1277903E200328CA5 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557EB1D4277903E200328CA5 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
 		557EB1DD277903E400328CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		557EB1E0277903E400328CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		557EB1E2277903E400328CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55CA2D79278391E2008989D0 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		55CA2D7A278391E2008989D0 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -61,10 +58,7 @@
 		55CA2D85278391E2008989D0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55D6DD1029257C1400B12C47 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		55D6DD1229257C6700B12C47 /* FinderLostTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostTabBar.swift; sourceTree = "<group>"; };
-		55CA2D9527839547008989D0 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
-		55D6DD162925920300B12C47 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		55D6DD182925929100B12C47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		55D6DD1A2925929500B12C47 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		55D6DD26292597B800B12C47 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		55E4C93B28A6629E002FA45A /* Statistic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Statistic; path = Packages/Statistic; sourceTree = "<group>"; };
 		55E4C93C28A662BD002FA45A /* DomainMock */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DomainMock; path = Packages/DomainMock; sourceTree = "<group>"; };
 		55E4C93D28A662C6002FA45A /* Action */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Action; path = Packages/Action; sourceTree = "<group>"; };
@@ -136,11 +130,10 @@
 		55CA2D7127838E4A008989D0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55D6DD252925979800B12C47 /* Localization */,
 				55CA2D85278391E2008989D0 /* Colors.xcassets */,
 				55CA2D77278391E2008989D0 /* Fonts */,
 				557EB1DD277903E400328CA5 /* Assets.xcassets */,
-				557EB1DF277903E400328CA5 /* LaunchScreen.storyboard */,
-				55D6DD192925929100B12C47 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -187,6 +180,14 @@
 				55CA2D84278391E2008989D0 /* Roboto-Black.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		55D6DD252925979800B12C47 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				55D6DD26292597B800B12C47 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		55E4C93A28A6629E002FA45A /* Packages */ = {
@@ -277,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CA2D92278391E2008989D0 /* Colors.xcassets in Resources */,
-				557EB1E1277903E400328CA5 /* LaunchScreen.storyboard in Resources */,
 				557EB1DE277903E400328CA5 /* Assets.xcassets in Resources */,
 				55CA2D8F278391E2008989D0 /* Roboto-Bold.ttf in Resources */,
 				55CA2D8B278391E2008989D0 /* Roboto-BoldItalic.ttf in Resources */,
@@ -287,9 +287,9 @@
 				55CA2D8E278391E2008989D0 /* Roboto-BlackItalic.ttf in Resources */,
 				55CA2D87278391E2008989D0 /* Roboto-Light.ttf in Resources */,
 				55CA2D8D278391E2008989D0 /* Roboto-Italic.ttf in Resources */,
+				55D6DD27292597B800B12C47 /* Localizable.strings in Resources */,
 				55CA2D89278391E2008989D0 /* Roboto-MediumItalic.ttf in Resources */,
 				55CA2D91278391E2008989D0 /* Roboto-Black.ttf in Resources */,
-				55D6DD172925929100B12C47 /* Localizable.strings in Resources */,
 				55CA2D90278391E2008989D0 /* Roboto-Thin.ttf in Resources */,
 				55CA2D86278391E2008989D0 /* Roboto-Medium.ttf in Resources */,
 			);
@@ -310,27 +310,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		557EB1DF277903E400328CA5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				557EB1E0277903E400328CA5 /* Base */,
-				55D6DD162925920300B12C47 /* es */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		55D6DD192925929100B12C47 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55D6DD182925929100B12C47 /* en */,
-				55D6DD1A2925929500B12C47 /* es */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		557EB1F9277903E500328CA5 /* Debug */ = {
